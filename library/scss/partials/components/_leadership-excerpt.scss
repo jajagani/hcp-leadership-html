@@ -1,0 +1,66 @@
+// Leadership Excerpt component for HarperCollins Leadership website
+
+.leadership-excerpt {
+  padding: $spacing-3xl 0;
+  background-color: $light-gray;
+
+  &__content {
+    display: grid;
+    gap: $spacing-2xl;
+    align-items: center;
+
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-3xl;
+    }
+  }
+
+  &__text {
+    order: 2;
+
+    @media (min-width: $breakpoint-lg) {
+      order: 1;
+    }
+  }
+
+  &__title {
+    font-family: $font-family-secondary;
+    font-size: $font-size-3xl;
+    font-weight: $font-weight-bold;
+    color: $text-primary;
+    margin-bottom: $spacing-lg;
+    line-height: $line-height-tight;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-size-4xl;
+    }
+  }
+
+  &__description {
+    font-family: $font-family-primary;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-normal;
+    color: $text-secondary;
+    line-height: $line-height-relaxed;
+    margin-bottom: $spacing-xl;
+
+    em {
+      font-style: italic;
+    }
+  }
+
+  &__image {
+    order: 1;
+
+    @media (min-width: $breakpoint-lg) {
+      order: 2;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: $border-radius-lg;
+      box-shadow: $shadow-lg;
+    }
+  }
+}

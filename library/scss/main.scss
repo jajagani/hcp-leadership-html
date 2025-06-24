@@ -1,25 +1,26 @@
 // Global variables
-@import "modules/variables.scss";
-
-// Lib
-//@import "lib/slick";
-@import "lib/bootstrap/bootstrap";
+@import "modules/variables";
 
 // Reset and general styling
-@import "partials/base.scss";
-@import "partials/tools.scss";
-@import "partials/typography.scss";
-@import "partials/inputs.scss";
-@import "partials/buttons.scss";
-@import "partials/styling.scss";
+@import "partials/base";
+@import "partials/typography";
+@import "partials/buttons";
+@import "partials/inputs";
+@import "partials/styling";
+@import "partials/tools";
 
 // Component specific styling
 @import "partials/components/header";
-@import "partials/components/not-found";
+@import "partials/components/hero";
+@import "partials/components/book-cards";
 @import "partials/components/footer";
 @import "partials/components/mobile-nav";
+@import "partials/components/featured-collection";
+@import "partials/components/new-releases";
+@import "partials/components/topics";
+@import "partials/components/manager-success";
+@import "partials/components/leadership-excerpt";
+@import "partials/components/services";
+@import "partials/components/not-found";
 @import "partials/components/blog";
 @import "partials/components/single-post";
-
-// Gutenberg
-//@import "partials/components/gutenberg/comparison";

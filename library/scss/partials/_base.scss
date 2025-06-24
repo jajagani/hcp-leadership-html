@@ -1,61 +1,196 @@
-html {
-    &.no-scroll {
-        position: fixed;
-        overflow-y: scroll;
-        width: 100%;
-    }
-}
+@use "../modules/variables" as variables;
+@use "sass:color";
 
-body,
-html {
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    font-weight: 400;
-    font-family: $font-body;
-    font-size: 15px;
-    color: $text;
-}
-
+// Reset and Base Styles
 * {
-    box-sizing: border-box;
-    outline: none !important;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  outline: none !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-    font-weight: 400;
-    text-decoration: underline;
-    color: $text;
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  &.no-scroll {
+    position: fixed;
+    overflow-y: scroll;
+    width: 100%;
+  }
 }
 
-ol {
-    margin-bottom: $gutter-small;
+body {
+  font-family: variables.$font-family-primary;
+  font-size: variables.$font-size-base;
+  line-height: variables.$line-height-normal;
+  color: variables.$text-primary;
+  background-color: variables.$white;
+  margin: 0;
+  padding: 0;
 }
 
-ul,
-ol {
-    margin: 0 0 $gutter-small 0;
-    padding: 0;
-
-    li {
-        margin: 0 0 0 20px;
-        padding: 0;
-    }
+// Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: variables.$font-family-secondary;
+  font-weight: variables.$font-weight-bold;
+  line-height: variables.$line-height-tight;
+  margin: 0 0 variables.$spacing-md 0;
+  color: variables.$text-primary;
 }
 
-ol {
-    margin-left: 10px;
+h1 {
+  font-size: variables.$font-size-4xl;
+
+  @media (min-width: variables.$breakpoint-md) {
+    font-size: 3.5rem;
+  }
+}
+
+h2 {
+  font-size: variables.$font-size-3xl;
+
+  @media (min-width: variables.$breakpoint-md) {
+    font-size: 2.5rem;
+  }
+}
+
+h3 {
+  font-size: variables.$font-size-2xl;
+
+  @media (min-width: variables.$breakpoint-md) {
+    font-size: 1.75rem;
+  }
+}
+
+h4 {
+  font-size: variables.$font-size-xl;
+}
+
+h5 {
+  font-size: variables.$font-size-lg;
+}
+
+h6 {
+  font-size: variables.$font-size-sm;
 }
 
 p {
-    margin: 0 0 $gutter-small 0;
+  margin: 0 0 variables.$spacing-md 0;
+  color: variables.$text-secondary;
+  line-height: variables.$line-height-relaxed;
 }
 
-.script-label {
-    font-family: $font-script;
-    transform: rotate(-5deg);
-    position: absolute;
-    font-size: 1.1rem;
+a {
+  color: variables.$primary-color;
+  text-decoration: none;
+  transition: variables.$transition-base;
+
+  &:hover {
+    color: color.adjust(variables.$primary-color, $lightness: -10%);
+    text-decoration: underline;
+  }
+}
+
+// Lists
+ul,
+ol {
+  margin: 0 0 variables.$spacing-md 0;
+  padding-left: variables.$spacing-xl;
+}
+
+li {
+  margin-bottom: variables.$spacing-xs;
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Container
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 variables.$spacing-md;
+
+  @media (min-width: variables.$breakpoint-md) {
+    padding: 0 variables.$spacing-lg;
+  }
+}
+
+// Utility Classes
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+.mb-1 {
+  margin-bottom: variables.$spacing-sm;
+}
+.mb-2 {
+  margin-bottom: variables.$spacing-md;
+}
+.mb-3 {
+  margin-bottom: variables.$spacing-lg;
+}
+.mb-4 {
+  margin-bottom: variables.$spacing-xl;
+}
+.mb-5 {
+  margin-bottom: variables.$spacing-2xl;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+.mt-1 {
+  margin-top: variables.$spacing-sm;
+}
+.mt-2 {
+  margin-top: variables.$spacing-md;
+}
+.mt-3 {
+  margin-top: variables.$spacing-lg;
+}
+.mt-4 {
+  margin-top: variables.$spacing-xl;
+}
+.mt-5 {
+  margin-top: variables.$spacing-2xl;
+}
+
+.p-0 {
+  padding: 0;
+}
+.p-1 {
+  padding: variables.$spacing-sm;
+}
+.p-2 {
+  padding: variables.$spacing-md;
+}
+.p-3 {
+  padding: variables.$spacing-lg;
+}
+.p-4 {
+  padding: variables.$spacing-xl;
+}
+.p-5 {
+  padding: variables.$spacing-2xl;
 }

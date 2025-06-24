@@ -1,0 +1,33 @@
+// Featured Collection component for HarperCollins Leadership website
+
+.featured-collection {
+  background-color: $light-gray;
+  padding: $spacing-3xl 0;
+  text-align: center;
+
+  &__content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-family: $font-family-secondary;
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $text-primary;
+    margin-bottom: $spacing-xl;
+    line-height: $line-height-tight;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-size-3xl;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    strong {
+      font-weight: $font-weight-bold;
+    }
+  }
+}

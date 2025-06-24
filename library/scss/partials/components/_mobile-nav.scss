@@ -1,0 +1,218 @@
+@use "../../modules/variables" as variables;
+
+// Mobile Navigation Styles
+.header__nav--mobile-open {
+  @media (max-width: variables.$breakpoint-lg - 1px) {
+    display: flex !important;
+    position: fixed;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: variables.$white;
+    border-top: 1px solid variables.$medium-gray;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    padding: variables.$spacing-lg;
+    max-height: calc(100vh - 100%);
+    overflow-y: auto;
+
+    .header__nav-list {
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+    }
+
+    .header__nav-item {
+      width: 100%;
+      border-bottom: 1px solid variables.$medium-gray;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .header__nav-link {
+      display: block;
+      padding: variables.$spacing-md 0;
+      width: 100%;
+      border-bottom: none;
+    }
+
+    .header__nav-dropdown {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      box-shadow: none;
+      border: none;
+      background-color: variables.$light-gray;
+      margin-top: variables.$spacing-sm;
+      border-radius: variables.$border-radius-sm;
+
+      .header__nav-dropdown-list {
+        padding: variables.$spacing-sm;
+      }
+
+      .header__nav-dropdown-link {
+        padding: variables.$spacing-sm;
+        font-size: variables.$font-size-sm;
+      }
+    }
+  }
+}
+
+// Animation classes
+.animate-in {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Button loading state
+.btn--loading {
+  position: relative;
+  color: transparent !important;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: variables.$breakpoint-sm) {
+  .hero__title {
+    font-size: 2.5rem;
+  }
+
+  .hero__subtitle {
+    font-size: variables.$font-size-base;
+  }
+
+  .featured-collection__title,
+  .new-releases__title,
+  .topics__title,
+  .manager-success__title,
+  .leadership-excerpt__title {
+    font-size: 2rem;
+  }
+
+  .book-card__content,
+  .topic-card,
+  .service-card {
+    padding: variables.$spacing-md;
+  }
+
+  .footer__container {
+    grid-template-columns: 1fr;
+    gap: variables.$spacing-lg;
+  }
+
+  .footer__bottom-content {
+    flex-direction: column;
+    gap: variables.$spacing-md;
+  }
+}
+
+// Mobile Navigation component for HarperCollins Leadership website
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: variables.$white;
+  z-index: variables.$z-modal;
+  transform: translateX(-100%);
+  transition: variables.$transition-base;
+
+  &--open {
+    transform: translateX(0);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: variables.$spacing-lg;
+    border-bottom: 1px solid variables.$medium-gray;
+  }
+
+  &__close-btn {
+    background: none;
+    border: none;
+    padding: variables.$spacing-sm;
+    cursor: pointer;
+    border-radius: variables.$border-radius-sm;
+    transition: variables.$transition-base;
+
+    &:hover {
+      background-color: variables.$light-gray;
+    }
+
+    &-icon {
+      width: 24px;
+      height: 24px;
+      fill: variables.$text-primary;
+    }
+  }
+
+  &__content {
+    padding: variables.$spacing-lg;
+    overflow-y: auto;
+    height: calc(100vh - 80px);
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    border-bottom: 1px solid variables.$medium-gray;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: variables.$spacing-lg 0;
+    font-family: variables.$font-family-primary;
+    font-size: variables.$font-size-lg;
+    font-weight: variables.$font-weight-medium;
+    color: variables.$text-primary;
+    text-decoration: none;
+    transition: variables.$transition-base;
+  }
+}
