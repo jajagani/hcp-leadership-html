@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   outline: none !important;
@@ -443,36 +444,46 @@ img {
 .btn--arrow {
   position: relative;
   overflow: hidden;
-  transition: background 0.2s, color 0.2s, padding-right 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: padding-right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   padding-right: 32px;
 }
-.btn--arrow .btn__icon {
-  display: none;
+.btn--arrow::after {
+  content: "⟶";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+  font-size: 1.4em;
+  font-weight: 700;
+  color: inherit;
   opacity: 0;
-  transform: translateX(-8px);
-  margin-left: 0;
-  font-size: 1.1em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  line-height: 1;
+  display: inline-block;
   vertical-align: middle;
-  transition: none;
+  margin-top: -2px;
 }
 .btn--arrow:hover {
   padding-right: 48px;
 }
-.btn--arrow:hover .btn__icon {
-  display: inline-block;
+.btn--arrow:hover::after {
   opacity: 1;
-  transform: translateX(0);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(-50%) translateX(0);
+}
+.btn--arrow:focus-visible::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
 }
 
-.btn--gold-arrow {
+.btn--gold {
   background: #e9b841 !important;
   color: #ffffff !important;
   border-color: #e9b841 !important;
 }
-.btn--gold-arrow:hover {
-  background: rgb(221.3679245283, 164.2783018868, 25.6320754717) !important;
-  border-color: rgb(221.3679245283, 164.2783018868, 25.6320754717) !important;
+.btn--gold:hover {
+  background: #487fc2 !important;
+  border-color: #487fc2 !important;
   color: #ffffff !important;
 }
 
@@ -2140,6 +2151,162 @@ img {
   width: 20px;
   height: 20px;
   fill: currentColor;
+}
+
+.footer-background-b {
+  background: #e3e8eb;
+  color: #111111;
+  width: 100%;
+  height: 112px;
+  display: flex;
+  align-items: center;
+}
+
+.footer-background-c {
+  background: #234f6a;
+  color: #c6c6c6;
+  width: 100%;
+  height: 145px;
+  display: flex;
+  align-items: center;
+}
+
+.site-footer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.footer-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 0 24px 0;
+}
+
+.menu {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item a {
+  color: inherit;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.menu-item a:hover,
+.menu-item a:focus {
+  text-decoration: underline;
+}
+
+.text-underline {
+  text-decoration: underline !important;
+}
+
+.site-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 24px 0 16px 0;
+}
+
+#footer-navigation-b .menu {
+  gap: 16px;
+}
+
+#footer-navigation-b .menu-item a {
+  color: #c6c6c6;
+  font-size: 15px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+#footer-navigation-b .menu-item a:hover,
+#footer-navigation-b .menu-item a:focus {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+#copyright {
+  color: #c6c6c6;
+  font-size: 15px;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin-top: 12px;
+}
+
+#copyright a {
+  color: #c6c6c6;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+#copyright a:hover {
+  color: #ffffff;
+}
+
+#copyright p {
+  margin: 0;
+  font-size: 13px;
+  color: #c6c6c6;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+@media (max-width: 600px) {
+  .footer-navigation,
+  .site-info {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .menu {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  .site-footer {
+    padding: 0 8px;
+  }
+  .site-info {
+    align-items: center;
+    text-align: center;
+  }
+}
+#footer-navigation-b .menu-item.text-uppercase a {
+  text-transform: uppercase;
 }
 
 @media (max-width: 991px) {

@@ -171,48 +171,61 @@
   }
 }
 
-// Arrow Button Variant
+// CSS-ONLY ARROW FUNCTIONALITY
+// This creates arrows using ::after pseudo-elements - no HTML required!
+
+// Arrow button class
 .btn--arrow {
   position: relative;
   overflow: hidden;
-  transition: background 0.2s, color 0.2s,
-    padding-right 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  padding-right: 32px;
+  transition: padding-right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding-right: variables.$spacing-xl; // Space for arrow
 
-  .btn__icon {
-    display: none;
+  // Arrow using ::after pseudo-element
+  &::after {
+    content: "⟶"; // Unicode long arrow
+    position: absolute;
+    right: variables.$spacing-md;
+    top: 50%;
+    transform: translateY(-50%) translateX(8px); // Start off-screen
+    font-size: 1.4em;
+    font-weight: variables.$font-weight-bold;
+    color: inherit;
     opacity: 0;
-    transform: translateX(-8px);
-    margin-left: 0;
-    font-size: 1.1em;
-    vertical-align: middle;
-    transition: none;
-  }
-
-  &:hover {
-    padding-right: 48px;
-  }
-
-  &:hover .btn__icon {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    line-height: 1;
     display: inline-block;
+    vertical-align: middle;
+    margin-top: -2px; // Fine-tune vertical alignment
+  }
+
+  // Show arrow on hover
+  &:hover {
+    padding-right: variables.$spacing-2xl;
+
+    &::after {
+      opacity: 1;
+      transform: translateY(-50%) translateX(0);
+    }
+  }
+
+  // Focus state for accessibility
+  &:focus-visible::after {
     opacity: 1;
-    transform: translateX(0);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(-50%) translateX(0);
   }
 }
 
-// Gold Arrow Button Variant
-.btn--gold-arrow {
+// Gold Button Variant
+.btn--gold {
   background: variables.$btn-gold !important;
   color: variables.$white !important;
   border-color: variables.$btn-gold !important;
 
   &:hover {
-    background: color.adjust(variables.$btn-gold, $lightness: -10%) !important;
-    border-color: color.adjust(
-      variables.$btn-gold,
-      $lightness: -10%
-    ) !important;
+    background: variables.$btn-primary-blue !important;
+    border-color: variables.$btn-primary-blue !important;
     color: variables.$white !important;
   }
 }
