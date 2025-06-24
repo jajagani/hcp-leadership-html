@@ -3,10 +3,11 @@
 
 // Footer Component
 .footer {
-  background-color: variables.$text-primary;
+  background-color: variables.$text-primary !important;
   color: variables.$white;
-  padding: variables.$spacing-3xl 0 variables.$spacing-lg;
+  padding: variables.$spacing-3xl 0 0 0;
   margin-top: auto;
+  border-bottom: none;
 }
 
 .footer__container {
@@ -166,9 +167,13 @@
 .footer__copyright {
   font-family: variables.$font-family-primary;
   font-size: variables.$font-size-sm;
-  font-weight: variables.$font-weight-normal;
+  font-weight: variables.$font-weight-bold;
   color: rgba(variables.$white, 0.6);
   margin: 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .footer__bottom-links {
@@ -227,24 +232,25 @@
 // === HCP Leadership Custom Footer ===
 
 .footer-background-b {
-  background: variables.$light-gray; // #e3e8eb
-  color: variables.$hero-subtitle-color; // #111111
+  background: variables.$light-gray;
+  color: variables.$hero-subtitle-color;
   width: 100%;
-  height: 112px;
+  min-height: 112px;
   display: flex;
   align-items: center;
 }
 
 .footer-background-c {
-  background: variables.$top-bar-bg; // same as top header bg
+  background: variables.$top-bar-bg;
   color: #c6c6c6;
   width: 100%;
-  height: 145px;
+  min-height: 145px;
   display: flex;
   align-items: center;
 }
 
 .site-footer {
+  background: transparent !important;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;

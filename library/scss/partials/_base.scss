@@ -9,7 +9,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
+html,
+body {
   font-size: 16px;
   scroll-behavior: smooth;
   &.no-scroll {
@@ -24,7 +25,6 @@ body {
   font-size: variables.$font-size-base;
   line-height: variables.$line-height-normal;
   color: variables.$text-primary;
-  background-color: variables.$white;
   margin: 0;
   padding: 0;
 }
