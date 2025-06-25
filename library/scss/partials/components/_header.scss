@@ -347,3 +347,48 @@
     }
   }
 }
+
+
+
+.underline-animated {
+  position: relative;
+  display: inline-block;
+  z-index: 0; // ensure this creates a stacking context
+
+  &::after {
+    // Your SVG curve underline
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    width: 100%;
+    height: 60px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 500 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.7,145.6C109,125,299.9,116.2,401,121.3c42.1,2.2,87.6,11.8,87.3,25.7' fill='none' stroke='%233b82f6' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 0; // sits at base of this stacking context
+  }
+
+  &::before {
+    // The mask that reveals the curve
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    width: 100%;
+    height: 20px;
+    background: white; // match page background
+    z-index: 1;        // covers the line *but is under the text*
+    transform: translateX(0);
+  }
+
+  &.active::before {
+    animation: reveal-underline 1.2s cubic-bezier(0.6, 0.05, 1, 0.2) forwards;
+  }
+}
+
+@keyframes reveal-underline {
+  to {
+    transform: translateX(100%);
+  }
+}

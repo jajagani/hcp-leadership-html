@@ -110,3 +110,19 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target); // Only animate once
+      }
+    });
+  },
+  { threshold: 0.6 }
+);
+
+document.querySelectorAll('.underline-animated').forEach((el) => {
+  observer.observe(el);
+});

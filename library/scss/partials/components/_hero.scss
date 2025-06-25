@@ -10,6 +10,7 @@
     align-items: center;
     justify-content: center;
     min-height: 420px;
+    height: auto;
   }
 
   &__text {
@@ -104,16 +105,34 @@
 
   &__text-outer {
     position: relative;
-    padding-top: 160px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: variables.$spacing-2xl variables.$spacing-xl variables.$spacing-2xl
-      variables.$spacing-3xl;
+    width: 50%;
     height: 100%;
-    width: 100%;
-    box-sizing: border-box;
+    gap: 2rem;
+  }
+
+  &__title-container--shifted {
+    position: relative;
+    width: 400px;
+    top: -20px;
+    left: -310px;
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__title-container--grouped {
+    display: flex;
+    flex-direction: column;
+    gap: variables.$spacing-md;
+  }
+
+  &__title-container--shifted-inner {
+    background: #fff;
+    padding: 0 variables.$spacing-md;
   }
 }
 
@@ -206,6 +225,13 @@
       line-height: variables.$line-height-normal !important;
       min-height: auto !important;
     }
+
+    &__title-container--shifted {
+      position: static !important;
+      top: auto !important;
+      left: auto !important;
+      width: 100% !important;
+    }
   }
 }
 
@@ -270,40 +296,6 @@
   font-weight: bold;
 }
 
-.hero__title--bg-underline {
-  position: absolute;
-  height: 50px;
-  padding: 10px;
-  left: -80px;
-  font-family: "Plantin-Bold", "EB Garamond", serif;
-  font-weight: 700;
-  color: #111;
-  font-size: 2.2rem;
-  line-height: 1.1;
-  z-index: 2;
-  display: block;
-  margin-bottom: 20px;
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 8px;
-    width: 100%;
-    height: 18px;
-    background: #fff;
-    z-index: -1;
-    border-radius: 2px;
-  }
-
-  &:first-of-type {
-    top: 40px;
-  }
-
-  &:last-of-type {
-    top: 70px;
-  }
-}
-
 @media (max-width: 900px) {
   .hero__title--bg-underline {
     position: static;
@@ -321,4 +313,11 @@
 
 .hero--bg-blue {
   background-color: #446880;
+}
+
+// Add intermediate viewport adjustment
+@media (min-width: 769px) and (max-width: 1200px) {
+  .hero__title-container--shifted {
+    left: -155px !important;
+  }
 }
