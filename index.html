@@ -60,11 +60,27 @@
       href="https://db.onlinewebfonts.com/c/4c40c7f27503517082e3857518913bab?family=Brandon+Grotesque+Bold"
       rel="stylesheet"
     />
+    <link href="https://db.onlinewebfonts.com/c/a52d31ec45dff4f55779eddaada28b32?family=Brandon+Grotesque+Web+Black" rel="stylesheet" />
     <!-- Font Awesome for button icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" />
+    <style>
+      @font-face {
+        font-family: "Brandon Grotesque Web Black";
+        src: url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.eot");
+        src: url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.eot?#iefix") format("embedded-opentype"),
+             url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.woff2") format("woff2"),
+             url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.woff") format("woff"),
+             url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.ttf") format("truetype"),
+             url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.svg#Brandon Grotesque Web Black") format("svg");
+        font-weight: 900;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
   </head>
   <body>
     <!-- Header -->
@@ -255,155 +271,83 @@
         </div>
       </section>
 
-      <!-- Topics Section (Refactored as Reusable Section) -->
-      <section class="section-grid topics">
+      <!-- Topics Section (Reusable Grid) -->
+      <section class="section-grid ">
         <h2 class="section-title topics__title">Explore by <span class="underline-animated">Category</span></h2>
-        <div class="section-grid__container topics__grid">
-          <article class="section-card topic-card">
-            <div class="topic-card__image">
-              <img src="https://via.placeholder.com/400x300/1e40af/ffffff?text=Activate+Your+Leadership" alt="Activate Your Leadership" />
-            </div>
-            <div class="topic-card__content">
-              <h4 class="topic-card__title">Activate Your Leadership</h4>
-              <p class="topic-card__description">with a copy of "Disrupting the Game"</p>
-            </div>
-          </article>
-          <article class="section-card topic-card">
-            <div class="topic-card__image">
-              <img src="https://via.placeholder.com/400x300/f59e0b/ffffff?text=Grow+Your+Business" alt="Grow Your Business" />
-            </div>
-            <div class="topic-card__content">
-              <h4 class="topic-card__title">Grow Your Business</h4>
-              <p class="topic-card__description">with a paperback of "From Startup to Exit"</p>
-            </div>
-          </article>
-          <article class="section-card topic-card">
-            <div class="topic-card__image">
-              <img src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2023/01/06074905/section-4-book-A-1-297x375.jpg" alt="Increase Your Sales" />
-            </div>
-            <div class="topic-card__content">
-              <h4 class="topic-card__title">Increase Your Sales</h4>
-              <p class="topic-card__description">with a copy of "Sell Different!"</p>
-            </div>
-          </article>
-          <article class="section-card topic-card">
-            <div class="topic-card__image">
-              <img src="https://via.placeholder.com/400x300/8b5cf6/ffffff?text=Marketing+That+Works" alt="Marketing That Works" />
-            </div>
-            <div class="topic-card__content">
-              <h4 class="topic-card__title">Marketing That Works</h4>
-              <p class="topic-card__description">Learn from "Marketing Made Simple"</p>
-            </div>
-          </article>
-          <article class="section-card topic-card">
-            <div class="topic-card__image">
-              <img src="https://via.placeholder.com/400x300/ef4444/ffffff?text=People+Management" alt="People Management" />
-            </div>
-            <div class="topic-card__content">
-              <h4 class="topic-card__title">People Management</h4>
-              <p class="topic-card__description">Learn from "The First-Time Manager"</p>
-            </div>
-          </article>
-          <article class="section-card topic-card">
-            <div class="topic-card__image">
-              <img src="https://via.placeholder.com/400x300/06b6d4/ffffff?text=Personal+Development" alt="Personal Development" />
-            </div>
-            <div class="topic-card__content">
-              <h4 class="topic-card__title">Personal Development</h4>
-              <p class="topic-card__description">Learn from "We Should All Be Millionaires"</p>
-            </div>
-          </article>
+        <div class="custom-grid custom-grid--max-3 custom-grid--gap-lg custom-grid--topics ">
+          <a href="https://www.harpercollinsleadership.com/topics/leadership/" class="custom-grid__item topic-link bg-trans">
+            <img src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2023/01/06074905/section-4-book-A-1-297x375.jpg" alt="Activate Your Leadership" />
+          </a>
+          <a href="https://www.harpercollinsleadership.com/categories/business" class="custom-grid__item topic-link">
+            <img src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2023/01/06075200/section-4-book-C4-1-296x375.jpg" alt="Grow Your Business" />
+          </a>
+          <a href="https://www.harpercollinsleadership.com/categories/sales" class="custom-grid__item topic-link">
+            <img src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2023/01/06075112/section-4-book-B3-1-296x375.jpg" alt="Increase Your Sales" />
+          </a>
+          <a href="https://www.harpercollinsleadership.com/categories/marketing" class="custom-grid__item topic-link">
+            <img src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2023/01/06075247/section-4-book-C3-1-297x375.jpg" alt="Marketing That Works" />
+          </a>
+          <a href="https://www.harpercollinsleadership.com/categories/people-management" class="custom-grid__item topic-link">
+            <img src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2023/01/06074959/section-4-book-B-1-297x375.jpg" alt="People Management" />
+          </a>
+          <a href="https://www.harpercollinsleadership.com/categories/personal-development" class="custom-grid__item topic-link">
+            <img src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2023/01/06075016/section-4-book-A3-1-296x375.jpg" alt="Personal Development" />
+          </a>
         </div>
       </section>
 
-      <!-- New & Upcoming Releases Section (Refactored as Reusable Section) -->
-      <section class="section-grid new-releases">
+      <!-- New & Upcoming Releases Section (Reusable Grid) -->
+      <section class="section-grid ">
         <h2 class="section-title new-releases__title">New &amp; Upcoming Releases</h2>
-        <div class="section-grid__container new-releases__grid">
-          <article class="section-card book-card">
-            <div class="book-card__image">
-              <div class="card__image">
-                <img loading="lazy" decoding="async" class="fl-photo-img wp-image-11246 size-full" src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02130347/who-believed-hardcover-400.png" alt="Who Believed In You?" itemprop="image" height="400" width="400" srcset="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02130347/who-believed-hardcover-400.png 400w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02130347/who-believed-hardcover-400-300x300.png 300w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02130347/who-believed-hardcover-400-150x150.png 150w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02130347/who-believed-hardcover-400-170x170.png 170w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02130347/who-believed-hardcover-400-113x113.png 113w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02130347/who-believed-hardcover-400-85x85.png 85w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02130347/who-believed-hardcover-400-200x200.png 200w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02130347/who-believed-hardcover-400-125x125.png 125w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02130347/who-believed-hardcover-400-250x250.png 250w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02130347/who-believed-hardcover-400-375x375.png 375w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02130347/who-believed-hardcover-400-280x280.png 280w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02130347/who-believed-hardcover-400-73x73.png 73w" sizes="auto, (max-width: 400px) 100vw, 400px" title="who-believed-hardcover-400">
+        <div class="custom-grid custom-grid--max-4 custom-grid--gap-lg custom-grid--releases">
+          <div class="custom-grid__item">
+            <a class="new-releases__link" href="https://www.harpercollinsleadership.com/books/who-believed-in-you/" target="_self">
+              <img loading="lazy" decoding="async" src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02130347/who-believed-hardcover-400.png" alt="Who Believed In You?" width="230" height="230" />
+            </a>
+            <div class="new-releases__overlay">Unleash the power of purposeful mentorship. For leaders, mentees, and society at large.</div>
               </div>
+          <div class="custom-grid__item">
+            <a class="new-releases__link" href="https://nicolelapin.com/money-school-book/" target="_blank" rel="noopener">
+              <img loading="lazy" decoding="async" src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400.png" alt="The Money School" width="230" height="230" />
+            </a>
+            <div class="new-releases__overlay">Realize financial stability and investing confidence with renowned money expert Nicole Lapin.</div>
             </div>
-            <div class="book-card__content">
-              <h4 class="book-card__title">Who Believed In You?</h4>
-              <p class="book-card__description">Unleash the power of purposeful mentorship. For leaders, mentees, and society at large.</p>
-              <a href="/books/who-believed-in-you" class="btn btn--primary">Learn More</a>
-            </div>
-          </article>
-          <article class="section-card book-card">
-            <div class="book-card__image">
-              <div class="card__image">
-                <img loading="lazy" decoding="async" class="fl-photo-img wp-image-11243 size-full" src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400.png" alt="The Money School" itemprop="image" height="1113" width="1113" srcset="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400.png 1113w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400-300x300.png 300w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400-1024x1024.png 1024w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400-150x150.png 150w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400-768x768.png 768w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400-407x407.png 407w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400-592x592.png 592w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400-170x170.png 170w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400-113x113.png 113w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400-85x85.png 85w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400-200x200.png 200w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400-125x125.png 125w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400-250x250.png 250w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400-375x375.png 375w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400-500x500.png 500w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400-1000x1000.png 1000w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400-625x625.png 625w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400-750x750.png 750w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400-875x875.png 875w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400-450x450.png 450w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400-683x683.png 683w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400-512x512.png 512w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400-430x430.png 430w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400-280x280.png 280w, https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400-73x73.png 73w" sizes="auto, (max-width: 1113px) 100vw, 1113px" title="money-school-hardcover-400">
+          <div class="custom-grid__item">
+            <a class="new-releases__link" href="https://www.harpercollinsleadership.com/9781400346929/the-charismatic-leader/" target="_self">
+              <img loading="lazy" decoding="async" src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/03/21150300/charismatic-hardcover-400.png" alt="The Charismatic Leader" width="230" height="230" />
+            </a>
+            <div class="new-releases__overlay">You can light up any room and create deep, meaningful connections.</div>
               </div>
+          <div class="custom-grid__item">
+            <a class="new-releases__link" href="https://www.harpercollinsleadership.com/9781400253531/marketing-in-the-ai-era/" target="_self">
+              <img loading="lazy" decoding="async" src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/03/21150600/marketing-ai-hardcove-400.png" alt="Marketing in the AI Era" width="230" height="230" />
+            </a>
+            <div class="new-releases__overlay">Transform your marketing strategy and engage with customers in ways never before possible.</div>
             </div>
-            <div class="book-card__content">
-              <h4 class="book-card__title">The Money School</h4>
-              <p class="book-card__description">Realize financial stability and investing confidence with renowned money expert Nicole Lapin.</p>
-              <a href="/books/the-money-school" class="btn btn--primary">Learn More</a>
+          <div class="custom-grid__item">
+            <a class="new-releases__link" href="https://www.harpercollinsleadership.com/books/new-science-of-momentum" target="_blank" rel="noopener">
+              <img loading="lazy" decoding="async" src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/03/21150326/new-science-hardcover-400.png" alt="The New Science of Momentum" width="230" height="230" />
+            </a>
+            <div class="new-releases__overlay">Learn how to capture the awesome power of momentum!</div>
+              </div>
+          <div class="custom-grid__item">
+            <a class="new-releases__link" href="https://www.harpercollinsleadership.com/books/little-book-of-data/" target="_self">
+              <img loading="lazy" decoding="async" src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02130633/little-book-data-hardcover-400.png" alt="The Little Book of Data" width="230" height="230" />
+            </a>
+            <div class="new-releases__overlay">Data is not about number crunching. It's about ideas.</div>
             </div>
-          </article>
-          <article class="section-card book-card">
-            <div class="book-card__image">
-              <img src="https://via.placeholder.com/300x400/10b981/ffffff?text=The+Charismatic+Leader" alt="The Charismatic Leader book cover" />
+          <div class="custom-grid__item">
+            <a class="new-releases__link" href="https://www.harpercollinsleadership.com/books/lead-boldly/" target="_self">
+              <img loading="lazy" decoding="async" src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/05/16082718/lead-boldly-hardcover-400.png" alt="Lead Boldly" width="230" height="230" />
+            </a>
+            <div class="new-releases__overlay">Leadership insights from one of history's most influential voices.</div>
+              </div>
+          <div class="custom-grid__item">
+            <a class="new-releases__link" href="https://www.harpercollinsleadership.com/9781400254842/the-unbreakables/" target="_self">
+              <img loading="lazy" decoding="async" src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/05/16082752/unbreakables-paperback-400.png" alt="The Unbreakables" width="230" height="230" />
+            </a>
+            <div class="new-releases__overlay">International bestseller! Inspiration and motivation to overcome obstacles and create the life you want.</div>
             </div>
-            <div class="book-card__content">
-              <h4 class="book-card__title">The Charismatic Leader</h4>
-              <p class="book-card__description">You can light up any room and create deep, meaningful connections.</p>
-              <a href="/books/the-charismatic-leader" class="btn btn--primary">Learn More</a>
-            </div>
-          </article>
-          <article class="section-card book-card">
-            <div class="book-card__image">
-              <img src="https://via.placeholder.com/300x400/8b5cf6/ffffff?text=Marketing+in+the+AI+Era" alt="Marketing in the AI Era book cover" />
-            </div>
-            <div class="book-card__content">
-              <h4 class="book-card__title">Marketing in the AI Era</h4>
-              <p class="book-card__description">Transform your marketing strategy and engage with customers in ways never before possible.</p>
-              <a href="/books/marketing-in-the-ai-era" class="btn btn--primary">Learn More</a>
-            </div>
-          </article>
-          <article class="section-card book-card">
-            <div class="book-card__image">
-              <img src="https://via.placeholder.com/300x400/ef4444/ffffff?text=The+New+Science+of+Momentum" alt="The New Science of Momentum book cover" />
-            </div>
-            <div class="book-card__content">
-              <h4 class="book-card__title">The New Science of Momentum</h4>
-              <p class="book-card__description">Learn how to capture the awesome power of momentum!</p>
-              <a href="/books/the-new-science-of-momentum" class="btn btn--primary">Learn More</a>
-            </div>
-          </article>
-          <article class="section-card book-card">
-            <div class="book-card__image">
-              <img src="https://via.placeholder.com/300x400/06b6d4/ffffff?text=The+Little+Book+of+Data" alt="The Little Book of Data book cover" />
-            </div>
-            <div class="book-card__content">
-              <h4 class="book-card__title">The Little Book of Data</h4>
-              <p class="book-card__description">Data is not about number crunching. It's about ideas.</p>
-              <a href="/books/the-little-book-of-data" class="btn btn--primary">Learn More</a>
-            </div>
-          </article>
-          <article class="section-card book-card">
-            <div class="book-card__image">
-              <img src="https://via.placeholder.com/300x400/84cc16/ffffff?text=Lead+Boldly" alt="Lead Boldly book cover" />
-            </div>
-            <div class="book-card__content">
-              <h4 class="book-card__title">Lead Boldly</h4>
-              <p class="book-card__description">Leadership insights from one of history's most influential voices.</p>
-              <a href="/books/lead-boldly" class="btn btn--primary">Learn More</a>
-            </div>
-          </article>
-          <article class="section-card book-card">
-            <div class="book-card__image">
-              <img src="https://via.placeholder.com/300x400/f97316/ffffff?text=The+Unbreakables" alt="The Unbreakables book cover" />
-            </div>
-            <div class="book-card__content">
-              <h4 class="book-card__title">The Unbreakables</h4>
-              <p class="book-card__description">International bestseller! Inspiration and motivation to overcome obstacles and create the life you want.</p>
-              <a href="/books/the-unbreakables" class="btn btn--primary">Learn More</a>
-            </div>
-          </article>
         </div>
       </section>
 

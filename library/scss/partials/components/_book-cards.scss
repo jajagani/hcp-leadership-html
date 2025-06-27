@@ -1,8 +1,22 @@
 @use "../../modules/variables" as variables;
+@use "../custom-grid";
+
+// Add light gray background variable if not present
+$light-gray: #e3e8eb !default;
+
+// Utility class for reusable light gray background
+.bg-light-gray {
+  background-color: $light-gray !important;
+}
+
+// Ensure a tags in new releases grid have the light gray background
+.new-releases__grid a {
+  background-color: $light-gray;
+}
 
 // Featured Collection
 .featured-collection {
-  background-color: variables.$light-gray;
+  background-color: $light-gray;
   padding: variables.$spacing-3xl 0;
   text-align: center;
 }
@@ -35,42 +49,122 @@
 
 .new-releases__title {
   text-align: center;
-  font-size: variables.$font-size-2xl;
+  font-size: variables.$font-size-3xl !important;
   margin-bottom: variables.$spacing-2xl;
-
-  @media (min-width: variables.$breakpoint-md) {
-    font-size: 3rem;
-  }
+  font-family: variables.$font-family-brandon !important;
+  text-transform: uppercase;
 }
 
 .new-releases__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: variables.$spacing-xl;
-  justify-items: center;
-  align-items: start;
+  @extend .custom-grid;
+  @extend .custom-grid--min-2;
+  @extend .custom-grid--gap-lg;
 }
 
-.card__image {
-  background: #fff;
-  border-radius: variables.$border-radius-lg;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  padding: variables.$spacing-lg;
+.new-releases__link {
+  @extend .custom-grid__item;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: box-shadow 0.2s;
-  max-width: 320px;
-  width: 100%;
-  height: 100%;
+  padding: 0;
+  margin: auto;
+  background-color: #f3f4f6;
+  border-radius: variables.$border-radius-lg;
+  overflow: hidden;
+  box-shadow: variables.$shadow-sm;
+  transition: all 0.3s ease-in-out;
+  max-width: 250px;
+  max-height: 250px;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: variables.$shadow-xl;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    height: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    margin: 0 auto;
+    padding: 0;
+    transition: transform 0.3s ease-in-out;
+    border-radius: variables.$border-radius-lg;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
 }
+
+.new-releases__overlay {
+  position: absolute;
+  left: 0.5rem;
+  bottom: 0.5rem;
+  width: calc(100% - 1rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-align: center;
+  padding: 1.1rem 1.5rem;
+  border-radius: 0;
+  font-family: variables.$font-family-brandon !important;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 2;
+}
+
+.custom-grid__item {
+  position: relative;
+}
+
+.custom-grid__item:hover .new-releases__overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.section-card.book-card {
+  max-width: 230px;
+  width: 100%;
+  height: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__image {
+  background-color: $light-gray;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: variables.$border-radius-lg;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
 .card__image img {
-  display: block;
-  max-width: 100%;
+  width: 100%;
+  max-width: 230px;
   height: auto;
+  max-height: 230px;
+  object-fit: cover;
+  display: block;
+  background: none;
+  padding: 0;
+  margin: 0 auto;
   border-radius: variables.$border-radius-lg;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
 }
+
 .card__image:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
@@ -117,7 +211,6 @@
   }
 
   &__title {
-    font-family: variables.$font-family-secondary;
     font-size: variables.$font-size-xl;
     font-weight: variables.$font-weight-bold;
     color: variables.$text-primary;
@@ -126,7 +219,6 @@
   }
 
   &__description {
-    font-family: variables.$font-family-primary;
     font-size: variables.$font-size-base;
     font-weight: variables.$font-weight-normal;
     color: variables.$text-secondary;
@@ -143,7 +235,7 @@
 
 // Topics Section
 .topics {
-  background-color: variables.$light-gray;
+  background-color: $light-gray;
   padding: variables.$spacing-3xl 0;
 }
 
@@ -207,7 +299,7 @@
 .manager-success__content {
   display: grid;
   grid-template-columns: 1fr;
-  gap: variables.$spacing-2xl;
+  gap: variables.$spacing-xl;
   align-items: center;
 
   @media (min-width: variables.$breakpoint-lg) {
@@ -263,7 +355,7 @@
 
 // Leadership Excerpt Section
 .leadership-excerpt {
-  background-color: variables.$light-gray;
+  background-color: $light-gray;
   padding: variables.$spacing-3xl 0;
 }
 
@@ -363,20 +455,123 @@
   color: variables.$text-secondary;
 }
 
-// Generic reusable section grid and title
+// === Base Section Grid Layout ===
 .section-grid {
-  margin: 0 auto;
-  padding: variables.$spacing-3xl 0;
+  display: grid;
+  gap: variables.$spacing-xl;
   width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
+
+  &--cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+    @media (max-width: variables.$breakpoint-md) {
+      grid-template-columns: 1fr;
+    }
+  }
+  &--cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+    @media (max-width: variables.$breakpoint-lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: variables.$breakpoint-md) {
+      grid-template-columns: 1fr;
+    }
+  }
+  &--cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+    @media (max-width: variables.$breakpoint-xl) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 }
-.section-title {
-  text-align: center;
-  font-size: variables.$font-size-2xl;
-  margin-bottom: variables.$spacing-2xl;
-  font-family: variables.$font-family-secondary;
-  font-weight: variables.$font-weight-bold;
+
+// === Card Modifiers ===
+.card--image-only {
+  .card__image {
+    width: 100%;
+    height: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: variables.$border-radius-lg;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: variables.$spacing-lg;
+    img {
+      width: 230px;
+      height: 230px;
+      object-fit: cover;
+      border-radius: variables.$border-radius-lg;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    }
+  }
 }
-.section-grid__container {
-  // No extra styles needed, just a generic wrapper for the grid
+
+.card--image-side {
+  display: flex;
+  align-items: center;
+  .card__image {
+    width: 50%;
+    height: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: variables.$border-radius-lg 0 0 variables.$border-radius-lg;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: variables.$spacing-lg;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: variables.$border-radius-lg;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    }
+  }
+  .card__content {
+    width: 50%;
+    padding: 0 variables.$spacing-lg;
+  }
+  @media (max-width: variables.$breakpoint-md) {
+    flex-direction: column;
+    .card__image,
+    .card__content {
+      width: 100%;
+      border-radius: variables.$border-radius-lg;
+    }
+    .card__image {
+      border-radius: variables.$border-radius-lg variables.$border-radius-lg 0 0;
+    }
+  }
+}
+
+// Force minimum 2 columns for new releases grid
+.new-releases__grid--min-2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: variables.$spacing-xl;
+  @media (max-width: variables.$breakpoint-xl) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 700px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@font-face {
+  font-family: "Brandon Grotesque Web Black";
+  src: url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.eot");
+  src: url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.svg#Brandon Grotesque Web Black")
+      format("svg");
+  font-weight: 900;
+  font-style: normal;
 }

@@ -1,3 +1,5 @@
+@use "../custom-grid";
+
 // Topics component for HarperCollins Leadership website
 
 .topics {
@@ -6,84 +8,61 @@
 
   &__title {
     font-family: $font-family-secondary;
-    font-size: $font-size-3xl;
+    font-size: $font-size-2xl;
     font-weight: $font-weight-bold;
     color: $text-primary;
     text-align: center;
     margin-bottom: $spacing-2xl;
 
     @media (min-width: $breakpoint-md) {
-      font-size: $font-size-4xl;
+      font-size: $font-size-3xl;
     }
   }
 
   &__grid {
-    display: grid;
-    gap: $spacing-xl;
-
-    @media (min-width: $breakpoint-sm) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (min-width: $breakpoint-lg) {
-      grid-template-columns: repeat(3, 1fr);
-    }
+    @extend .custom-grid;
+    @extend .custom-grid--min-3;
+    @extend .custom-grid--gap-lg;
   }
 }
 
-.topic-card {
-  background-color: $white;
+.topic-link {
+  @extend .custom-grid__item;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 275px;
+  max-height: 375px;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: transparent;
+
+  // Hover animation styles
+  background-color: #f3f4f6; // Light grey background
   border-radius: $border-radius-lg;
   overflow: hidden;
   box-shadow: $shadow-sm;
-  transition: $transition-base;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
     box-shadow: $shadow-xl;
   }
 
-  &__image {
-    position: relative;
-    overflow: hidden;
-    aspect-ratio: 4/3;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: $transition-base;
-    }
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 275px;
+    max-height: 350px;
+    object-fit: contain;
+    margin: 0 auto;
+    padding: 0;
+    transition: transform 0.3s ease-in-out;
   }
 
-  &:hover &__image img {
+  &:hover img {
     transform: scale(1.05);
-  }
-
-  &__content {
-    padding: $spacing-lg;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__title {
-    font-family: $font-family-secondary;
-    font-size: $font-size-lg;
-    font-weight: $font-weight-bold;
-    color: $text-primary;
-    margin-bottom: $spacing-sm;
-    line-height: $line-height-tight;
-  }
-
-  &__description {
-    font-family: $font-family-primary;
-    font-size: $font-size-base;
-    font-weight: $font-weight-normal;
-    color: $text-secondary;
-    line-height: $line-height-relaxed;
   }
 }

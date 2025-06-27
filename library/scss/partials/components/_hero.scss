@@ -112,13 +112,14 @@
     width: 50%;
     height: 100%;
     gap: 2rem;
+    border: "10px solid";
   }
 
   &__title-container--shifted {
     position: relative;
     width: 400px;
     top: -20px;
-    left: -310px;
+    left: -21.5vw;
     text-align: left;
     display: flex;
     justify-content: flex-start;
@@ -315,9 +316,3 @@
   background-color: #446880;
 }
 
-// Add intermediate viewport adjustment
-@media (min-width: 769px) and (max-width: 1200px) {
-  .hero__title-container--shifted {
-    left: -155px !important;
-  }
-}

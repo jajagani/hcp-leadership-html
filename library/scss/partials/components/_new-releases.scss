@@ -4,19 +4,6 @@
   padding: $spacing-3xl 0;
   background-color: $white;
 
-  &__title {
-    font-family: $font-family-secondary;
-    font-size: $font-size-3xl;
-    font-weight: $font-weight-bold;
-    color: $text-primary;
-    text-align: center;
-    margin-bottom: $spacing-2xl;
-
-    @media (min-width: $breakpoint-md) {
-      font-size: $font-size-4xl;
-    }
-  }
-
   &__grid {
     display: grid;
     gap: $spacing-xl;

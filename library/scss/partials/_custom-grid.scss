@@ -1,0 +1,123 @@
+@use "../modules/variables" as variables;
+
+// Custom Grid System
+
+// Variables por defecto
+$custom-grid-gap-sm: 1rem !default;
+$custom-grid-gap-md: 2rem !default;
+$custom-grid-gap-lg: 3rem !default;
+$custom-grid-min-col-width: 200px !default;
+$custom-grid-max-col-width: 1fr !default;
+
+// Mixin para grid base
+@mixin custom-grid($min-cols: 1, $max-cols: 4, $gap: $custom-grid-gap-md) {
+  display: grid;
+  width: 100%;
+  margin: 0 auto;
+  gap: $gap;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax($custom-grid-min-col-width, $custom-grid-max-col-width)
+  );
+  justify-content: center;
+  align-items: start;
+}
+
+.custom-grid {
+  @include custom-grid();
+  justify-content: center;
+  align-items: start;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  &--min-1 {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  &--min-2 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  &--min-3 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  &--min-4 {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  &--max-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &--max-3 {
+    grid-template-columns: repeat(3, max-content);
+    justify-content: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &--max-4 {
+    grid-template-columns: repeat(4, max-content);
+    justify-content: center;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(3, max-content);
+    }
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &--gap-sm {
+    gap: $custom-grid-gap-sm;
+  }
+  &--gap-md {
+    gap: $custom-grid-gap-md;
+  }
+  &--gap-lg {
+    gap: $custom-grid-gap-lg;
+  }
+}
+
+.custom-grid__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bg-trans {
+  background-color: transparent !important;
+}
+
+.section-grid {
+  padding: variables.$spacing-3xl 0;
+  background-color: variables.$white;
+}
+
+.section-grid__title,
+.new-releases__title {
+  font-family: variables.$font-family-secondary;
+  font-size: variables.$font-size-3xl;
+  font-weight: variables.$font-weight-bold;
+  color: variables.$text-primary;
+  text-align: center;
+  margin-bottom: variables.$spacing-2xl;
+
+  @media (min-width: variables.$breakpoint-md) {
+    font-size: variables.$font-size-4xl;
+  }
+  @media (max-width: variables.$breakpoint-md) {
+    font-size: variables.$font-size-2xl;
+  }
+  @media (max-width: 500px) {
+    font-size: 1.2rem;
+  }
+}
