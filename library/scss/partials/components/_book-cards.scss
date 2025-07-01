@@ -1,19 +1,22 @@
-@use "../../modules/variables" as variables;
-@use "../custom-grid";
+@use '../../modules/variables' as variables;
+@use '../custom-grid';
+
+// Add light gray background variable if not present
+$light-gray: #e3e8eb !default;
 
 // Utility class for reusable light gray background
 .bg-light-gray {
-  background-color: variables.$light-gray;
+  background-color: $light-gray !important;
 }
 
 // Ensure a tags in new releases grid have the light gray background
 .new-releases__grid a {
-  background-color: variables.$light-gray;
+  background-color: $light-gray;
 }
 
 // Featured Collection
 .featured-collection {
-  background-color: variables.$light-gray;
+  background-color: $light-gray;
   padding: variables.$spacing-3xl 0;
   text-align: center;
 }
@@ -44,6 +47,14 @@
   padding: variables.$spacing-3xl 0;
 }
 
+.new-releases__title {
+  text-align: center;
+  font-size: variables.$font-size-3xl !important;
+  margin-bottom: variables.$spacing-2xl;
+  font-family: variables.$font-family-brandon !important;
+  text-transform: uppercase;
+}
+
 .new-releases__grid {
   @extend .custom-grid;
   @extend .custom-grid--min-2;
@@ -58,7 +69,7 @@
   justify-content: center;
   padding: 0;
   margin: auto;
-  background-color: variables.$light-gray;
+  background-color: #f3f4f6;
   border-radius: variables.$border-radius-lg;
   overflow: hidden;
   box-shadow: variables.$shadow-sm;
@@ -99,13 +110,13 @@
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.85);
-  color: variables.$white;
+  color: #fff;
   font-size: 0.85rem;
   font-weight: 400;
   text-align: center;
   padding: 1.1rem 1.5rem;
   border-radius: 0;
-  font-family: variables.$font-family-brandon;
+  font-family: variables.$font-family-brandon !important;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;
@@ -131,7 +142,7 @@
 }
 
 .card__image {
-  background-color: variables.$light-gray;
+  background-color: $light-gray;
   padding: 1rem;
   display: flex;
   align-items: center;
@@ -224,18 +235,24 @@
 
 // Topics Section
 .topics {
-  background-color: variables.$light-gray;
+  background-color: $light-gray;
   padding: variables.$spacing-3xl 0;
 }
 
 .topics__title {
-  font-family: "Plantin", "EB Garamond", serif;
-  font-size: 30.4px;
   text-align: center;
+  font-size: variables.$font-size-2xl;
   margin-bottom: variables.$spacing-2xl;
 
   @media (min-width: variables.$breakpoint-md) {
     font-size: 3rem;
+  }
+
+  &-cursive {
+    font-family: variables.$font-family-zooja;
+    font-size: 1.8em;
+    padding-right: 0.1em;
+    font-weight: 400;
   }
 }
 
@@ -345,7 +362,7 @@
 
 // Leadership Excerpt Section
 .leadership-excerpt {
-  background-color: variables.$light-gray;
+  background-color: $light-gray;
   padding: variables.$spacing-3xl 0;
 }
 
@@ -484,7 +501,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: variables.$white;
+    background: #fff;
     border-radius: variables.$border-radius-lg;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     padding: variables.$spacing-lg;
@@ -507,7 +524,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: variables.$white;
+    background: #fff;
     border-radius: variables.$border-radius-lg 0 0 variables.$border-radius-lg;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     padding: variables.$spacing-lg;
@@ -550,18 +567,18 @@
 }
 
 @font-face {
-  font-family: "Brandon Grotesque Web Black";
-  src: url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.eot");
-  src: url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.eot?#iefix")
-      format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.woff2")
-      format("woff2"),
-    url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.woff")
-      format("woff"),
-    url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.ttf")
-      format("truetype"),
-    url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.svg#Brandon Grotesque Web Black")
-      format("svg");
+  font-family: 'Brandon Grotesque Web Black';
+  src: url('https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.eot');
+  src: url('https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.woff2')
+      format('woff2'),
+    url('https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.woff')
+      format('woff'),
+    url('https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.ttf')
+      format('truetype'),
+    url('https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.svg#Brandon Grotesque Web Black')
+      format('svg');
   font-weight: 900;
   font-style: normal;
 }

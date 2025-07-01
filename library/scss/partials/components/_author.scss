@@ -1,0 +1,100 @@
+@use '../../modules/variables' as variables;
+@use '../../modules/mixins' as mixins;
+
+.author__section {
+  padding: 110px 0 70px;
+  background: variables.$light-gray;
+
+  .container {
+    max-width: 1400px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .author__content {
+    max-width: 800px;
+    padding: 20px 50px;
+
+    &-title {
+      font-size: 35px;
+      line-height: 1.2;
+      color: variables.$hero-subtitle-color;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    &-subtitle {
+      font-family: variables.$font-family-brandon;
+      line-height: 1.2;
+      letter-spacing: 0.06em;
+      font-size: 16px;
+      margin: 16px 0;
+    }
+
+    p {
+      line-height: 1.5;
+      color: variables.$hero-subtitle-color;
+      font-size: 17px;
+      margin: 0 0 16px;
+    }
+
+    ul {
+      margin: 16px 0 0;
+      li {
+        line-height: 1.5;
+        color: variables.$hero-subtitle-color;
+        font-size: 17px;
+        margin-bottom: 8px;
+      }
+    }
+
+    .link__btn {
+      margin: 20px 0 0;
+
+      &-action {
+        font-family: variables.$font-family-brandon;
+        font-size: 16px;
+        color: variables.$hero-here-color;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  .author__aside {
+    width: 25%;
+    padding: 0 30px;
+  }
+
+  .promo-box {
+    box-shadow: none;
+    padding-top: 200px;
+
+    &__img-wrap {
+      width: 230px;
+      height: 230px;
+      border-width: 2px;
+      box-shadow: none;
+    }
+
+    .by__text {
+      display: block;
+      line-height: 1.5;
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    &__title {
+      margin: 0 0 40px;
+      font-size: 32px;
+      line-height: 1.1;
+      font-family: variables.$font-family-plantin;
+      text-transform: uppercase;
+    }
+
+    &__desc {
+      margin-bottom: 0;
+      color: variables.$hero-subtitle-color;
+    }
+  }
+}

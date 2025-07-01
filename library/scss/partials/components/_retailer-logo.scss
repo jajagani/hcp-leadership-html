@@ -1,0 +1,28 @@
+@use '../../modules/variables' as variables;
+@use '../../modules/mixins' as mixins;
+
+.retailer__logo {
+  padding: 40px 0 60px;
+  &-grid {
+    max-width: 860px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px 40px;
+
+    .logo__card {
+      display: flex;
+
+      a {
+        width: 100%;
+        height: 100%;
+        display: block;
+
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}

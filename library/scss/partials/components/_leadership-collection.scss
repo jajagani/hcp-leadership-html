@@ -1,0 +1,136 @@
+@use '../../modules/variables' as variables;
+@use '../../modules/mixins' as mixins;
+
+.book__col {
+  width: 100%;
+}
+
+.book__card {
+  display: flex;
+  padding: 10px;
+  gap: 20px;
+
+  .thumb {
+    width: 200px;
+    height: 285px;
+    position: relative;
+    margin: 0;
+
+    .redirection {
+      @include mixins.absoluteTopLeft;
+      @include mixins.sizeFull;
+    }
+
+    img {
+      @include mixins.imageCover;
+    }
+  }
+
+  .content {
+    max-width: 53%;
+    flex-shrink: 0;
+    padding: 12px 0 0;
+
+    .title {
+      font-size: 19px;
+      line-height: 22px;
+      color: variables.$hero-here-color;
+      font-family: variables.$font-family-brandon;
+      text-transform: uppercase;
+
+      a {
+        font-size: 19px;
+        line-height: 22px;
+        color: variables.$hero-here-color;
+        font-family: variables.$font-family-brandon;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+          color: variables.$btn-gold;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .sub__title {
+      font-size: 19px;
+      line-height: 22px;
+      color: variables.$hero-subtitle-color;
+      margin: 10px 0 0;
+    }
+
+    .desc {
+      margin: 16px 0 0;
+    }
+  }
+
+  &:hover {
+    .content {
+      .title {
+        a {
+          color: variables.$btn-gold;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.vertical__layout {
+  .row {
+    row-gap: 30px;
+  }
+
+  .book__card {
+    flex-direction: column;
+    gap: 12px;
+
+    .thumb {
+      width: 195px;
+      margin: auto;
+      height: 301px;
+      max-height: inherit;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .content {
+      max-width: 100%;
+      text-align: center;
+      padding: 0;
+
+      .title {
+        font-size: 16px;
+        margin: 0;
+
+        a {
+          font-size: 16px;
+        }
+      }
+
+      .desc {
+        margin: 4px 0 2px;
+      }
+
+      .name {
+        display: block;
+        margin: 4px 0 0;
+        font-size: 16px;
+        line-height: 24px;
+        font-family: variables.$font-family-brandon;
+      }
+    }
+  }
+}
+
+.cmn__heading {
+  margin-bottom: 30px;
+}
+
+.section-desc {
+  font-size: 19px;
+  line-height: 1.4;
+  margin: 30px 0 0;
+  color: variables.$hero-subtitle-color;
+}
