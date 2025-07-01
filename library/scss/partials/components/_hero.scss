@@ -556,6 +556,77 @@
   font-weight: bold;
 }
 
+// AMACOM Hero Section Styles
+.hero__logo-container {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0;
+}
+
+.hero__logo {
+  min-width: 300px;
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero__subtitle-container--amacom {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+
+  .hero__subtitle {
+    max-width: none;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: left;
+  }
+}
+
+.hero__link-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0;
+}
+
+.hero__link {
+  font-family: variables.$font-family-brandon;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: variables.$transition-base;
+  display: inline-block;
+}
+
+.hero__link--blue {
+  color: variables.$btn-primary-blue;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-transform: none;
+
+  &:hover,
+  &:focus {
+    color: variables.$accent-color;
+    text-decoration: none;
+    background: none;
+    border: none;
+  }
+}
+
+// Increase specificity for font-family
+.hero .hero__link--blue {
+  font-family: variables.$font-family-brandon;
+}
+
 @font-face {
   font-family: "Plantin-Bold";
   src: url("https://db.onlinewebfonts.com/t/7200e29d11cf7f02855b90abc943762c.woff2")
@@ -775,4 +846,14 @@
   font-family: variables.$font-family-brandon;
   font-size: 20.9px;
   text-transform: uppercase;
+}
+
+.hero__container--fullheight {
+  height: 100%;
+  min-height: 100%;
+}
+
+// When using fullheight, align text-outer to the top
+.hero__container--fullheight .hero__text-outer--centered {
+  justify-content: flex-start;
 }

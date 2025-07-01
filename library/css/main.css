@@ -2116,6 +2116,72 @@ img {
   font-weight: bold;
 }
 
+.hero__logo-container {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0;
+}
+
+.hero__logo {
+  min-width: 300px;
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero__subtitle-container--amacom {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+.hero__subtitle-container--amacom .hero__subtitle {
+  max-width: none;
+  width: 100%;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.hero__link-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0;
+}
+
+.hero__link {
+  font-family: "Brandon Grotesque", "Inter", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.hero__link--blue {
+  color: #487fc2;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-transform: none;
+}
+.hero__link--blue:hover, .hero__link--blue:focus {
+  color: #f59e0b;
+  text-decoration: none;
+  background: none;
+  border: none;
+}
+
+.hero .hero__link--blue {
+  font-family: "Brandon Grotesque", "Inter", Arial, sans-serif;
+}
+
 @font-face {
   font-family: "Plantin-Bold";
   src: url("https://db.onlinewebfonts.com/t/7200e29d11cf7f02855b90abc943762c.woff2") format("woff2"), url("https://db.onlinewebfonts.com/t/7200e29d11cf7f02855b90abc943762c.woff") format("woff");
@@ -2317,6 +2383,15 @@ img {
   font-family: "Brandon Grotesque", "Inter", Arial, sans-serif;
   font-size: 20.9px;
   text-transform: uppercase;
+}
+
+.hero__container--fullheight {
+  height: 100%;
+  min-height: 100%;
+}
+
+.hero__container--fullheight .hero__text-outer--centered {
+  justify-content: flex-start;
 }
 
 @media (max-width: 991px) {
