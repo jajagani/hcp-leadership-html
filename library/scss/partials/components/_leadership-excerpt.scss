@@ -1,66 +1,63 @@
 // Leadership Excerpt component for HarperCollins Leadership website
 
+@use "../../modules/variables" as variables;
+
 .leadership-excerpt {
-  padding: $spacing-3xl 0;
-  background-color: $light-gray;
+  padding: variables.$spacing-3xl 0;
+  background-color: variables.$light-gray;
 
   &__content {
     display: grid;
-    gap: $spacing-2xl;
+    gap: variables.$spacing-2xl;
     align-items: center;
 
-    @media (min-width: $breakpoint-lg) {
+    @media (min-width: variables.$breakpoint-lg) {
       grid-template-columns: 1fr 1fr;
-      gap: $spacing-3xl;
+      gap: variables.$spacing-3xl;
     }
   }
 
   &__text {
     order: 2;
 
-    @media (min-width: $breakpoint-lg) {
+    @media (min-width: variables.$breakpoint-lg) {
       order: 1;
     }
   }
 
   &__title {
-    font-family: $font-family-secondary;
-    font-size: $font-size-3xl;
-    font-weight: $font-weight-bold;
-    color: $text-primary;
-    margin-bottom: $spacing-lg;
-    line-height: $line-height-tight;
+    font-family: variables.$font-family-brandon;
+    font-size: variables.$font-size-2xl;
+    font-weight: variables.$font-weight-bold;
+    color: variables.$text-primary;
+    text-align: center;
+    margin-bottom: variables.$spacing-lg;
 
-    @media (min-width: $breakpoint-md) {
-      font-size: $font-size-4xl;
+    @media (min-width: variables.$breakpoint-md) {
+      font-size: variables.$font-size-3xl;
     }
   }
 
   &__description {
-    font-family: $font-family-primary;
-    font-size: $font-size-lg;
-    font-weight: $font-weight-normal;
-    color: $text-secondary;
-    line-height: $line-height-relaxed;
-    margin-bottom: $spacing-xl;
-
-    em {
-      font-style: italic;
-    }
+    font-size: variables.$font-size-lg;
+    line-height: 1.6;
+    margin-bottom: variables.$spacing-xl;
+    color: variables.$text-secondary;
   }
 
   &__image {
     order: 1;
+    text-align: center;
 
-    @media (min-width: $breakpoint-lg) {
+    @media (min-width: variables.$breakpoint-lg) {
       order: 2;
     }
 
     img {
-      width: 100%;
+      max-width: 300px;
       height: auto;
-      border-radius: $border-radius-lg;
-      box-shadow: $shadow-lg;
+      border-radius: variables.$border-radius-lg;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     }
   }
 }

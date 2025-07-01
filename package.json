@@ -1,0 +1,13 @@
+{
+  "name": "hcp-leadership-html",
+  "version": "1.0.0",
+  "description": "A modern, responsive website recreation of the HarperCollins Leadership homepage, combining semantic HTML, SCSS components, and WordPress integration patterns for optimal performance and maintainability.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:styles": "sass --watch library/scss/main.scss:library/css/main.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

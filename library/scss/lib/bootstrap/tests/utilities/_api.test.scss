@@ -11,24 +11,26 @@ $utilities: ();
     $utilities: (
       margin: (
         property: margin,
-        values: auto
+        values: auto,
       ),
       padding: (
         property: padding,
         responsive: true,
-        values: 1rem
+        values: 1rem,
       ),
       font-size: (
         property: font-size,
-        values: (large: 1.25rem),
-        print: true
-      )
+        values: (
+          large: 1.25rem,
+        ),
+        print: true,
+      ),
     ) !global;
 
     $grid-breakpoints: (
       xs: 0,
       sm: 333px,
-      md: 666px
+      md: 666px,
     ) !global;
 
     @include assert() {
@@ -39,37 +41,36 @@ $utilities: ();
       @include expect() {
         // margin is not set to responsive
         .margin-auto {
-          margin: auto !important;
+          margin: auto;
         }
 
         // padding is, though
         .padding-1rem {
-          padding: 1rem !important;
+          padding: 1rem;
         }
 
         .font-size-large {
-          font-size: 1.25rem !important;
+          font-size: 1.25rem;
         }
 
         @media (min-width: 333px) {
           .padding-sm-1rem {
-            padding: 1rem !important;
+            padding: 1rem;
           }
         }
 
         @media (min-width: 666px) {
           .padding-md-1rem {
-            padding: 1rem !important;
+            padding: 1rem;
           }
         }
 
         @media print {
           .font-size-print-large {
-            font-size: 1.25rem !important;
+            font-size: 1.25rem;
           }
         }
       }
-
     }
   }
 }

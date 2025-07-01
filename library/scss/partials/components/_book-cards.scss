@@ -1,22 +1,19 @@
 @use "../../modules/variables" as variables;
 @use "../custom-grid";
 
-// Add light gray background variable if not present
-$light-gray: #e3e8eb !default;
-
 // Utility class for reusable light gray background
 .bg-light-gray {
-  background-color: $light-gray !important;
+  background-color: variables.$light-gray;
 }
 
 // Ensure a tags in new releases grid have the light gray background
 .new-releases__grid a {
-  background-color: $light-gray;
+  background-color: variables.$light-gray;
 }
 
 // Featured Collection
 .featured-collection {
-  background-color: $light-gray;
+  background-color: variables.$light-gray;
   padding: variables.$spacing-3xl 0;
   text-align: center;
 }
@@ -47,14 +44,6 @@ $light-gray: #e3e8eb !default;
   padding: variables.$spacing-3xl 0;
 }
 
-.new-releases__title {
-  text-align: center;
-  font-size: variables.$font-size-3xl !important;
-  margin-bottom: variables.$spacing-2xl;
-  font-family: variables.$font-family-brandon !important;
-  text-transform: uppercase;
-}
-
 .new-releases__grid {
   @extend .custom-grid;
   @extend .custom-grid--min-2;
@@ -69,7 +58,7 @@ $light-gray: #e3e8eb !default;
   justify-content: center;
   padding: 0;
   margin: auto;
-  background-color: #f3f4f6;
+  background-color: variables.$light-gray;
   border-radius: variables.$border-radius-lg;
   overflow: hidden;
   box-shadow: variables.$shadow-sm;
@@ -110,13 +99,13 @@ $light-gray: #e3e8eb !default;
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.85);
-  color: #fff;
+  color: variables.$white;
   font-size: 0.85rem;
   font-weight: 400;
   text-align: center;
   padding: 1.1rem 1.5rem;
   border-radius: 0;
-  font-family: variables.$font-family-brandon !important;
+  font-family: variables.$font-family-brandon;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;
@@ -142,7 +131,7 @@ $light-gray: #e3e8eb !default;
 }
 
 .card__image {
-  background-color: $light-gray;
+  background-color: variables.$light-gray;
   padding: 1rem;
   display: flex;
   align-items: center;
@@ -235,13 +224,14 @@ $light-gray: #e3e8eb !default;
 
 // Topics Section
 .topics {
-  background-color: $light-gray;
+  background-color: variables.$light-gray;
   padding: variables.$spacing-3xl 0;
 }
 
 .topics__title {
+  font-family: "Plantin", "EB Garamond", serif;
+  font-size: 30.4px;
   text-align: center;
-  font-size: variables.$font-size-2xl;
   margin-bottom: variables.$spacing-2xl;
 
   @media (min-width: variables.$breakpoint-md) {
@@ -355,7 +345,7 @@ $light-gray: #e3e8eb !default;
 
 // Leadership Excerpt Section
 .leadership-excerpt {
-  background-color: $light-gray;
+  background-color: variables.$light-gray;
   padding: variables.$spacing-3xl 0;
 }
 
@@ -494,7 +484,7 @@ $light-gray: #e3e8eb !default;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fff;
+    background: variables.$white;
     border-radius: variables.$border-radius-lg;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     padding: variables.$spacing-lg;
@@ -517,7 +507,7 @@ $light-gray: #e3e8eb !default;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fff;
+    background: variables.$white;
     border-radius: variables.$border-radius-lg 0 0 variables.$border-radius-lg;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     padding: variables.$spacing-lg;

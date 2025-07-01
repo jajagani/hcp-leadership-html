@@ -1,7 +1,9 @@
+@use "../modules/variables" as variables;
+
 // Tools and utilities for HarperCollins Leadership website
 
-// Screen reader only text
-.sr-only {
+// Accessibility Mixins
+@mixin sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -13,225 +15,294 @@
   border: 0;
 }
 
-// Focus visible
-.focus-visible {
-  outline: 2px solid $primary-color;
+@mixin focus-visible {
+  outline: 2px solid variables.$primary-color;
   outline-offset: 2px;
 }
 
-// Visually hidden
+// Layout Mixins
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Aspect Ratio Mixins
+@mixin aspect-ratio($width, $height) {
+  aspect-ratio: calc($width / $height);
+}
+
+// Object Fit Mixins
+@mixin object-fit($fit) {
+  object-fit: $fit;
+}
+
+// Z-index Mixins
+@mixin z-index($value) {
+  z-index: $value;
+}
+
+// Cursor Mixins
+@mixin cursor($type) {
+  cursor: $type;
+}
+
+// User Select Mixins
+@mixin user-select($type) {
+  user-select: $type;
+}
+
+// Pointer Events Mixins
+@mixin pointer-events($type) {
+  pointer-events: $type;
+}
+
+// Resize Mixins
+@mixin resize($type) {
+  resize: $type;
+}
+
+// List Style Mixins
+@mixin list-style($style) {
+  list-style: $style;
+}
+
+// Table Layout Mixins
+@mixin table-layout($layout) {
+  table-layout: $layout;
+}
+
+// Word Break Mixins
+@mixin word-break($type) {
+  overflow-wrap: $type;
+  word-break: $type;
+}
+
+// Whitespace Mixins
+@mixin whitespace($type) {
+  white-space: $type;
+}
+
+// Letter Spacing Mixins
+@mixin letter-spacing($spacing) {
+  letter-spacing: $spacing;
+}
+
+// Screen Reader Only
+.sr-only {
+  @include sr-only;
+}
+
+// Focus Visible
+.focus-visible {
+  @include focus-visible;
+}
+
+// Visually Hidden
 .visually-hidden {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
+  @include sr-only;
 }
 
 // Clearfix
-.clearfix::after {
-  content: "";
-  display: table;
-  clear: both;
+.clearfix {
+  @include clearfix;
 }
 
-// Aspect ratio utilities
+// Aspect Ratio Utilities
 .aspect-square {
-  aspect-ratio: 1 / 1;
+  @include aspect-ratio(1, 1);
 }
 
 .aspect-video {
-  aspect-ratio: 16 / 9;
+  @include aspect-ratio(16, 9);
 }
 
 .aspect-photo {
-  aspect-ratio: 4 / 3;
+  @include aspect-ratio(4, 3);
 }
 
-// Object fit utilities
+// Object Fit Utilities
 .object-cover {
-  object-fit: cover;
+  @include object-fit(cover);
 }
 
 .object-contain {
-  object-fit: contain;
+  @include object-fit(contain);
 }
 
 .object-fill {
-  object-fit: fill;
+  @include object-fit(fill);
 }
 
 .object-none {
-  object-fit: none;
+  @include object-fit(none);
 }
 
-// Z-index utilities
+// Z-index Utilities
 .z-0 {
-  z-index: 0;
+  @include z-index(0);
 }
 
 .z-10 {
-  z-index: 10;
+  @include z-index(10);
 }
 
 .z-20 {
-  z-index: 20;
+  @include z-index(20);
 }
 
 .z-30 {
-  z-index: 30;
+  @include z-index(30);
 }
 
 .z-40 {
-  z-index: 40;
+  @include z-index(40);
 }
 
 .z-50 {
-  z-index: 50;
+  @include z-index(50);
 }
 
 .z-auto {
-  z-index: auto;
+  @include z-index(auto);
 }
 
-// Cursor utilities
+// Cursor Utilities
 .cursor-pointer {
-  cursor: pointer;
+  @include cursor(pointer);
 }
 
 .cursor-default {
-  cursor: default;
+  @include cursor(default);
 }
 
 .cursor-not-allowed {
-  cursor: not-allowed;
+  @include cursor(not-allowed);
 }
 
-// User select utilities
+// User Select Utilities
 .select-none {
-  user-select: none;
+  @include user-select(none);
 }
 
 .select-text {
-  user-select: text;
+  @include user-select(text);
 }
 
 .select-all {
-  user-select: all;
+  @include user-select(all);
 }
 
 .select-auto {
-  user-select: auto;
+  @include user-select(auto);
 }
 
-// Pointer events utilities
+// Pointer Events Utilities
 .pointer-events-none {
-  pointer-events: none;
+  @include pointer-events(none);
 }
 
 .pointer-events-auto {
-  pointer-events: auto;
+  @include pointer-events(auto);
 }
 
-// Resize utilities
+// Resize Utilities
 .resize-none {
-  resize: none;
+  @include resize(none);
 }
 
 .resize-y {
-  resize: vertical;
+  @include resize(vertical);
 }
 
 .resize-x {
-  resize: horizontal;
+  @include resize(horizontal);
 }
 
 .resize {
-  resize: both;
+  @include resize(both);
 }
 
-// List style utilities
+// List Style Utilities
 .list-none {
-  list-style: none;
+  @include list-style(none);
 }
 
 .list-disc {
-  list-style: disc;
+  @include list-style(disc);
 }
 
 .list-decimal {
-  list-style: decimal;
+  @include list-style(decimal);
 }
 
-// Table utilities
+// Table Utilities
 .table-auto {
-  table-layout: auto;
+  @include table-layout(auto);
 }
 
 .table-fixed {
-  table-layout: fixed;
+  @include table-layout(fixed);
 }
 
-// Break word utilities
+// Word Break Utilities
 .break-normal {
-  overflow-wrap: normal;
-  word-break: normal;
+  @include word-break(normal);
 }
 
 .break-words {
   overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .break-all {
-  word-break: break-all;
+  @include word-break(break-all);
 }
 
-// Whitespace utilities
+// Whitespace Utilities
 .whitespace-normal {
-  white-space: normal;
+  @include whitespace(normal);
 }
 
 .whitespace-nowrap {
-  white-space: nowrap;
+  @include whitespace(nowrap);
 }
 
 .whitespace-pre {
-  white-space: pre;
+  @include whitespace(pre);
 }
 
 .whitespace-pre-line {
-  white-space: pre-line;
+  @include whitespace(pre-line);
 }
 
 .whitespace-pre-wrap {
-  white-space: pre-wrap;
+  @include whitespace(pre-wrap);
 }
 
-// Word spacing utilities
+// Letter Spacing Utilities
 .tracking-tighter {
-  letter-spacing: -0.05em;
+  @include letter-spacing(-0.05em);
 }
 
 .tracking-tight {
-  letter-spacing: -0.025em;
+  @include letter-spacing(-0.025em);
 }
 
 .tracking-normal {
-  letter-spacing: 0em;
+  @include letter-spacing(0em);
 }
 
 .tracking-wide {
-  letter-spacing: 0.025em;
+  @include letter-spacing(0.025em);
 }
 
 .tracking-wider {
-  letter-spacing: 0.05em;
+  @include letter-spacing(0.05em);
 }
 
 .tracking-widest {
-  letter-spacing: 0.1em;
+  @include letter-spacing(0.1em);
 }

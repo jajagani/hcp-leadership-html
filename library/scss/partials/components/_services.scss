@@ -1,45 +1,47 @@
 // Services component for HarperCollins Leadership website
 
+@use "../../modules/variables" as variables;
+
 .services {
-  padding: $spacing-3xl 0;
-  background-color: $white;
+  padding: variables.$spacing-3xl 0;
+  background-color: variables.$white;
 
   &__grid {
     display: grid;
-    gap: $spacing-xl;
+    gap: variables.$spacing-xl;
 
-    @media (min-width: $breakpoint-md) {
+    @media (min-width: variables.$breakpoint-md) {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @media (min-width: $breakpoint-lg) {
+    @media (min-width: variables.$breakpoint-lg) {
       grid-template-columns: repeat(3, 1fr);
     }
   }
 }
 
 .service-card {
-  background-color: $white;
-  border: 1px solid $medium-gray;
-  border-radius: $border-radius-lg;
-  padding: $spacing-xl;
+  background-color: variables.$white;
+  border: 1px solid variables.$medium-gray;
+  border-radius: variables.$border-radius-lg;
+  padding: variables.$spacing-xl;
   text-align: center;
-  transition: $transition-base;
+  transition: variables.$transition-base;
   height: 100%;
   display: flex;
   flex-direction: column;
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: $shadow-xl;
-    border-color: $primary-color;
+    box-shadow: variables.$shadow-xl;
+    border-color: variables.$primary-color;
   }
 
   &__icon {
     width: 48px;
     height: 48px;
-    margin: 0 auto $spacing-lg;
-    color: $primary-color;
+    margin: 0 auto variables.$spacing-lg;
+    color: variables.$primary-color;
 
     svg {
       width: 100%;
@@ -48,21 +50,21 @@
   }
 
   &__title {
-    font-family: $font-family-secondary;
-    font-size: $font-size-xl;
-    font-weight: $font-weight-bold;
-    color: $text-primary;
-    margin-bottom: $spacing-md;
-    line-height: $line-height-tight;
+    font-family: variables.$font-family-secondary;
+    font-size: variables.$font-size-xl;
+    font-weight: variables.$font-weight-bold;
+    color: variables.$text-primary;
+    margin-bottom: variables.$spacing-md;
+    line-height: variables.$line-height-tight;
   }
 
   &__description {
-    font-family: $font-family-primary;
-    font-size: $font-size-base;
-    font-weight: $font-weight-normal;
-    color: $text-secondary;
-    line-height: $line-height-relaxed;
-    margin-bottom: $spacing-lg;
+    font-family: variables.$font-family-primary;
+    font-size: variables.$font-size-base;
+    font-weight: variables.$font-weight-normal;
+    color: variables.$text-secondary;
+    line-height: variables.$line-height-relaxed;
+    margin-bottom: variables.$spacing-lg;
     flex-grow: 1;
   }
 }

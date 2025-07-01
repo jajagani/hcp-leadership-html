@@ -1,5 +1,7 @@
+@use "../../modules/variables" as variables;
+
 .promo-section {
-  background: #3b3f48;
+  background: variables.$top-bar-bg;
   padding: 64px 0;
   .promo-section__container {
     display: flex;
@@ -11,7 +13,7 @@
 }
 
 .promo-box {
-  background: #fff;
+  background: variables.$white;
   border-radius: 0;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
   padding: 72px 32px 32px 32px;
@@ -44,10 +46,10 @@
   width: 200px;
   height: 200px;
   border-radius: 100vw;
-  border: 6px solid #fff;
+  border: 6px solid variables.$white;
   overflow: hidden;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  background: #fff;
+  background: variables.$white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,19 +65,19 @@
 }
 
 .promo-box__title {
-  font-family: $font-family-secondary;
+  font-family: variables.$font-family-brandon;
   font-size: 1.5rem;
   font-weight: 900;
   margin-bottom: 12px;
-  color: #222;
+  color: variables.$text-primary;
   letter-spacing: 0.01em;
   margin-top: 130px;
 }
 
 .promo-box__desc {
-  font-family: $font-family-primary;
+  font-family: variables.$font-family-primary;
   font-size: 1rem;
-  color: #444;
+  color: variables.$text-secondary;
   margin-bottom: 28px;
   line-height: 1.5;
   font-weight: 400;
@@ -86,7 +88,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: $font-family-brandon;
+  font-family: variables.$font-family-brandon;
   font-weight: 600;
   font-size: 1rem;
 }

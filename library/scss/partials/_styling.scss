@@ -1,45 +1,109 @@
-// Styling utilities for HarperCollins Leadership website
+@use "../modules/variables" as variables;
 
-// Background colors
+// Background Color Mixins
+@mixin bg-color($color) {
+  background-color: $color;
+}
+
+// Border Mixins
+@mixin border($width: 1px, $style: solid, $color: variables.$medium-gray) {
+  border: $width $style $color;
+}
+
+@mixin border-side(
+  $side,
+  $width: 1px,
+  $style: solid,
+  $color: variables.$medium-gray
+) {
+  border-#{$side}: $width $style $color;
+}
+
+// Border Radius Mixins
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+// Shadow Mixins
+@mixin shadow($shadow) {
+  box-shadow: $shadow;
+}
+
+// Display Mixins
+@mixin display($type) {
+  display: $type;
+}
+
+// Flex Mixins
+@mixin flex(
+  $direction: row,
+  $wrap: nowrap,
+  $justify: flex-start,
+  $align: stretch
+) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// Position Mixins
+@mixin position($type) {
+  position: $type;
+}
+
+// Size Mixins
+@mixin size($width: auto, $height: auto) {
+  width: $width;
+  height: $height;
+}
+
+// Overflow Mixins
+@mixin overflow($type) {
+  overflow: $type;
+}
+
+// Background Colors
 .bg-primary {
-  background-color: $primary-color;
+  @include bg-color(variables.$primary-color);
 }
 
 .bg-secondary {
-  background-color: $secondary-color;
+  @include bg-color(variables.$secondary-color);
 }
 
 .bg-accent {
-  background-color: $accent-color;
+  @include bg-color(variables.$accent-color);
 }
 
 .bg-white {
-  background-color: $white;
+  @include bg-color(variables.$white);
 }
 
 .bg-light {
-  background-color: $light-gray;
+  @include bg-color(variables.$light-gray);
 }
 
 .bg-dark {
-  background-color: $text-primary;
+  @include bg-color(variables.$text-primary);
 }
 
-// Border utilities
+// Border Utilities
 .border {
-  border: 1px solid $medium-gray;
+  @include border();
 }
 
 .border-primary {
-  border-color: $primary-color;
+  @include border(1px, solid, variables.$primary-color);
 }
 
 .border-secondary {
-  border-color: $secondary-color;
+  @include border(1px, solid, variables.$secondary-color);
 }
 
 .border-light {
-  border-color: $light-gray;
+  @include border(1px, solid, variables.$light-gray);
 }
 
 .border-0 {
@@ -47,93 +111,93 @@
 }
 
 .border-t {
-  border-top: 1px solid $medium-gray;
+  @include border-side(top);
 }
 
 .border-b {
-  border-bottom: 1px solid $medium-gray;
+  @include border-side(bottom);
 }
 
 .border-l {
-  border-left: 1px solid $medium-gray;
+  @include border-side(left);
 }
 
 .border-r {
-  border-right: 1px solid $medium-gray;
+  @include border-side(right);
 }
 
-// Border radius
+// Border Radius
 .rounded-sm {
-  border-radius: $border-radius-sm;
+  @include border-radius(variables.$border-radius-sm);
 }
 
 .rounded {
-  border-radius: $border-radius;
+  @include border-radius(variables.$border-radius);
 }
 
 .rounded-lg {
-  border-radius: $border-radius;
+  @include border-radius(variables.$border-radius-lg);
 }
 
 .rounded-xl {
-  border-radius: $border-radius;
+  @include border-radius(variables.$border-radius-xl);
 }
 
 .rounded-full {
-  border-radius: 0;
+  @include border-radius(0);
 }
 
-// Shadow utilities
+// Shadow Utilities
 .shadow-sm {
-  box-shadow: $shadow-sm;
+  @include shadow(variables.$shadow-sm);
 }
 
 .shadow {
-  box-shadow: $shadow-md;
+  @include shadow(variables.$shadow-md);
 }
 
 .shadow-lg {
-  box-shadow: $shadow-lg;
+  @include shadow(variables.$shadow-lg);
 }
 
 .shadow-xl {
-  box-shadow: $shadow-xl;
+  @include shadow(variables.$shadow-xl);
 }
 
 .shadow-none {
-  box-shadow: none;
+  @include shadow(none);
 }
 
-// Display utilities
+// Display Utilities
 .block {
-  display: block;
+  @include display(block);
 }
 
 .inline-block {
-  display: inline-block;
+  @include display(inline-block);
 }
 
 .inline {
-  display: inline;
+  @include display(inline);
 }
 
 .flex {
-  display: flex;
+  @include display(flex);
 }
 
 .inline-flex {
-  display: inline-flex;
+  @include display(inline-flex);
 }
 
 .grid {
-  display: grid;
+  @include display(grid);
 }
 
 .hidden {
-  display: none;
+  @include display(none);
 }
 
-// Flex utilities
+// Flex Utilities
 .flex-row {
   flex-direction: row;
 }
@@ -198,55 +262,55 @@
   flex: none;
 }
 
-// Position utilities
+// Position Utilities
 .relative {
-  position: relative;
+  @include position(relative);
 }
 
 .absolute {
-  position: absolute;
+  @include position(absolute);
 }
 
 .fixed {
-  position: fixed;
+  @include position(fixed);
 }
 
 .sticky {
-  position: sticky;
+  @include position(sticky);
 }
 
 .static {
-  position: static;
+  @include position(static);
 }
 
-// Width and height utilities
+// Width and Height Utilities
 .w-full {
-  width: 100%;
+  @include size(100%);
 }
 
 .h-full {
-  height: 100%;
+  @include size(auto, 100%);
 }
 
 .w-auto {
-  width: auto;
+  @include size(auto);
 }
 
 .h-auto {
-  height: auto;
+  @include size(auto, auto);
 }
 
-// Overflow utilities
+// Overflow Utilities
 .overflow-hidden {
-  overflow: hidden;
+  @include overflow(hidden);
 }
 
 .overflow-auto {
-  overflow: auto;
+  @include overflow(auto);
 }
 
 .overflow-scroll {
-  overflow: scroll;
+  @include overflow(scroll);
 }
 
 .overflow-x-auto {

@@ -1,26 +1,101 @@
-// Global variables
-@import "modules/variables";
+// Import variables first
+@use "modules/variables" as variables;
 
-// Reset and general styling
-@import "partials/base";
-@import "partials/typography";
-@import "partials/buttons";
-@import "partials/inputs";
-@import "partials/styling";
-@import "partials/tools";
+// Import base styles
+@use "partials/base";
+@use "partials/typography";
+@use "partials/buttons";
+@use "partials/inputs";
+@use "partials/styling";
+@use "partials/tools";
+@use "partials/custom-grid";
 
-// Component specific styling
-@import "partials/components/header";
-@import "partials/components/hero";
-@import "partials/components/book-cards";
-@import "partials/components/footer";
-@import "partials/components/mobile-nav";
-@import "partials/components/featured-collection";
-@import "partials/components/new-releases";
-@import "partials/components/topics";
-@import "partials/components/leadership-excerpt";
-@import "partials/components/services";
-@import "partials/components/not-found";
-@import "partials/components/blog";
-@import "partials/components/single-post";
-@import "partials/components/promo-box";
+// Import components
+@use "partials/components/header";
+@use "partials/components/hero";
+@use "partials/components/mobile-nav";
+@use "partials/components/footer";
+@use "partials/components/blog";
+@use "partials/components/single-post";
+@use "partials/components/not-found";
+@use "partials/components/book-cards";
+@use "partials/components/featured-collection";
+@use "partials/components/new-releases";
+@use "partials/components/topics";
+@use "partials/components/leadership-excerpt";
+@use "partials/components/services";
+@use "partials/components/promo-box";
+
+// Font Face Declarations
+@font-face {
+  font-family: "Brandon Grotesque";
+  src: url("https://db.onlinewebfonts.com/t/7a6c42836c00680f20083f745d05cfae.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/7a6c42836c00680f20083f745d05cfae.woff")
+      format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Brandon Grotesque";
+  src: url("https://db.onlinewebfonts.com/t/7a6c42836c00680f20083f745d05cfae.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/7a6c42836c00680f20083f745d05cfae.woff")
+      format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Brandon Grotesque";
+  src: url("https://db.onlinewebfonts.com/t/7a6c42836c00680f20083f745d05cfae.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/7a6c42836c00680f20083f745d05cfae.woff")
+      format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Brandon Grotesque";
+  src: url("https://db.onlinewebfonts.com/t/7a6c42836c00680f20083f745d05cfae.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/7a6c42836c00680f20083f745d05cfae.woff")
+      format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Brandon Grotesque";
+  src: url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.woff")
+      format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Brandon Grotesque Web Italic";
+  src: url("https://db.onlinewebfonts.com/t/a285b6c725c7bb306b0de84c809fa46e.eot");
+  src: url("https://db.onlinewebfonts.com/t/a285b6c725c7bb306b0de84c809fa46e.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/a285b6c725c7bb306b0de84c809fa46e.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/a285b6c725c7bb306b0de84c809fa46e.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/a285b6c725c7bb306b0de84c809fa46e.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/a285b6c725c7bb306b0de84c809fa46e.svg#Brandon Grotesque Web Italic")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

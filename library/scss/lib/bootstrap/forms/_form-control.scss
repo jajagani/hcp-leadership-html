@@ -56,7 +56,11 @@
     // https://github.com/twbs/bootstrap/issues/23307
     // TODO: we can remove this workaround once https://bugs.webkit.org/show_bug.cgi?id=198959 is resolved
     // Multiply line-height by 1em if it has no unit
-    height: if(unit($input-line-height) == "", $input-line-height * 1em, $input-line-height);
+    height: if(
+      unit($input-line-height) == "",
+      $input-line-height * 1em,
+      $input-line-height
+    );
 
     // Android Chrome type="date" is taller than the other inputs
     // because of "margin: 1px 24px 1px 4px" inside the shadow DOM
@@ -120,17 +124,12 @@
 .form-control-plaintext {
   display: block;
   width: 100%;
-  padding: $input-padding-y 0;
+  padding: var(--#{$prefix}input-padding-y) 0;
   margin-bottom: 0; // match inputs if this class comes on inputs with default margins
-  line-height: $input-line-height;
-  color: $input-plaintext-color;
+  color: var(--#{$prefix}body-color);
   background-color: transparent;
   border: solid transparent;
-  border-width: $input-border-width 0;
-
-  &:focus {
-    outline: 0;
-  }
+  border-width: var(--#{$prefix}input-border-width) 0;
 
   &.form-control-sm,
   &.form-control-lg {
@@ -200,15 +199,19 @@ textarea {
   }
 
   &::-moz-color-swatch {
-    border: 0 !important; // stylelint-disable-line declaration-no-important
+    border: 0;
     @include border-radius($input-border-radius);
   }
 
   &::-webkit-color-swatch {
-    border: 0 !important; // stylelint-disable-line declaration-no-important
+    border: 0;
     @include border-radius($input-border-radius);
   }
 
-  &.form-control-sm { height: $input-height-sm; }
-  &.form-control-lg { height: $input-height-lg; }
+  &.form-control-sm {
+    height: $input-height-sm;
+  }
+  &.form-control-lg {
+    height: $input-height-lg;
+  }
 }

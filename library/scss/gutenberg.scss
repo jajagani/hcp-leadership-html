@@ -1,12 +1,11 @@
 // Global variables
-@import "modules/variables.scss";
+@use "modules/variables" as variables;
 
 .block-editor-block-list__block {
     max-width: 1800px;
 }
 
 .block-editor-block-list__block:not(.is-selected) {
-
     @import "lib/bootstrap/bootstrap";
     
     // Reset and general styling
@@ -36,8 +35,8 @@
     }
 
     section {
-        margin-top: 0 !important;
-        padding-top: 0 !important;
+    margin-top: 0;
+    padding-top: 0;
 
         .slider {
             display: flex;

@@ -1,86 +1,111 @@
 @use "../modules/variables" as variables;
 
-// Custom Grid System
+// Grid Variables
+$custom-grid-gap-sm: 1.4rem;
+$custom-grid-gap-md: 2rem;
+$custom-grid-gap-lg: 2.5rem;
+$custom-grid-min-col-width: 200px;
+$custom-grid-max-col-width: 1fr;
 
-// Variables por defecto
-$custom-grid-gap-sm: 1rem !default;
-$custom-grid-gap-md: 2rem !default;
-$custom-grid-gap-lg: 3rem !default;
-$custom-grid-min-col-width: 200px !default;
-$custom-grid-max-col-width: 1fr !default;
-
-// Mixin para grid base
-@mixin custom-grid($min-cols: 1, $max-cols: 4, $gap: $custom-grid-gap-md) {
+// Grid Mixins
+@mixin grid-base($gap: $custom-grid-gap-md) {
   display: grid;
   width: 100%;
   margin: 0 auto;
   gap: $gap;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax($custom-grid-min-col-width, $custom-grid-max-col-width)
-  );
   justify-content: center;
   align-items: start;
 }
 
-.custom-grid {
-  @include custom-grid();
+@mixin grid-columns(
+  $min-width: $custom-grid-min-col-width,
+  $max-width: $custom-grid-max-col-width
+) {
+  grid-template-columns: repeat(auto-fit, minmax($min-width, $max-width));
+}
+
+@mixin grid-fixed-columns($columns: 1) {
+  grid-template-columns: repeat($columns, 1fr);
+}
+
+@mixin grid-max-content-columns($columns: 1, $max-width: 1200px) {
+  grid-template-columns: repeat($columns, max-content);
   justify-content: center;
-  align-items: start;
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin responsive-grid(
+  $desktop-columns,
+  $tablet-columns: 2,
+  $mobile-columns: 1,
+  $breakpoint-lg: 1200px,
+  $breakpoint-md: 900px
+) {
+  @include grid-max-content-columns($desktop-columns);
+
+  @media (max-width: $breakpoint-lg) {
+    @include grid-max-content-columns($tablet-columns);
+  }
+
+  @media (max-width: $breakpoint-md) {
+    @include grid-fixed-columns($mobile-columns);
+  }
+}
+
+// Main Grid Class
+.custom-grid {
+  @include grid-base();
+  @include grid-columns();
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 
+  // Minimum column width variants
   &--min-1 {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    @include grid-columns(200px);
   }
+
   &--min-2 {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    @include grid-columns(250px);
   }
+
   &--min-3 {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    @include grid-columns(300px);
   }
+
   &--min-4 {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    @include grid-columns(350px);
   }
 
+  // Maximum column variants
   &--max-2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  &--max-3 {
-    grid-template-columns: repeat(3, max-content);
-    justify-content: center;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    @media (max-width: 900px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  &--max-4 {
-    grid-template-columns: repeat(4, max-content);
-    justify-content: center;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-    @media (max-width: 1200px) {
-      grid-template-columns: repeat(3, max-content);
-    }
-    @media (max-width: 900px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    @include grid-fixed-columns(2);
   }
 
+  &--max-3 {
+    @include responsive-grid(3, 2, 2, 900px);
+  }
+
+  &--max-4 {
+    @include responsive-grid(4, 3, 2, 1200px, 900px);
+  }
+
+  // Gap variants
   &--gap-sm {
     gap: $custom-grid-gap-sm;
   }
+
   &--gap-md {
     gap: $custom-grid-gap-md;
   }
+
   &--gap-lg {
     gap: $custom-grid-gap-lg;
   }
 }
 
+// Grid Item
 .custom-grid__item {
   display: flex;
   flex-direction: column;
@@ -93,31 +118,43 @@ $custom-grid-max-col-width: 1fr !default;
   margin: 0;
 }
 
+// Background Utilities
 .bg-trans {
-  background-color: transparent !important;
+  background-color: transparent;
 }
 
+// Section Grid
 .section-grid {
   padding: variables.$spacing-3xl 0;
   background-color: variables.$white;
 }
 
-.section-grid__title,
-.new-releases__title {
-  font-family: variables.$font-family-secondary;
-  font-size: variables.$font-size-3xl;
+// Section Title Mixin
+@mixin section-title {
+  font-family: variables.$font-family-brandon;
+  font-size: variables.$font-size-xl;
   font-weight: variables.$font-weight-bold;
   color: variables.$text-primary;
   text-align: center;
-  margin-bottom: variables.$spacing-2xl;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
 
   @media (min-width: variables.$breakpoint-md) {
-    font-size: variables.$font-size-4xl;
+    font-size: variables.$font-size-3xl;
   }
+
   @media (max-width: variables.$breakpoint-md) {
     font-size: variables.$font-size-2xl;
   }
+
   @media (max-width: 500px) {
     font-size: 1.2rem;
   }
+}
+
+// Section Titles
+.section-grid__title,
+.new-releases__title {
+  @include section-title;
 }

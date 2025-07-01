@@ -1,25 +1,27 @@
 // Featured Collection component for HarperCollins Leadership website
 
+@use "../../modules/variables" as variables;
+
 .featured-collection {
-  background-color: $light-gray;
-  padding: $spacing-3xl 0;
+  background-color: variables.$light-gray;
+  padding: variables.$spacing-3xl 0;
   text-align: center;
 
   &__content {
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
   }
 
   &__title {
-    font-family: $font-family-secondary;
-    font-size: $font-size-2xl;
-    font-weight: $font-weight-bold;
-    color: $text-primary;
-    margin-bottom: $spacing-xl;
-    line-height: $line-height-tight;
+    font-family: variables.$font-family-secondary;
+    font-size: variables.$font-size-2xl;
+    font-weight: variables.$font-weight-bold;
+    color: variables.$text-primary;
+    margin-bottom: variables.$spacing-lg;
+    line-height: variables.$line-height-tight;
 
-    @media (min-width: $breakpoint-md) {
-      font-size: $font-size-3xl;
+    @media (min-width: variables.$breakpoint-md) {
+      font-size: 3rem;
     }
 
     em {
@@ -27,7 +29,14 @@
     }
 
     strong {
-      font-weight: $font-weight-bold;
+      font-weight: variables.$font-weight-bold;
     }
+  }
+
+  &__description {
+    font-size: variables.$font-size-lg;
+    line-height: 1.6;
+    margin-bottom: variables.$spacing-xl;
+    color: variables.$text-secondary;
   }
 }

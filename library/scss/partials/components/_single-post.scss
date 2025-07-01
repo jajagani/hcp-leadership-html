@@ -1,42 +1,52 @@
 // Single Post component for HarperCollins Leadership website
 
+@use "../../modules/variables" as variables;
+
 .single-post {
-  padding: $spacing-3xl 0;
-  background-color: $white;
+  padding: variables.$spacing-3xl 0;
+  background-color: variables.$white;
 
   &__header {
     text-align: center;
-    margin-bottom: $spacing-3xl;
+    margin-bottom: variables.$spacing-3xl;
   }
 
   &__title {
-    font-family: $font-family-secondary;
-    font-size: $font-size-4xl;
-    font-weight: $font-weight-bold;
-    color: $text-primary;
-    margin-bottom: $spacing-lg;
-    line-height: $line-height-tight;
+    font-family: variables.$font-family-brandon;
+    font-size: variables.$font-size-2xl;
+    font-weight: variables.$font-weight-bold;
+    color: variables.$text-primary;
+    text-align: center;
+    margin-bottom: variables.$spacing-2xl;
+
+    @media (min-width: variables.$breakpoint-md) {
+      font-size: variables.$font-size-3xl;
+    }
   }
 
   &__meta {
-    font-family: $font-family-primary;
-    font-size: $font-size-base;
-    font-weight: $font-weight-normal;
-    color: $text-secondary;
-    margin-bottom: $spacing-xl;
+    font-family: variables.$font-family-primary;
+    font-size: variables.$font-size-base;
+    font-weight: variables.$font-weight-normal;
+    color: variables.$text-secondary;
+    margin-bottom: variables.$spacing-xl;
   }
 
   &__content {
     max-width: 800px;
     margin: 0 auto;
+    font-size: variables.$font-size-lg;
+    line-height: 1.6;
+    margin-bottom: variables.$spacing-xl;
+    color: variables.$text-secondary;
 
     p {
-      font-family: $font-family-primary;
-      font-size: $font-size-lg;
-      font-weight: $font-weight-normal;
-      color: $text-primary;
-      line-height: $line-height-relaxed;
-      margin-bottom: $spacing-lg;
+      font-family: variables.$font-family-primary;
+      font-size: variables.$font-size-lg;
+      font-weight: variables.$font-weight-normal;
+      color: variables.$text-primary;
+      line-height: variables.$line-height-relaxed;
+      margin-bottom: variables.$spacing-lg;
     }
 
     h2,
@@ -44,38 +54,38 @@
     h4,
     h5,
     h6 {
-      font-family: $font-family-secondary;
-      font-weight: $font-weight-bold;
-      color: $text-primary;
-      margin-top: $spacing-2xl;
-      margin-bottom: $spacing-lg;
+      font-family: variables.$font-family-secondary;
+      font-weight: variables.$font-weight-bold;
+      color: variables.$text-primary;
+      margin-top: variables.$spacing-2xl;
+      margin-bottom: variables.$spacing-lg;
     }
 
     h2 {
-      font-size: $font-size-3xl;
+      font-size: variables.$font-size-3xl;
     }
 
     h3 {
-      font-size: $font-size-2xl;
+      font-size: variables.$font-size-2xl;
     }
 
     h4 {
-      font-size: $font-size-xl;
+      font-size: variables.$font-size-xl;
     }
 
     ul,
     ol {
-      margin-bottom: $spacing-lg;
-      padding-left: $spacing-xl;
+      margin-bottom: variables.$spacing-lg;
+      padding-left: variables.$spacing-xl;
     }
 
     li {
-      font-family: $font-family-primary;
-      font-size: $font-size-lg;
-      font-weight: $font-weight-normal;
-      color: $text-primary;
-      line-height: $line-height-relaxed;
-      margin-bottom: $spacing-sm;
+      font-family: variables.$font-family-primary;
+      font-size: variables.$font-size-lg;
+      font-weight: variables.$font-weight-normal;
+      color: variables.$text-primary;
+      line-height: variables.$line-height-relaxed;
+      margin-bottom: variables.$spacing-sm;
     }
   }
 }

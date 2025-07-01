@@ -5,7 +5,11 @@
 
 .navbar {
   // scss-docs-start navbar-css-vars
-  --#{$prefix}navbar-padding-x: #{if($navbar-padding-x == null, 0, $navbar-padding-x)};
+  --#{$prefix}navbar-padding-x: #{if(
+      $navbar-padding-x == null,
+      0,
+      $navbar-padding-x
+    )};
   --#{$prefix}navbar-padding-y: #{$navbar-padding-y};
   --#{$prefix}navbar-color: #{$navbar-light-color};
   --#{$prefix}navbar-hover-color: #{$navbar-light-hover-color};
@@ -20,7 +24,9 @@
   --#{$prefix}navbar-toggler-padding-y: #{$navbar-toggler-padding-y};
   --#{$prefix}navbar-toggler-padding-x: #{$navbar-toggler-padding-x};
   --#{$prefix}navbar-toggler-font-size: #{$navbar-toggler-font-size};
-  --#{$prefix}navbar-toggler-icon-bg: #{escape-svg($navbar-light-toggler-icon-bg)};
+  --#{$prefix}navbar-toggler-icon-bg: #{escape-svg(
+      $navbar-light-toggler-icon-bg
+    )};
   --#{$prefix}navbar-toggler-border-color: #{$navbar-light-toggler-border-color};
   --#{$prefix}navbar-toggler-border-radius: #{$navbar-toggler-border-radius};
   --#{$prefix}navbar-toggler-focus-width: #{$navbar-toggler-focus-width};
@@ -57,7 +63,6 @@
   }
 }
 
-
 // Navbar brand
 //
 // Used for brand, project, or site names.
@@ -77,7 +82,6 @@
     text-decoration: if($link-hover-decoration == underline, none, null);
   }
 }
-
 
 // Navbar nav
 //
@@ -112,7 +116,6 @@
   }
 }
 
-
 // Navbar text
 //
 //
@@ -124,11 +127,10 @@
 
   a,
   a:hover,
-  a:focus  {
+  a:focus {
     color: var(--#{$prefix}navbar-active-color);
   }
 }
-
 
 // Responsive navbar
 //
@@ -148,12 +150,14 @@
 
 // Button for toggling the navbar when in its collapsed state
 .navbar-toggler {
-  padding: var(--#{$prefix}navbar-toggler-padding-y) var(--#{$prefix}navbar-toggler-padding-x);
-  @include font-size(var(--#{$prefix}navbar-toggler-font-size));
+  padding: var(--#{$prefix}navbar-toggler-padding-y)
+    var(--#{$prefix}navbar-toggler-padding-x);
+  font-size: var(--#{$prefix}navbar-toggler-font-size);
   line-height: 1;
   color: var(--#{$prefix}navbar-color);
-  background-color: transparent; // remove default button style
-  border: var(--#{$prefix}border-width) solid var(--#{$prefix}navbar-toggler-border-color); // remove default button style
+  background-color: transparent;
+  border: var(--#{$prefix}border-width) solid
+    var(--#{$prefix}navbar-toggler-border-color);
   @include border-radius(var(--#{$prefix}navbar-toggler-border-radius));
   @include transition(var(--#{$prefix}navbar-toggler-transition));
 
@@ -166,19 +170,17 @@
     outline: 0;
     box-shadow: 0 0 0 var(--#{$prefix}navbar-toggler-focus-width);
   }
-}
 
-// Keep as a separate element so folks can easily override it with another icon
-// or image file as needed.
-.navbar-toggler-icon {
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  vertical-align: middle;
-  background-image: var(--#{$prefix}navbar-toggler-icon-bg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
+  // Animated icon
+  .navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+  }
 }
 
 .navbar-nav-scroll {
@@ -186,7 +188,6 @@
   overflow-y: auto;
 }
 
-// scss-docs-start navbar-expand-loop
 // Generate series of `.navbar-expand-*` responsive classes for configuring
 // where your navbar collapses.
 .navbar-expand {
@@ -218,7 +219,7 @@
         }
 
         .navbar-collapse {
-          display: flex !important; // stylelint-disable-line declaration-no-important
+          display: flex;
           flex-basis: auto;
         }
 
@@ -226,37 +227,26 @@
           display: none;
         }
 
+        .offcanvas-header {
+          display: none;
+        }
+
         .offcanvas {
-          // stylelint-disable declaration-no-important
-          position: static;
+          position: inherit;
+          bottom: 0;
           z-index: auto;
           flex-grow: 1;
-          width: auto !important;
-          height: auto !important;
-          visibility: visible !important;
-          background-color: transparent !important;
-          border: 0 !important;
-          transform: none !important;
-          @include box-shadow(none);
+          visibility: visible;
+          background-color: transparent;
+          border-right: 0;
+          border-left: 0;
           @include transition(none);
-          // stylelint-enable declaration-no-important
-
-          .offcanvas-header {
-            display: none;
-          }
-
-          .offcanvas-body {
-            display: flex;
-            flex-grow: 0;
-            padding: 0;
-            overflow-y: visible;
-          }
+          transform: none;
         }
       }
     }
   }
 }
-// scss-docs-end navbar-expand-loop
 
 // Navbar themes
 //
@@ -283,7 +273,9 @@
 @if $enable-dark-mode {
   @include color-mode(dark) {
     .navbar-toggler-icon {
-      --#{$prefix}navbar-toggler-icon-bg: #{escape-svg($navbar-dark-toggler-icon-bg)};
+      --#{$prefix}navbar-toggler-icon-bg: #{escape-svg(
+          $navbar-dark-toggler-icon-bg
+        )};
     }
   }
 }

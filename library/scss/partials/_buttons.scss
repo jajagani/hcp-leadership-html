@@ -1,45 +1,49 @@
 @use "../modules/variables" as variables;
 @use "sass:color";
 
-// Button Base Styles
-.btn,
-.btn--primary {
-  font-family: variables.$font-family-brandon !important;
-  font-size: variables.$font-size-base !important;
-  font-weight: variables.$font-weight-semibold !important;
-  letter-spacing: 1px !important;
-  line-height: 18px !important;
-  text-transform: uppercase !important;
-  color: variables.$btn-text-color !important;
-  background: variables.$btn-primary-blue !important;
-  display: inline !important;
-  box-sizing: border-box !important;
-  cursor: pointer !important;
-  text-align: center !important;
-  text-shadow: none !important;
-  text-size-adjust: 100% !important;
-  vertical-align: middle !important;
-  width: auto !important;
-  height: auto !important;
-  border: none !important;
-  border-color: variables.$btn-text-color !important;
-  border-width: 0 !important;
-  border-style: none !important;
+// Button Mixins
+@mixin button-base {
+  font-family: variables.$font-family-brandon;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: center;
+  text-shadow: none;
+  text-size-adjust: 100%;
+  width: auto;
+  height: auto;
+  border: none;
+  border-width: 0;
+  border-style: none;
+  border-radius: 0;
+  padding: 15px 24px 12px 24px;
+  margin: 0;
+  transition: variables.$transition-base;
 }
 
-.btn {
-  -webkit-font-smoothing: antialiased;
-  text-rendering: auto;
-  text-shadow: none;
-  margin: 0;
-  outline: none;
+@mixin button-variant($bg-color, $text-color, $border-color: $bg-color) {
+  background: $bg-color;
+  color: $text-color;
+  border-color: $border-color;
 
   &:hover,
   &:focus {
-    background: color.adjust(variables.$btn-primary-blue, $lightness: -10%);
-    color: variables.$btn-text-color;
-    text-decoration: none !important;
+    background: $bg-color;
+    color: $text-color;
+    text-decoration: none;
+    font-weight: 800;
   }
+}
+
+// Base Button - Increased specificity to override Bootstrap
+.btn.btn {
+  @include button-base;
 
   &:disabled {
     opacity: 0.6;
@@ -47,6 +51,12 @@
     transform: none;
   }
 
+  &:focus-visible {
+    outline: 2px solid variables.$primary-color;
+    outline-offset: 2px;
+  }
+
+  // Button Elements
   &__text {
     font-family: inherit;
     font-size: inherit;
@@ -64,7 +74,7 @@
     font-style: normal;
     font-weight: variables.$font-weight-normal;
     line-height: 20.8px;
-    color: variables.$btn-text-color;
+    color: inherit;
     letter-spacing: 1px;
     text-align: center;
     text-rendering: auto;
@@ -76,16 +86,20 @@
   }
 }
 
-// Button Variants
-.btn--primary {
-  background: variables.$btn-primary-blue !important;
-  color: variables.$btn-text-color !important;
+// Button Variants - Increased specificity
+.btn.btn--primary {
+  @include button-variant(
+    variables.$btn-primary-blue,
+    variables.$btn-text-color
+  );
 }
 
-.btn--secondary {
-  background-color: variables.$white;
-  color: variables.$primary-color;
-  border-color: variables.$primary-color;
+.btn.btn--secondary {
+  @include button-variant(
+    variables.$white,
+    variables.$primary-color,
+    variables.$primary-color
+  );
 
   &:hover {
     background-color: variables.$primary-color;
@@ -93,22 +107,12 @@
   }
 }
 
-.btn--accent {
-  background-color: variables.$accent-color;
-  color: variables.$white;
-  border-color: variables.$accent-color;
-
-  &:hover {
-    background-color: color.adjust(variables.$accent-color, $lightness: -10%);
-    border-color: color.adjust(variables.$accent-color, $lightness: -10%);
-    color: variables.$white;
-  }
+.btn.btn--accent {
+  @include button-variant(variables.$accent-color, variables.$white);
 }
 
-.btn--ghost {
-  background-color: transparent;
-  color: variables.$primary-color;
-  border-color: transparent;
+.btn.btn--ghost {
+  @include button-variant(transparent, variables.$primary-color, transparent);
 
   &:hover {
     background-color: rgba(variables.$primary-color, 0.1);
@@ -116,22 +120,18 @@
   }
 }
 
-// Button Sizes
-.btn--small {
-  padding: variables.$spacing-xs variables.$spacing-md;
-  font-size: variables.$font-size-sm;
-  min-height: 36px;
+.btn.btn--gold {
+  @include button-variant(variables.$btn-gold, variables.$white);
+
+  &:hover {
+    background: variables.$btn-primary-blue;
+    border-color: variables.$btn-primary-blue;
+    color: variables.$white;
+  }
 }
 
-.btn--large {
-  padding: variables.$spacing-md variables.$spacing-xl;
-  font-size: variables.$font-size-lg;
-  font-weight: variables.$font-weight-semibold;
-  min-height: 52px;
-}
-
-// Button with Icon
-.btn--with-icon {
+// Button Modifiers - Increased specificity
+.btn.btn--with-icon {
   gap: variables.$spacing-sm;
 
   .btn__icon {
@@ -140,13 +140,11 @@
   }
 }
 
-// Full Width Button
-.btn--full-width {
+.btn.btn--full-width {
   width: 100%;
 }
 
-// Loading state
-.btn--loading {
+.btn.btn--loading {
   position: relative;
   color: transparent;
 
@@ -160,105 +158,64 @@
     margin: -8px 0 0 -8px;
     border: 2px solid transparent;
     border-top-color: currentColor;
-    border-radius: 50%;
     animation: spin 1s linear infinite;
   }
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-// CSS-ONLY ARROW FUNCTIONALITY
-// This creates arrows using ::after pseudo-elements - no HTML required!
-
-// Arrow button class
-.btn--arrow {
+.btn.btn--arrow {
   position: relative;
   overflow: hidden;
   transition: padding-right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  padding-right: variables.$spacing-xl; // Space for arrow
 
-  // Arrow using ::after pseudo-element
   &::after {
-    content: "⟶"; // Unicode long arrow
+    content: "";
     position: absolute;
-    right: variables.$spacing-md;
+    right: 16px;
     top: 50%;
-    transform: translateY(-50%) translateX(8px); // Start off-screen
-    font-size: 1.4em;
-    font-weight: variables.$font-weight-bold;
-    color: inherit;
+    transform: translateY(-50%) translateX(8px);
+    width: 30px;
+    height: 13px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 13' fill='white'%3E%3Cpath d='M1 6.5h20l-5-5v3H1v3h15v3l5-5z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     opacity: 0;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
-    line-height: 1;
-    display: inline-block;
-    vertical-align: middle;
-    margin-top: -2px; // Fine-tune vertical alignment
   }
 
-  // Show arrow on hover
   &:hover {
-    padding-right: variables.$spacing-2xl;
-
-    &::after {
-      opacity: 1;
-      transform: translateY(-50%) translateX(0);
-    }
+    padding-right: 48px;
   }
 
-  // Focus state for accessibility
+  &:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+
   &:focus-visible::after {
     opacity: 1;
     transform: translateY(-50%) translateX(0);
   }
 }
 
-// Gold Button Variant
-.btn--gold {
-  background: variables.$btn-gold !important;
-  color: variables.$white !important;
-  border-color: variables.$btn-gold !important;
+// Button Group
+.btn-group {
+  display: inline-flex;
+  vertical-align: middle;
 
-  &:hover {
-    background: variables.$btn-primary-blue !important;
-    border-color: variables.$btn-primary-blue !important;
-    color: variables.$white !important;
+  .btn {
+    position: relative;
+    flex: 1 1 auto;
   }
 }
 
-// Disabled state
-.btn--disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-// Focus states for accessibility
-.btn:focus-visible {
-  outline: 2px solid variables.$primary-color;
-  outline-offset: 2px;
-}
-
-// Button group styles
-.btn-group {
-  display: inline-flex;
-  gap: variables.$spacing-xs;
-
-  .btn {
-    border-radius: 0;
-
-    &:first-child {
-      border-top-left-radius: variables.$border-radius-sm;
-      border-bottom-left-radius: variables.$border-radius-sm;
-    }
-
-    &:last-child {
-      border-top-right-radius: variables.$border-radius-sm;
-      border-bottom-right-radius: variables.$border-radius-sm;
-    }
+// Loading Animation
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

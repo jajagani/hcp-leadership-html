@@ -1,9 +1,11 @@
 // Not Found component for HarperCollins Leadership website
 
+@use "../../modules/variables" as variables;
+
 .not-found {
-  padding: $spacing-4xl 0;
+  padding: variables.$spacing-3xl 0;
   text-align: center;
-  background-color: $white;
+  background-color: variables.$white;
 
   &__content {
     max-width: 600px;
@@ -11,19 +13,22 @@
   }
 
   &__title {
-    font-family: $font-family-secondary;
-    font-size: $font-size-5xl;
-    font-weight: $font-weight-bold;
-    color: $text-primary;
-    margin-bottom: $spacing-lg;
+    font-family: variables.$font-family-brandon;
+    font-size: variables.$font-size-2xl;
+    font-weight: variables.$font-weight-bold;
+    color: variables.$text-primary;
+    text-align: center;
+    margin-bottom: variables.$spacing-2xl;
+
+    @media (min-width: variables.$breakpoint-md) {
+      font-size: variables.$font-size-3xl;
+    }
   }
 
   &__description {
-    font-family: $font-family-primary;
-    font-size: $font-size-lg;
-    font-weight: $font-weight-normal;
-    color: $text-secondary;
-    line-height: $line-height-relaxed;
-    margin-bottom: $spacing-xl;
+    font-size: variables.$font-size-lg;
+    line-height: 1.6;
+    margin-bottom: variables.$spacing-xl;
+    color: variables.$text-secondary;
   }
 }

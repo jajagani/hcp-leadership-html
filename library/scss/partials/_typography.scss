@@ -1,85 +1,131 @@
-// Typography utilities for HarperCollins Leadership website
+@use "../modules/variables" as variables;
 
+// Typography Mixins
+@mixin text-color($color) {
+  color: $color;
+}
+
+@mixin font-family($family) {
+  font-family: $family;
+}
+
+@mixin font-weight($weight) {
+  font-weight: $weight;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+}
+
+@mixin line-height($height) {
+  line-height: $height;
+}
+
+// Text Color Utilities
 .text-primary {
-  color: $text-primary;
+  @include text-color(variables.$text-primary);
 }
 
 .text-secondary {
-  color: $text-secondary;
+  @include text-color(variables.$text-secondary);
 }
 
 .text-light {
-  color: $text-light;
+  @include text-color(variables.$text-light);
 }
 
 .text-white {
-  color: $white;
+  @include text-color(variables.$white);
 }
 
+// Font Family Utilities
 .font-primary {
-  font-family: $font-family-primary;
+  @include font-family(variables.$font-family-primary);
 }
 
 .font-secondary {
-  font-family: $font-family-secondary;
+  @include font-family(variables.$font-family-secondary);
 }
 
+.font-plantin {
+  @include font-family(variables.$font-family-plantin);
+}
+
+.font-brandon {
+  @include font-family(variables.$font-family-brandon);
+}
+
+.font-zooja {
+  @include font-family(variables.$font-family-zooja);
+}
+
+// Font Weight Utilities
 .font-normal {
-  font-weight: $font-weight-normal;
+  @include font-weight(variables.$font-weight-normal);
 }
 
 .font-medium {
-  font-weight: $font-weight-medium;
+  @include font-weight(variables.$font-weight-medium);
 }
 
 .font-semibold {
-  font-weight: $font-weight-semibold;
+  @include font-weight(variables.$font-weight-semibold);
 }
 
 .font-bold {
-  font-weight: $font-weight-bold;
+  @include font-weight(variables.$font-weight-bold);
 }
 
+.font-light {
+  @include font-weight(variables.$font-weight-light);
+}
+
+.font-extrabold {
+  @include font-weight(variables.$font-weight-extrabold);
+}
+
+// Font Size Utilities
 .text-sm {
-  font-size: $font-size-sm;
+  @include font-size(variables.$font-size-sm);
 }
 
 .text-base {
-  font-size: $font-size-base;
+  @include font-size(variables.$font-size-base);
 }
 
 .text-lg {
-  font-size: $font-size-lg;
+  @include font-size(variables.$font-size-lg);
 }
 
 .text-xl {
-  font-size: $font-size-xl;
+  @include font-size(variables.$font-size-xl);
 }
 
 .text-2xl {
-  font-size: $font-size-2xl;
+  @include font-size(variables.$font-size-2xl);
 }
 
 .text-3xl {
-  font-size: $font-size-3xl;
+  @include font-size(variables.$font-size-3xl);
 }
 
 .text-4xl {
-  font-size: $font-size-4xl;
+  @include font-size(variables.$font-size-4xl);
 }
 
 .text-5xl {
-  font-size: $font-size-5xl;
+  @include font-size(variables.$font-size-5xl);
 }
 
+// Line Height Utilities
 .leading-tight {
-  line-height: $line-height-tight;
+  @include line-height(variables.$line-height-tight);
 }
 
 .leading-normal {
-  line-height: $line-height-normal;
+  @include line-height(variables.$line-height-normal);
 }
 
 .leading-relaxed {
-  line-height: $line-height-relaxed;
+  @include line-height(variables.$line-height-relaxed);
 }

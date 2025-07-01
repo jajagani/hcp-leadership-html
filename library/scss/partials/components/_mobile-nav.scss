@@ -1,61 +1,109 @@
 @use "../../modules/variables" as variables;
 
+// Mobile Navigation Mixins
+@mixin mobile-nav-open {
+  display: flex;
+  position: fixed;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: variables.$white;
+  border-top: 1px solid variables.$medium-gray;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  padding: variables.$spacing-lg;
+  max-height: calc(100vh - 100%);
+  overflow-y: auto;
+}
+
+@mixin mobile-nav-list {
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+@mixin mobile-nav-item {
+  width: 100%;
+  border-bottom: 1px solid variables.$medium-gray;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+@mixin mobile-nav-link {
+  display: block;
+  padding: variables.$spacing-md 0;
+  width: 100%;
+  border-bottom: none;
+}
+
+@mixin mobile-nav-dropdown {
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  box-shadow: none;
+  border: none;
+  background-color: variables.$light-gray;
+  margin-top: variables.$spacing-sm;
+  border-radius: variables.$border-radius-sm;
+}
+
+@mixin mobile-nav-dropdown-list {
+  padding: variables.$spacing-sm;
+}
+
+@mixin mobile-nav-dropdown-link {
+  padding: variables.$spacing-sm;
+  font-size: variables.$font-size-sm;
+}
+
+@mixin button-loading {
+  position: relative;
+  color: transparent;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
 // Mobile Navigation Styles
 .header__nav--mobile-open {
   @media (max-width: variables.$breakpoint-lg - 1px) {
-    display: flex !important;
-    position: fixed;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: variables.$white;
-    border-top: 1px solid variables.$medium-gray;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 999;
-    padding: variables.$spacing-lg;
-    max-height: calc(100vh - 100%);
-    overflow-y: auto;
+    @include mobile-nav-open;
 
     .header__nav-list {
-      flex-direction: column;
-      gap: 0;
-      width: 100%;
+      @include mobile-nav-list;
     }
 
     .header__nav-item {
-      width: 100%;
-      border-bottom: 1px solid variables.$medium-gray;
-
-      &:last-child {
-        border-bottom: none;
-      }
+      @include mobile-nav-item;
     }
 
     .header__nav-link {
-      display: block;
-      padding: variables.$spacing-md 0;
-      width: 100%;
-      border-bottom: none;
+      @include mobile-nav-link;
     }
 
     .header__nav-dropdown {
-      position: static;
-      opacity: 1;
-      visibility: visible;
-      transform: none;
-      box-shadow: none;
-      border: none;
-      background-color: variables.$light-gray;
-      margin-top: variables.$spacing-sm;
-      border-radius: variables.$border-radius-sm;
+      @include mobile-nav-dropdown;
 
       .header__nav-dropdown-list {
-        padding: variables.$spacing-sm;
+        @include mobile-nav-dropdown-list;
       }
 
       .header__nav-dropdown-link {
-        padding: variables.$spacing-sm;
-        font-size: variables.$font-size-sm;
+        @include mobile-nav-dropdown-link;
       }
     }
   }
@@ -79,22 +127,7 @@
 
 // Button loading state
 .btn--loading {
-  position: relative;
-  color: transparent !important;
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 20px;
-    height: 20px;
-    margin: -10px 0 0 -10px;
-    border: 2px solid transparent;
-    border-top: 2px solid currentColor;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-  }
+  @include button-loading;
 }
 
 @keyframes spin {
@@ -141,8 +174,7 @@
   }
 }
 
-// Mobile Navigation component for HarperCollins Leadership website
-
+// Mobile Navigation component
 .mobile-nav {
   position: fixed;
   top: 0;

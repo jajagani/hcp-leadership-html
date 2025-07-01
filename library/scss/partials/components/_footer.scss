@@ -1,13 +1,97 @@
 @use "../../modules/variables" as variables;
 @use "sass:color";
 
-// Footer Component
-.footer {
-  background-color: variables.$text-primary !important;
+// Footer Mixins
+@mixin footer-base {
   color: variables.$white;
   padding: variables.$spacing-3xl 0 0 0;
   margin-top: auto;
   border-bottom: none;
+}
+
+@mixin footer-link {
+  color: rgba(variables.$white, 0.8);
+  text-decoration: none;
+  transition: variables.$transition-base;
+
+  &:hover {
+    color: variables.$white;
+    text-decoration: underline;
+  }
+}
+
+@mixin footer-newsletter-input {
+  flex: 1;
+  padding: variables.$spacing-sm variables.$spacing-md;
+  font-family: variables.$font-family-primary;
+  font-size: variables.$font-size-base;
+  border: 1px solid rgba(variables.$white, 0.3);
+  border-radius: variables.$border-radius;
+  background-color: rgba(variables.$white, 0.1);
+  color: variables.$white;
+
+  &::placeholder {
+    color: rgba(variables.$white, 0.6);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: variables.$primary-color;
+    background-color: rgba(variables.$white, 0.2);
+  }
+}
+
+@mixin footer-newsletter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: variables.$spacing-xs variables.$spacing-md;
+  font-family: variables.$font-family-secondary;
+  font-size: variables.$font-size-sm;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: variables.$border-radius;
+  cursor: pointer;
+  transition: variables.$transition-base;
+  text-align: center;
+  min-height: 36px;
+  background-color: variables.$accent-color;
+  color: variables.$white;
+  border-color: variables.$accent-color;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: color.adjust(variables.$accent-color, $lightness: -10%);
+    border-color: color.adjust(variables.$accent-color, $lightness: -10%);
+    color: variables.$white;
+    text-decoration: none;
+  }
+}
+
+@mixin footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: variables.$dark-gray;
+  border-radius: 50%;
+  color: variables.$white;
+  text-decoration: none;
+  transition: variables.$transition-base;
+
+  &:hover {
+    background-color: variables.$accent-color;
+    color: variables.$white;
+    text-decoration: none;
+  }
+}
+
+// Footer Component
+.footer {
+  background-color: variables.$text-primary;
+  @include footer-base;
 }
 
 .footer__container {
@@ -49,14 +133,7 @@
 }
 
 .footer__link {
-  color: rgba(variables.$white, 0.8);
-  text-decoration: none;
-  transition: variables.$transition-base;
-
-  &:hover {
-    color: variables.$white;
-    text-decoration: underline;
-  }
+  @include footer-link;
 }
 
 .footer__description {
@@ -90,24 +167,7 @@
 }
 
 .footer__newsletter-input {
-  flex: 1;
-  padding: variables.$spacing-sm variables.$spacing-md;
-  font-family: variables.$font-family-primary;
-  font-size: variables.$font-size-base;
-  border: 1px solid rgba(variables.$white, 0.3);
-  border-radius: variables.$border-radius;
-  background-color: rgba(variables.$white, 0.1);
-  color: variables.$white;
-
-  &::placeholder {
-    color: rgba(variables.$white, 0.6);
-  }
-
-  &:focus {
-    outline: none;
-    border-color: variables.$primary-color;
-    background-color: rgba(variables.$white, 0.2);
-  }
+  @include footer-newsletter-input;
 }
 
 .footer__newsletter-disclaimer {
@@ -120,31 +180,7 @@
 }
 
 .footer__newsletter-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: variables.$spacing-xs variables.$spacing-md;
-  font-family: variables.$font-family-secondary;
-  font-size: variables.$font-size-sm;
-  font-weight: 600;
-  text-decoration: none;
-  border: 2px solid transparent;
-  border-radius: variables.$border-radius;
-  cursor: pointer;
-  transition: variables.$transition-base;
-  text-align: center;
-  min-height: 36px;
-  background-color: variables.$accent-color;
-  color: variables.$white;
-  border-color: variables.$accent-color;
-  white-space: nowrap;
-
-  &:hover {
-    background-color: color.adjust(variables.$accent-color, $lightness: -10%);
-    border-color: color.adjust(variables.$accent-color, $lightness: -10%);
-    color: variables.$white;
-    text-decoration: none;
-  }
+  @include footer-newsletter-btn;
 }
 
 .footer__bottom {
@@ -183,17 +219,11 @@
 }
 
 .footer__bottom-link {
+  @include footer-link;
   font-family: variables.$font-family-primary;
   font-size: variables.$font-size-sm;
   font-weight: variables.$font-weight-normal;
   color: rgba(variables.$white, 0.6);
-  text-decoration: none;
-  transition: variables.$transition-base;
-
-  &:hover {
-    color: variables.$white;
-    text-decoration: underline;
-  }
 }
 
 .footer__social-links {
@@ -205,22 +235,7 @@
 }
 
 .footer__social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background-color: variables.$dark-gray;
-  border-radius: 50%;
-  color: variables.$white;
-  text-decoration: none;
-  transition: variables.$transition-base;
-
-  &:hover {
-    background-color: variables.$accent-color;
-    color: variables.$white;
-    text-decoration: none;
-  }
+  @include footer-social-link;
 }
 
 .footer__social-icon {
@@ -229,8 +244,7 @@
   fill: currentColor;
 }
 
-// === HCP Leadership Custom Footer ===
-
+// HCP Leadership Custom Footer
 .footer-background-b {
   background: variables.$light-gray;
   color: variables.$hero-subtitle-color;
@@ -242,7 +256,7 @@
 
 .footer-background-c {
   background: variables.$top-bar-bg;
-  color: #c6c6c6;
+  color: variables.$text-light;
   width: 100%;
   min-height: 145px;
   display: flex;
@@ -250,7 +264,7 @@
 }
 
 .site-footer {
-  background: transparent !important;
+  background: transparent;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -282,6 +296,7 @@
   text-decoration: none;
   transition: color 0.2s;
 }
+
 .menu-item a:hover,
 .menu-item a:focus {
   text-decoration: underline;
@@ -289,7 +304,7 @@
 
 // Modifier for underlined text
 .text-underline {
-  text-decoration: underline !important;
+  text-decoration: underline;
 }
 
 // Footer bottom section
@@ -306,12 +321,13 @@
 }
 
 #footer-navigation-b .menu-item a {
-  color: #c6c6c6;
+  color: variables.$text-light;
   font-size: 15px;
   font-weight: 400;
   text-decoration: none;
   transition: color 0.2s;
 }
+
 #footer-navigation-b .menu-item a:hover,
 #footer-navigation-b .menu-item a:focus {
   text-decoration: underline;
@@ -319,43 +335,51 @@
 }
 
 #copyright {
-  color: #c6c6c6;
+  color: variables.$text-light;
   font-size: 15px;
   font-family: variables.$font-family-primary;
   margin-top: 12px;
 }
+
 #copyright a {
-  color: #c6c6c6;
+  color: variables.$text-light;
   text-decoration: underline;
   transition: color 0.2s;
 }
+
 #copyright a:hover {
   color: variables.$white;
 }
+
 #copyright p {
   margin: 0;
   font-size: 13px;
-  color: #c6c6c6;
+  color: variables.$text-light;
 }
 
 // Utility classes
 .text-center {
-  text-align: center !important;
+  text-align: center;
 }
+
 .text-left {
-  text-align: left !important;
+  text-align: left;
 }
+
 .text-right {
-  text-align: right !important;
+  text-align: right;
 }
+
 .mt-0 {
-  margin-top: 0 !important;
+  margin-top: 0;
 }
+
 .mb-0 {
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
 }
+
 .text-uppercase {
-  text-transform: uppercase !important;
+  text-transform: uppercase;
 }
 
 // Responsive adjustments
@@ -365,14 +389,17 @@
     padding-left: 0;
     padding-right: 0;
   }
+
   .menu {
     flex-direction: column;
     gap: 12px;
     align-items: center;
   }
+
   .site-footer {
     padding: 0 8px;
   }
+
   .site-info {
     align-items: center;
     text-align: center;

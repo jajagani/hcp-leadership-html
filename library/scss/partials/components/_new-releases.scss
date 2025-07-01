@@ -1,24 +1,82 @@
 // New Releases component for HarperCollins Leadership website
 
+@use "../../modules/variables" as variables;
+@use "../custom-grid" as customGrid;
+
 .new-releases {
-  padding: $spacing-3xl 0;
-  background-color: $white;
+  padding: variables.$spacing-3xl 0;
+  background-color: variables.$white;
 
   &__grid {
-    display: grid;
-    gap: $spacing-xl;
-
-    @media (min-width: $breakpoint-md) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: $spacing-2xl;
-    }
-
-    @media (min-width: $breakpoint-lg) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    @media (min-width: $breakpoint-xl) {
-      grid-template-columns: repeat(4, 1fr);
-    }
+    @include customGrid.grid-base();
+    @include customGrid.grid-columns(250px);
+    gap: customGrid.$custom-grid-gap-lg;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
+}
+
+.new-releases__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  background-color: variables.$light-gray;
+  border-radius: variables.$border-radius-lg;
+  overflow: hidden;
+  box-shadow: variables.$shadow-sm;
+  transition: all 0.3s ease-in-out;
+  max-width: 250px;
+  max-height: 250px;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: variables.$shadow-xl;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    height: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    margin: 0 auto;
+    padding: 0;
+    transition: transform 0.3s ease-in-out;
+    border-radius: variables.$border-radius-lg;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+.new-releases__overlay {
+  position: absolute;
+  left: 0.5rem;
+  bottom: 0.5rem;
+  width: calc(100% - 1rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  color: variables.$white;
+  font-size: 11px;
+  font-weight: 500;
+  text-align: center;
+  padding: 1.1rem 1.5rem;
+  border-radius: 0;
+  font-family: variables.$font-family-brandon;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 2;
 }
