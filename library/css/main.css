@@ -1750,9 +1750,6 @@ img {
 }
 .hero__subtitle {
   font-family: "Plantin", "EB Garamond", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-family: "Plantin", "EB Garamond", serif;
   font-size: 19.2px;
   font-weight: 300;
   color: #111111;
@@ -1771,6 +1768,10 @@ img {
   word-wrap: break-word;
   overflow-wrap: break-word;
   hyphens: auto;
+  font-family: "Plantin", "EB Garamond", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17.6px;
   margin: 0;
 }
 .hero__subtitle--centered {
@@ -1802,9 +1803,6 @@ img {
   gap: 16px;
   padding: 0 60px;
   margin: 0;
-}
-.hero__text-outer > * {
-  max-width: 550px;
 }
 .hero__text-outer--centered {
   align-items: center;
@@ -1979,6 +1977,91 @@ img {
   flex-direction: row-reverse;
 }
 
+.hero--split-50 .hero__text-outer {
+  flex: 1 1 50%;
+  width: 50%;
+}
+.hero--split-50 .hero__image {
+  flex: 1 1 50%;
+  width: 50%;
+}
+.hero--split-50 .hero__image img {
+  width: 100%;
+}
+
+.hero--split-60-40 .hero__text-outer {
+  flex: 1 1 60%;
+  width: 60%;
+}
+.hero--split-60-40 .hero__image {
+  flex: 1 1 40%;
+  width: 40%;
+  justify-content: center;
+  align-items: center;
+}
+.hero--split-60-40 .hero__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero--split-30-70 .hero__text-outer {
+  flex: 1 1 30%;
+  width: 30%;
+}
+.hero--split-30-70 .hero__image {
+  flex: 1 1 70%;
+  width: 70%;
+}
+.hero--split-30-70 .hero__image img {
+  width: 100%;
+}
+
+.hero--padding {
+  padding: 30px;
+}
+
+.hero--bg-light-gray {
+  background-color: #e3e8eb;
+}
+
+.hero__subtitle-container--columns {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+.hero__subtitle-container--columns .hero__subtitle {
+  max-width: none;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.hero__text-outer--top-centered {
+  justify-content: flex-start !important;
+  align-items: center;
+  align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+  .hero--split-50 .hero__text-outer,
+  .hero--split-60-40 .hero__text-outer,
+  .hero--split-30-70 .hero__text-outer {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+  .hero--split-50 .hero__image,
+  .hero--split-60-40 .hero__image,
+  .hero--split-30-70 .hero__image {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+  .hero--split-50 .hero__image img,
+  .hero--split-60-40 .hero__image img,
+  .hero--split-30-70 .hero__image img {
+    width: 100%;
+  }
+}
 .hero--bg-blue {
   background-color: #234f6a;
 }
@@ -2228,6 +2311,12 @@ img {
   justify-content: center;
   align-items: center;
   align-self: center;
+}
+
+.hero__title--brandon-size {
+  font-family: "Brandon Grotesque", "Inter", Arial, sans-serif;
+  font-size: 20.9px;
+  text-transform: uppercase;
 }
 
 @media (max-width: 991px) {
@@ -2948,7 +3037,7 @@ img {
 }
 
 .bg-light-gray {
-  background-color: #e3e8eb;
+  background-color: #e3e8eb !important;
 }
 
 .new-releases__grid a {
@@ -2987,6 +3076,14 @@ img {
   padding: 64px 0;
 }
 
+.new-releases__title {
+  text-align: center;
+  font-size: 28px !important;
+  margin-bottom: 48px;
+  font-family: "Brandon Grotesque", "Inter", Arial, sans-serif !important;
+  text-transform: uppercase;
+}
+
 .new-releases__link {
   position: relative;
   display: flex;
@@ -2994,7 +3091,7 @@ img {
   justify-content: center;
   padding: 0;
   margin: auto;
-  background-color: #e3e8eb;
+  background-color: #f3f4f6;
   border-radius: 0;
   overflow: hidden;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -3032,13 +3129,13 @@ img {
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.85);
-  color: #ffffff;
+  color: #fff;
   font-size: 0.85rem;
   font-weight: 400;
   text-align: center;
   padding: 1.1rem 1.5rem;
   border-radius: 0;
-  font-family: "Brandon Grotesque", "Inter", Arial, sans-serif;
+  font-family: "Brandon Grotesque", "Inter", Arial, sans-serif !important;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;
@@ -3151,15 +3248,20 @@ img {
 }
 
 .topics__title {
-  font-family: "Plantin", "EB Garamond", serif;
-  font-size: 30.4px;
   text-align: center;
+  font-size: 19.2px;
   margin-bottom: 48px;
 }
 @media (min-width: 768px) {
   .topics__title {
     font-size: 3rem;
   }
+}
+.topics__title-cursive {
+  font-family: "Zooja Pro", cursive, sans-serif;
+  font-size: 1.8em;
+  padding-right: 0.1em;
+  font-weight: 400;
 }
 
 .topics__grid {
@@ -3413,7 +3515,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ffffff;
+  background: #fff;
   border-radius: 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   padding: 24px;
@@ -3436,7 +3538,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ffffff;
+  background: #fff;
   border-radius: 0 0 0 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   padding: 24px;
@@ -3915,6 +4017,270 @@ img {
     margin-top: 50px;
   }
 }
+.book__col {
+  width: 100%;
+}
+
+.book__card {
+  display: flex;
+  padding: 10px;
+  gap: 20px;
+}
+.book__card .thumb {
+  width: 200px;
+  height: 285px;
+  position: relative;
+  margin: 0;
+}
+.book__card .thumb .redirection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.book__card .thumb img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.book__card .content {
+  max-width: 53%;
+  flex-shrink: 0;
+  padding: 12px 0 0;
+}
+.book__card .content .title {
+  font-size: 19px;
+  line-height: 22px;
+  color: #487fc2;
+  font-family: "Brandon Grotesque", "Inter", Arial, sans-serif;
+  text-transform: uppercase;
+}
+.book__card .content .title a {
+  font-size: 19px;
+  line-height: 22px;
+  color: #487fc2;
+  font-family: "Brandon Grotesque", "Inter", Arial, sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.book__card .content .title a:hover {
+  color: #e9b841;
+  text-decoration: underline;
+}
+.book__card .content .sub__title {
+  font-size: 19px;
+  line-height: 22px;
+  color: #111111;
+  margin: 10px 0 0;
+}
+.book__card .content .desc {
+  margin: 16px 0 0;
+}
+.book__card:hover .content .title a {
+  color: #e9b841;
+  text-decoration: underline;
+}
+
+.vertical__layout .row {
+  row-gap: 30px;
+}
+.vertical__layout .book__card {
+  flex-direction: column;
+  gap: 12px;
+}
+.vertical__layout .book__card .thumb {
+  width: 195px;
+  margin: auto;
+  height: 301px;
+  max-height: inherit;
+  display: flex;
+  align-items: flex-end;
+}
+.vertical__layout .book__card .content {
+  max-width: 100%;
+  text-align: center;
+  padding: 0;
+}
+.vertical__layout .book__card .content .title {
+  font-size: 16px;
+  margin: 0;
+}
+.vertical__layout .book__card .content .title a {
+  font-size: 16px;
+}
+.vertical__layout .book__card .content .desc {
+  margin: 4px 0 2px;
+}
+.vertical__layout .book__card .content .name {
+  display: block;
+  margin: 4px 0 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "Brandon Grotesque", "Inter", Arial, sans-serif;
+}
+
+.cmn__heading {
+  margin-bottom: 30px;
+}
+
+.section-desc {
+  font-size: 19px;
+  line-height: 1.4;
+  margin: 30px 0 0;
+  color: #111111;
+}
+
+.retailer__logo {
+  padding: 40px 0 60px;
+}
+.retailer__logo-grid {
+  max-width: 860px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px 40px;
+}
+.retailer__logo-grid .logo__card {
+  display: flex;
+}
+.retailer__logo-grid .logo__card a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.retailer__logo-grid .logo__card a img {
+  max-width: 100%;
+  height: auto;
+}
+
+.book__promo {
+  padding: 20px 0;
+  background: #e3e8eb;
+  margin: 10px 0;
+}
+.book__promo .container {
+  max-width: 1400px;
+  padding: 0;
+}
+.book__promo .promo__flex {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+}
+.book__promo .promo__flex-side {
+  width: 25%;
+  padding: 10px 20px;
+  flex: 1 1 auto;
+}
+.book__promo .promo__flex-side .promo__img {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.book__promo .promo__flex-side .promo__img img {
+  max-width: 100%;
+  height: auto;
+}
+.book__promo .promo__flex-content {
+  width: 50%;
+  padding: 10px 20px;
+  flex: 1 1 auto;
+  text-align: center;
+}
+.book__promo .promo__flex-content .promo__hdng {
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 600;
+  font-family: "Plantin", "EB Garamond", serif;
+}
+
+.author__section {
+  padding: 110px 0 70px;
+  background: #e3e8eb;
+}
+.author__section .container {
+  max-width: 1400px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.author__section .author__content {
+  max-width: 800px;
+  padding: 20px 50px;
+}
+.author__section .author__content-title {
+  font-size: 35px;
+  line-height: 1.2;
+  color: #111111;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.author__section .author__content-subtitle {
+  font-family: "Brandon Grotesque", "Inter", Arial, sans-serif;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  font-size: 16px;
+  margin: 16px 0;
+}
+.author__section .author__content p {
+  line-height: 1.5;
+  color: #111111;
+  font-size: 17px;
+  margin: 0 0 16px;
+}
+.author__section .author__content ul {
+  margin: 16px 0 0;
+}
+.author__section .author__content ul li {
+  line-height: 1.5;
+  color: #111111;
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+.author__section .author__content .link__btn {
+  margin: 20px 0 0;
+}
+.author__section .author__content .link__btn-action {
+  font-family: "Brandon Grotesque", "Inter", Arial, sans-serif;
+  font-size: 16px;
+  color: #487fc2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.author__section .author__aside {
+  width: 25%;
+  padding: 0 30px;
+}
+.author__section .promo-box {
+  box-shadow: none;
+  padding-top: 200px;
+}
+.author__section .promo-box__img-wrap {
+  width: 230px;
+  height: 230px;
+  border-width: 2px;
+  box-shadow: none;
+}
+.author__section .promo-box .by__text {
+  display: block;
+  line-height: 1.5;
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+.author__section .promo-box__title {
+  margin: 0 0 40px;
+  font-size: 32px;
+  line-height: 1.1;
+  font-family: "Plantin", "EB Garamond", serif;
+  text-transform: uppercase;
+}
+.author__section .promo-box__desc {
+  margin-bottom: 0;
+  color: #111111;
+}
+
 @font-face {
   font-family: "Brandon Grotesque";
   src: url("https://db.onlinewebfonts.com/t/7a6c42836c00680f20083f745d05cfae.woff2") format("woff2"), url("https://db.onlinewebfonts.com/t/7a6c42836c00680f20083f745d05cfae.woff") format("woff");

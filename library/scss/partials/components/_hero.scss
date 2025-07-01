@@ -150,10 +150,11 @@
   }
 
   &__subtitle {
+    @include hero-subtitle-base;
     font-family: "Plantin", "EB Garamond", serif;
     font-weight: 400;
     font-style: normal;
-    @include hero-subtitle-base;
+    font-size: 17.6px;
     margin: 0;
   }
 
@@ -189,10 +190,6 @@
     gap: 16px;
     padding: 0 variables.$hero-text-outer-padding-x-desktop;
     margin: 0;
-
-    > * {
-      max-width: 550px;
-    }
   }
 
   &__text-outer--centered {
@@ -395,6 +392,111 @@
 // Hero Variants
 .hero--reverse {
   flex-direction: row-reverse;
+}
+
+// Width proportion modifiers
+.hero--split-50 {
+  .hero__text-outer {
+    flex: 1 1 50%;
+    width: 50%;
+  }
+
+  .hero__image {
+    flex: 1 1 50%;
+    width: 50%;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.hero--split-60-40 {
+  .hero__text-outer {
+    flex: 1 1 60%;
+    width: 60%;
+  }
+
+  .hero__image {
+    flex: 1 1 40%;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.hero--split-30-70 {
+  .hero__text-outer {
+    flex: 1 1 30%;
+    width: 30%;
+  }
+
+  .hero__image {
+    flex: 1 1 70%;
+    width: 70%;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+// Padding modifier
+.hero--padding {
+  padding: 30px;
+}
+
+// Background color modifier
+.hero--bg-light-gray {
+  background-color: variables.$light-gray;
+}
+
+// Column layout modifier for hero subtitles
+.hero__subtitle-container--columns {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+
+  .hero__subtitle {
+    max-width: none;
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+// Top-centered content modifier
+.hero__text-outer--top-centered {
+  justify-content: flex-start !important;
+  align-items: center;
+  align-self: flex-start;
+}
+
+// Mobile responsive adjustments for width proportions
+@media (max-width: variables.$breakpoint-mobile) {
+  .hero--split-50,
+  .hero--split-60-40,
+  .hero--split-30-70 {
+    .hero__text-outer {
+      flex: 1 1 100%;
+      width: 100%;
+    }
+
+    .hero__image {
+      flex: 1 1 100%;
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
 
 .hero--bg-blue {
@@ -666,4 +768,11 @@
   justify-content: center;
   align-items: center;
   align-self: center;
+}
+
+// Brandon title modifier
+.hero__title--brandon-size {
+  font-family: variables.$font-family-brandon;
+  font-size: 20.9px;
+  text-transform: uppercase;
 }
