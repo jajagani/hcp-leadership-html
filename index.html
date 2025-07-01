@@ -21,6 +21,11 @@
       href="https://fonts.googleapis.com/css2?family=Georgia:wght@700&family=Pacifico&display=swap"
       rel="stylesheet"
     />
+    <!-- Brandon Grotesque alternative with multiple weights -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <!-- Google Fonts fallback for Plantin (closest: EB Garamond) -->
     <link
       href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap"
@@ -57,25 +62,115 @@
       rel="stylesheet"
     />
     <link
-      href="https://db.onlinewebfonts.com/c/4c40c7f27503517082e3857518913bab?family=Brandon+Grotesque+Bold"
+      href="https://db.onlinewebfonts.com/c/8c3c6f5e3d6b3b3b3b3b3b3b3b3b3b3b?family=Brandon+Grotesque"
       rel="stylesheet"
     />
-    <link href="https://db.onlinewebfonts.com/c/a52d31ec45dff4f55779eddaada28b32?family=Brandon+Grotesque+Web+Black" rel="stylesheet" />
+    <link
+      href="https://db.onlinewebfonts.com/c/a52d31ec45dff4f55779eddaada28b32?family=Brandon+Grotesque+Web+Black"
+      rel="stylesheet"
+    />
+    <link
+      href="https://db.onlinewebfonts.com/c/a285b6c725c7bb306b0de84c809fa46e?family=Brandon+Grotesque+Web+Italic"
+      rel="stylesheet"
+    />
     <!-- Font Awesome for button icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap"
+    />
     <style>
+      @font-face {
+        font-family: "Brandon Grotesque";
+        src: url("https://db.onlinewebfonts.com/t/8c3c6f5e3d6b3b3b3b3b3b3b3b3b3b3b.eot");
+        src: url("https://db.onlinewebfonts.com/t/8c3c6f5e3d6b3b3b3b3b3b3b3b3b3b3b.eot?#iefix")
+            format("embedded-opentype"),
+          url("https://db.onlinewebfonts.com/t/8c3c6f5e3d6b3b3b3b3b3b3b3b3b3b3b.woff2")
+            format("woff2"),
+          url("https://db.onlinewebfonts.com/t/8c3c6f5e3d6b3b3b3b3b3b3b3b3b3b3b.woff")
+            format("woff"),
+          url("https://db.onlinewebfonts.com/t/8c3c6f5e3d6b3b3b3b3b3b3b3b3b3b3b.ttf")
+            format("truetype"),
+          url("https://db.onlinewebfonts.com/t/8c3c6f5e3d6b3b3b3b3b3b3b3b3b3b3b.svg#Brandon Grotesque")
+            format("svg");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* Brandon Grotesque Medium (500) */
+      @font-face {
+        font-family: "Brandon Grotesque";
+        src: url("https://db.onlinewebfonts.com/t/8c3c6f5e3d6b3b3b3b3b3b3b3b3b3b3b.eot");
+        src: url("https://db.onlinewebfonts.com/t/8c3c6f5e3d6b3b3b3b3b3b3b3b3b3b3b.eot?#iefix")
+            format("embedded-opentype"),
+          url("https://db.onlinewebfonts.com/t/8c3c6f5e3d6b3b3b3b3b3b3b3b3b3b3b.woff2")
+            format("woff2"),
+          url("https://db.onlinewebfonts.com/t/8c3c6f5e3d6b3b3b3b3b3b3b3b3b3b3b.woff")
+            format("woff"),
+          url("https://db.onlinewebfonts.com/t/8c3c6f5e3d6b3b3b3b3b3b3b3b3b3b3b.ttf")
+            format("truetype"),
+          url("https://db.onlinewebfonts.com/t/8c3c6f5e3d6b3b3b3b3b3b3b3b3b3b3b.svg#Brandon Grotesque")
+            format("svg");
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* Brandon Grotesque Bold (700) */
+      @font-face {
+        font-family: "Brandon Grotesque";
+        src: url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.eot");
+        src: url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.eot?#iefix")
+            format("embedded-opentype"),
+          url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.woff2")
+            format("woff2"),
+          url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.woff")
+            format("woff"),
+          url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.ttf")
+            format("truetype"),
+          url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.svg#Brandon Grotesque Web Black")
+            format("svg");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* Brandon Grotesque Extra Bold (800) for hover states */
+      @font-face {
+        font-family: "Brandon Grotesque";
+        src: url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.eot");
+        src: url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.eot?#iefix")
+            format("embedded-opentype"),
+          url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.woff2")
+            format("woff2"),
+          url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.woff")
+            format("woff"),
+          url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.ttf")
+            format("truetype"),
+          url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.svg#Brandon Grotesque Web Black")
+            format("svg");
+        font-weight: 800;
+        font-style: normal;
+        font-display: swap;
+      }
+
       @font-face {
         font-family: "Brandon Grotesque Web Black";
         src: url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.eot");
-        src: url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.eot?#iefix") format("embedded-opentype"),
-             url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.woff2") format("woff2"),
-             url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.woff") format("woff"),
-             url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.ttf") format("truetype"),
-             url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.svg#Brandon Grotesque Web Black") format("svg");
+        src: url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.eot?#iefix")
+            format("embedded-opentype"),
+          url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.woff2")
+            format("woff2"),
+          url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.woff")
+            format("woff"),
+          url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.ttf")
+            format("truetype"),
+          url("https://db.onlinewebfonts.com/t/a52d31ec45dff4f55779eddaada28b32.svg#Brandon Grotesque Web Black")
+            format("svg");
         font-weight: 900;
         font-style: normal;
         font-display: swap;
@@ -197,21 +292,27 @@
       <section class="hero">
         <div class="hero__container">
           <!-- hero--reverse -->
-          <div class="hero__text-outer">
-            <div class="hero__text">
-              <div class="hero__title-container">
-                <h2 class="hero__title">
-                  Success starts <span class="hero__title-cursive ">here</span>
+          <div class="hero__text-outer hero__text-outer--centered">
+            <div class="hero__text hero__text--centered hero__text--gap-lg">
+              <div
+                class="hero__title-container hero__title-container--centered"
+              >
+                <h2 class="hero__title hero__title--centered">
+                  Success starts <span class="hero__title-cursive">here</span>
                 </h2>
               </div>
-              <div class="hero__subtitle-container">
-                <p class="hero__subtitle">
+              <div
+                class="hero__subtitle-container hero__subtitle-container--centered"
+              >
+                <p class="hero__subtitle hero__subtitle--centered">
                   Books and resources from HarperCollins Leadership equip you to
                   grow in your career and life.
                 </p>
               </div>
-              <div class="hero__button-container">
-                <a href="/books" class="btn btn--primary btn--large btn--arrow">
+              <div
+                class="hero__button-container hero__button-container--centered"
+              >
+                <a href="/books" class="btn btn--primary btn--arrow">
                   Explore Books
                 </a>
               </div>
@@ -235,119 +336,339 @@
               alt="Woman shopping for books in a bookstore"
             />
           </div>
-          <div class="hero__text-outer">
-            <div class="hero__title-container--shifted">
-              <div class="hero__title-container--shifted-inner">
-              <h2 class="hero__title ">
-                Equip your new
-              </h2>
+          <div class="hero__text-outer hero__text-outer--centered">
+            <div
+              class="hero__text hero__text--centered hero__text--text-centered hero__text--gap-lg"
+            >
+              <div
+                class="hero__title-container--shifted hero__title-container--centered"
+              >
+                <div class="hero__title-container--shifted-inner">
+                  <h2 class="hero__title hero__title--centered">
+                    Equip your new
+                  </h2>
+                </div>
               </div>
-            </div>
-           <div class="hero__title-container--shifted">
-            <div class="hero__title-container--shifted-inner">
-              <h2 class="hero__title ">
-                managers for success
-              </h2>
-            </div>
-           </div>
-              
-               <div class="hero__title-container--grouped">
-                <p class="hero__subtitle hero__subtitle--white">
+              <div
+                class="hero__title-container--shifted hero__title-container--centered"
+              >
+                <div class="hero__title-container--shifted-inner">
+                  <h2 class="hero__title hero__title--centered">
+                    managers for success
+                  </h2>
+                </div>
+              </div>
+
+              <div
+                class="hero__title-container--grouped hero__subtitle-container--centered"
+              >
+                <p
+                  class="hero__subtitle hero__subtitle--white hero__subtitle--centered"
+                >
                   On average, employees begin supervising others at age 30, but
-                  most don't receive formal leadership training until their
-                  40s.<br />
+                  most don't receive formal leadership training until their 40s.
+                </p>
+                <p
+                  class="hero__subtitle hero__subtitle--white hero__subtitle--centered"
+                >
                   Providing books and online courses as resources to managers is
                   a cost-effective, easy way to set them up for success.
                 </p>
+              </div>
+              <div
+                class="hero__button-container hero__button-container--centered"
+              >
                 <a
                   href="https://www.harpercollinsleadership.com/categories/people-management"
-                  class="btn btn--primary btn--large btn--arrow"
+                  class="btn btn--primary btn--arrow"
                 >
                   View People Management Books
                 </a>
-               </div>
-            </d>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Leadership Intuition Hero Section -->
+      <section class="hero">
+        <div class="hero__container">
+          <div class="hero__text-outer hero__text-outer--fully-centered">
+            <div class="hero__text hero__text--fully-centered">
+              <div
+                class="hero__title-container hero__title-container--fully-centered"
+              >
+                <h2
+                  class="hero__title hero__title--brandon hero__title--fully-centered"
+                >
+                  DEVELOP LEADERSHIP INTUITION
+                </h2>
+              </div>
+              <div
+                class="hero__subtitle-container hero__subtitle-container--fully-centered"
+              >
+                <p
+                  class="hero__subtitle hero__subtitle--brandon hero__subtitle--fully-centered"
+                >
+                  Read an excerpt from John C. Maxwell's classic,
+                  <em
+                    >The 21 Irrefutable Laws of Leadership, 25th Anniversary
+                    Edition</em
+                  >
+                </p>
+              </div>
+              <div
+                class="hero__button-container hero__button-container--fully-centered"
+              >
+                <a
+                  href="/books/the-21-irrefutable-laws-of-leadership"
+                  class="hero__link"
+                >
+                  Take a Look
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="hero__image">
+            <img
+              src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2022/10/28111405/maxwell-book.png"
+              alt="Hardcover of The 21 Irrefutable Laws of Leadership"
+            />
           </div>
         </div>
       </section>
 
       <!-- Topics Section (Reusable Grid) -->
-      <section class="section-grid ">
-        <h2 class="section-title topics__title">Explore by <span class="underline-animated">Category</span></h2>
-        <div class="custom-grid custom-grid--max-3 custom-grid--gap-lg custom-grid--topics ">
-          <a href="https://www.harpercollinsleadership.com/topics/leadership/" class="custom-grid__item topic-link bg-trans">
-            <img src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2023/01/06074905/section-4-book-A-1-297x375.jpg" alt="Activate Your Leadership" />
+      <section class="section-grid">
+        <h2 class="section-title topics__title">
+          Explore by <span class="underline-animated">Category</span>
+        </h2>
+        <div
+          class="custom-grid custom-grid--max-3 custom-grid--gap-lg custom-grid--topics"
+        >
+          <a
+            href="https://www.harpercollinsleadership.com/topics/leadership/"
+            class="custom-grid__item topic-link bg-trans"
+          >
+            <img
+              src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2023/01/06074905/section-4-book-A-1-297x375.jpg"
+              alt="Activate Your Leadership"
+            />
           </a>
-          <a href="https://www.harpercollinsleadership.com/categories/business" class="custom-grid__item topic-link">
-            <img src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2023/01/06075200/section-4-book-C4-1-296x375.jpg" alt="Grow Your Business" />
+          <a
+            href="https://www.harpercollinsleadership.com/categories/business"
+            class="custom-grid__item topic-link"
+          >
+            <img
+              src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2023/01/06075200/section-4-book-C4-1-296x375.jpg"
+              alt="Grow Your Business"
+            />
           </a>
-          <a href="https://www.harpercollinsleadership.com/categories/sales" class="custom-grid__item topic-link">
-            <img src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2023/01/06075112/section-4-book-B3-1-296x375.jpg" alt="Increase Your Sales" />
+          <a
+            href="https://www.harpercollinsleadership.com/categories/sales"
+            class="custom-grid__item topic-link"
+          >
+            <img
+              src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2023/01/06075112/section-4-book-B3-1-296x375.jpg"
+              alt="Increase Your Sales"
+            />
           </a>
-          <a href="https://www.harpercollinsleadership.com/categories/marketing" class="custom-grid__item topic-link">
-            <img src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2023/01/06075247/section-4-book-C3-1-297x375.jpg" alt="Marketing That Works" />
+          <a
+            href="https://www.harpercollinsleadership.com/categories/marketing"
+            class="custom-grid__item topic-link"
+          >
+            <img
+              src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2023/01/06075247/section-4-book-C3-1-297x375.jpg"
+              alt="Marketing That Works"
+            />
           </a>
-          <a href="https://www.harpercollinsleadership.com/categories/people-management" class="custom-grid__item topic-link">
-            <img src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2023/01/06074959/section-4-book-B-1-297x375.jpg" alt="People Management" />
+          <a
+            href="https://www.harpercollinsleadership.com/categories/people-management"
+            class="custom-grid__item topic-link"
+          >
+            <img
+              src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2023/01/06074959/section-4-book-B-1-297x375.jpg"
+              alt="People Management"
+            />
           </a>
-          <a href="https://www.harpercollinsleadership.com/categories/personal-development" class="custom-grid__item topic-link">
-            <img src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2023/01/06075016/section-4-book-A3-1-296x375.jpg" alt="Personal Development" />
+          <a
+            href="https://www.harpercollinsleadership.com/categories/personal-development"
+            class="custom-grid__item topic-link"
+          >
+            <img
+              src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2023/01/06075016/section-4-book-A3-1-296x375.jpg"
+              alt="Personal Development"
+            />
           </a>
         </div>
       </section>
 
       <!-- New & Upcoming Releases Section (Reusable Grid) -->
-      <section class="section-grid ">
-        <h2 class="section-title new-releases__title">New &amp; Upcoming Releases</h2>
-        <div class="custom-grid custom-grid--max-4 custom-grid--gap-lg custom-grid--releases">
+      <section class="section-grid">
+        <h2 class="section-title new-releases__title">
+          New &amp; Upcoming Releases
+        </h2>
+        <div
+          class="custom-grid custom-grid--max-4 custom-grid--gap-sm custom-grid--releases"
+        >
           <div class="custom-grid__item">
-            <a class="new-releases__link" href="https://www.harpercollinsleadership.com/books/who-believed-in-you/" target="_self">
-              <img loading="lazy" decoding="async" src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02130347/who-believed-hardcover-400.png" alt="Who Believed In You?" width="230" height="230" />
+            <a
+              class="new-releases__link"
+              href="https://www.harpercollinsleadership.com/books/who-believed-in-you/"
+              target="_self"
+            >
+              <img
+                loading="lazy"
+                decoding="async"
+                src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02130347/who-believed-hardcover-400.png"
+                alt="Who Believed In You?"
+                width="230"
+                height="230"
+              />
             </a>
-            <div class="new-releases__overlay">Unleash the power of purposeful mentorship. For leaders, mentees, and society at large.</div>
-              </div>
-          <div class="custom-grid__item">
-            <a class="new-releases__link" href="https://nicolelapin.com/money-school-book/" target="_blank" rel="noopener">
-              <img loading="lazy" decoding="async" src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400.png" alt="The Money School" width="230" height="230" />
-            </a>
-            <div class="new-releases__overlay">Realize financial stability and investing confidence with renowned money expert Nicole Lapin.</div>
+            <div class="new-releases__overlay">
+              Unleash the power of purposeful mentorship. For leaders, mentees,
+              and society at large.
             </div>
+          </div>
           <div class="custom-grid__item">
-            <a class="new-releases__link" href="https://www.harpercollinsleadership.com/9781400346929/the-charismatic-leader/" target="_self">
-              <img loading="lazy" decoding="async" src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/03/21150300/charismatic-hardcover-400.png" alt="The Charismatic Leader" width="230" height="230" />
+            <a
+              class="new-releases__link"
+              href="https://nicolelapin.com/money-school-book/"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                loading="lazy"
+                decoding="async"
+                src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02124110/money-school-hardcover-400.png"
+                alt="The Money School"
+                width="230"
+                height="230"
+              />
             </a>
-            <div class="new-releases__overlay">You can light up any room and create deep, meaningful connections.</div>
-              </div>
-          <div class="custom-grid__item">
-            <a class="new-releases__link" href="https://www.harpercollinsleadership.com/9781400253531/marketing-in-the-ai-era/" target="_self">
-              <img loading="lazy" decoding="async" src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/03/21150600/marketing-ai-hardcove-400.png" alt="Marketing in the AI Era" width="230" height="230" />
-            </a>
-            <div class="new-releases__overlay">Transform your marketing strategy and engage with customers in ways never before possible.</div>
+            <div class="new-releases__overlay">
+              Realize financial stability and investing confidence with renowned
+              money expert Nicole Lapin.
             </div>
+          </div>
           <div class="custom-grid__item">
-            <a class="new-releases__link" href="https://www.harpercollinsleadership.com/books/new-science-of-momentum" target="_blank" rel="noopener">
-              <img loading="lazy" decoding="async" src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/03/21150326/new-science-hardcover-400.png" alt="The New Science of Momentum" width="230" height="230" />
+            <a
+              class="new-releases__link"
+              href="https://www.harpercollinsleadership.com/9781400346929/the-charismatic-leader/"
+              target="_self"
+            >
+              <img
+                loading="lazy"
+                decoding="async"
+                src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/03/21150300/charismatic-hardcover-400.png"
+                alt="The Charismatic Leader"
+                width="230"
+                height="230"
+              />
             </a>
-            <div class="new-releases__overlay">Learn how to capture the awesome power of momentum!</div>
-              </div>
-          <div class="custom-grid__item">
-            <a class="new-releases__link" href="https://www.harpercollinsleadership.com/books/little-book-of-data/" target="_self">
-              <img loading="lazy" decoding="async" src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02130633/little-book-data-hardcover-400.png" alt="The Little Book of Data" width="230" height="230" />
-            </a>
-            <div class="new-releases__overlay">Data is not about number crunching. It's about ideas.</div>
+            <div class="new-releases__overlay">
+              You can light up any room and create deep, meaningful connections.
             </div>
+          </div>
           <div class="custom-grid__item">
-            <a class="new-releases__link" href="https://www.harpercollinsleadership.com/books/lead-boldly/" target="_self">
-              <img loading="lazy" decoding="async" src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/05/16082718/lead-boldly-hardcover-400.png" alt="Lead Boldly" width="230" height="230" />
+            <a
+              class="new-releases__link"
+              href="https://www.harpercollinsleadership.com/9781400253531/marketing-in-the-ai-era/"
+              target="_self"
+            >
+              <img
+                loading="lazy"
+                decoding="async"
+                src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/03/21150600/marketing-ai-hardcove-400.png"
+                alt="Marketing in the AI Era"
+                width="230"
+                height="230"
+              />
             </a>
-            <div class="new-releases__overlay">Leadership insights from one of history's most influential voices.</div>
-              </div>
-          <div class="custom-grid__item">
-            <a class="new-releases__link" href="https://www.harpercollinsleadership.com/9781400254842/the-unbreakables/" target="_self">
-              <img loading="lazy" decoding="async" src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/05/16082752/unbreakables-paperback-400.png" alt="The Unbreakables" width="230" height="230" />
-            </a>
-            <div class="new-releases__overlay">International bestseller! Inspiration and motivation to overcome obstacles and create the life you want.</div>
+            <div class="new-releases__overlay">
+              Transform your marketing strategy and engage with customers in
+              ways never before possible.
             </div>
+          </div>
+          <div class="custom-grid__item">
+            <a
+              class="new-releases__link"
+              href="https://www.harpercollinsleadership.com/books/new-science-of-momentum"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                loading="lazy"
+                decoding="async"
+                src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/03/21150326/new-science-hardcover-400.png"
+                alt="The New Science of Momentum"
+                width="230"
+                height="230"
+              />
+            </a>
+            <div class="new-releases__overlay">
+              Learn how to capture the awesome power of momentum!
+            </div>
+          </div>
+          <div class="custom-grid__item">
+            <a
+              class="new-releases__link"
+              href="https://www.harpercollinsleadership.com/books/little-book-of-data/"
+              target="_self"
+            >
+              <img
+                loading="lazy"
+                decoding="async"
+                src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/01/02130633/little-book-data-hardcover-400.png"
+                alt="The Little Book of Data"
+                width="230"
+                height="230"
+              />
+            </a>
+            <div class="new-releases__overlay">
+              Data is not about number crunching. It's about ideas.
+            </div>
+          </div>
+          <div class="custom-grid__item">
+            <a
+              class="new-releases__link"
+              href="https://www.harpercollinsleadership.com/books/lead-boldly/"
+              target="_self"
+            >
+              <img
+                loading="lazy"
+                decoding="async"
+                src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/05/16082718/lead-boldly-hardcover-400.png"
+                alt="Lead Boldly"
+                width="230"
+                height="230"
+              />
+            </a>
+            <div class="new-releases__overlay">
+              Leadership insights from one of history's most influential voices.
+            </div>
+          </div>
+          <div class="custom-grid__item">
+            <a
+              class="new-releases__link"
+              href="https://www.harpercollinsleadership.com/9781400254842/the-unbreakables/"
+              target="_self"
+            >
+              <img
+                loading="lazy"
+                decoding="async"
+                src="https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2025/05/16082752/unbreakables-paperback-400.png"
+                alt="The Unbreakables"
+                width="230"
+                height="230"
+              />
+            </a>
+            <div class="new-releases__overlay">
+              International bestseller! Inspiration and motivation to overcome
+              obstacles and create the life you want.
+            </div>
+          </div>
         </div>
       </section>
 
@@ -361,10 +682,7 @@
               <strong>John C. Maxwell</strong>, <strong>Donald Miller</strong>,
               and dozens of other experts.
             </h3>
-            <a
-              href="/books"
-              class="btn btn--primary btn--large btn--arrow btn--gold"
-            >
+            <a href="/books" class="btn btn--primary btn--arrow btn--gold">
               See the Bestsellers
             </a>
           </div>
@@ -420,7 +738,7 @@
             <a
               href="https://www.edelweiss.plus/#publisher=HKDF"
               target="_blank"
-              class="btn btn--primary btn--large btn--arrow"
+              class="btn btn--primary btn--arrow"
             >
               Edelweiss Catalog
             </a>
@@ -440,7 +758,7 @@
             </p>
             <a
               href="https://www.harpercollinsleadership.com/bulk-orders/#custom"
-              class="btn btn--primary btn--large btn--arrow"
+              class="btn btn--primary btn--arrow"
             >
               Learn More
             </a>
@@ -459,7 +777,7 @@
             </p>
             <a
               href="https://www.harpercollinsleadership.com/bulk-orders/"
-              class="btn btn--primary btn--large btn--arrow"
+              class="btn btn--primary btn--arrow"
             >
               Place an Order
             </a>
