@@ -11,6 +11,7 @@ $dark-gray: #334155; // Dark gray text
 $text-primary: #1d1d1f; // Main text color
 $text-secondary: #64748b; // Secondary text color
 $text-light: #94a3b8; // Light text color
+$text-dark: #111111; // Dark text color (used for descriptions, content text)
 $success-color: #10b981; // Green for success states
 $warning-color: #f59e0b; // Orange for warnings
 $error-color: #ef4444; // Red for errors
@@ -23,8 +24,8 @@ $btn-primary-blue: #487fc2; // Button primary blue
 $btn-text-color: #f7f7f7; // Button text color
 $btn-gold: #e9b841; // Gold button background
 $top-bar-bg: #234f6a; // Top bar background
-$hero-subtitle-color: #111111; // Hero subtitle color
-$search-input-color: #111111; // Search input text color
+$hero-subtitle-color: $text-dark; // Hero subtitle color
+$search-input-color: $text-dark; // Search input text color
 
 // Typography - HarperCollins Leadership Fonts
 $font-family-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",

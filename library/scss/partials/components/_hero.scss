@@ -22,7 +22,7 @@
   font-family: variables.$font-family-plantin;
   font-size: 19.2px;
   font-weight: 300;
-  color: #111111;
+  color: variables.$text-dark;
   line-height: 26.88px;
   letter-spacing: 0.3px;
   margin: 0;
@@ -119,7 +119,7 @@
     font-style: normal;
     letter-spacing: 0.01em;
     font-size: 35.2px;
-    color: #222222;
+    color: variables.$hero-title-color;
     display: inline;
     position: relative;
     text-align: left;
@@ -237,7 +237,7 @@
 
   &__subtitle--brandon {
     box-sizing: border-box;
-    color: rgb(17, 17, 17);
+    color: variables.$text-dark;
     display: block;
     font-family: variables.$font-family-brandon;
     font-size: 17.6px;
@@ -271,7 +271,7 @@
     margin: 0;
 
     &:hover {
-      color: #3a6ba0;
+      color: variables.$secondary-color;
       text-decoration: none;
     }
   }

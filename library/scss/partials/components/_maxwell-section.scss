@@ -1,0 +1,93 @@
+@use "../../modules/variables" as variables;
+
+.maxwell-section {
+  padding: variables.$spacing-3xl 0;
+  text-align: center;
+
+  &__container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 variables.$spacing-xl;
+    display: flex;
+    flex-direction: column;
+    gap: variables.$spacing-2xl;
+  }
+
+  &__title {
+    font-family: variables.$font-family-plantin;
+    font-size: 35.2px;
+    font-weight: variables.$font-weight-bold;
+    line-height: 1.2;
+    color: variables.$text-primary;
+    margin: 0;
+  }
+
+  &__description {
+    font-family: variables.$font-family-plantin;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: variables.$text-dark;
+    margin: 0;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: variables.$spacing-md;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__button {
+    // Button base styles
+    font-family: variables.$font-family-brandon;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-align: center;
+    text-shadow: none;
+    text-size-adjust: 100%;
+    width: auto;
+    height: auto;
+    border: none;
+    border-width: 0;
+    border-style: none;
+    border-radius: 0;
+    padding: 15px 24px 12px 24px;
+    margin: 0;
+    transition: variables.$transition-base;
+    text-decoration: none;
+
+    // Primary button colors
+    background: variables.$btn-primary-blue;
+    color: variables.$btn-text-color;
+
+    &:hover,
+    &:focus {
+      background: variables.$btn-primary-blue;
+      color: variables.$btn-text-color;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid variables.$primary-color;
+      outline-offset: 2px;
+    }
+  }
+}

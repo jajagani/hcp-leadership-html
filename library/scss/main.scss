@@ -25,11 +25,11 @@
 @use "partials/components/leadership-excerpt";
 @use "partials/components/services";
 @use "partials/components/promo-box";
-@use 'partials/components/leadership-collection';
-@use 'partials/components/retailer-logo';
-@use 'partials/components/book-promo';
-@use 'partials/components/author';
-
+@use "partials/components/leadership-collection";
+@use "partials/components/retailer-logo";
+@use "partials/components/book-promo";
+@use "partials/components/author";
+@use "partials/components/maxwell-section";
 
 // Font Face Declarations
 @font-face {

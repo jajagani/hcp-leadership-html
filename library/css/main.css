@@ -1843,7 +1843,7 @@ img {
 }
 .hero__subtitle--brandon {
   box-sizing: border-box;
-  color: rgb(17, 17, 17);
+  color: #111111;
   display: block;
   font-family: "Brandon Grotesque", "Inter", Arial, sans-serif;
   font-size: 17.6px;
@@ -1875,7 +1875,7 @@ img {
   margin: 0;
 }
 .hero__link:hover {
-  color: #3a6ba0;
+  color: #3a7ca5;
   text-decoration: none;
 }
 
@@ -4279,6 +4279,86 @@ img {
 .author__section .promo-box__desc {
   margin-bottom: 0;
   color: #111111;
+}
+
+.maxwell-section {
+  padding: 64px 0;
+  text-align: center;
+}
+.maxwell-section__container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.maxwell-section__title {
+  font-family: "Plantin", "EB Garamond", serif;
+  font-size: 35.2px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1d1d1f;
+  margin: 0;
+}
+.maxwell-section__description {
+  font-family: "Plantin", "EB Garamond", serif;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #111111;
+  margin: 0;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+.maxwell-section__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+.maxwell-section__button {
+  font-family: "Brandon Grotesque", "Inter", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: center;
+  text-shadow: none;
+  text-size-adjust: 100%;
+  width: auto;
+  height: auto;
+  border: none;
+  border-width: 0;
+  border-style: none;
+  border-radius: 0;
+  padding: 15px 24px 12px 24px;
+  margin: 0;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  background: #487fc2;
+  color: #f7f7f7;
+}
+.maxwell-section__button:hover, .maxwell-section__button:focus {
+  background: #487fc2;
+  color: #f7f7f7;
+  text-decoration: none;
+  font-weight: 800;
+}
+.maxwell-section__button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+.maxwell-section__button:focus-visible {
+  outline: 2px solid #002b5b;
+  outline-offset: 2px;
 }
 
 @font-face {
