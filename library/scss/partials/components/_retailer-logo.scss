@@ -3,12 +3,38 @@
 
 .retailer__logo {
   padding: 40px 0 60px;
+
+  .topics__title {
+    margin-bottom: variables.$spacing-xl;
+
+    @media (max-width: variables.$breakpoint-md) {
+      overflow: hidden;
+    }
+
+    &-cursive {
+      @media (max-width: variables.$breakpoint-md) {
+        display: block;
+        padding: 0;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
   &-grid {
     max-width: 860px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px 40px;
+
+    @media (max-width: variables.$breakpoint-md) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    @media screen and (min-width: variables.$breakpoint-md) and (max-width: variables.$breakpoint-lg) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
 
     .logo__card {
       display: flex;

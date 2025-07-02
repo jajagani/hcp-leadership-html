@@ -256,6 +256,21 @@ $light-gray: #e3e8eb !default;
   }
 }
 
+.topics__subtitle {
+  margin: variables.$spacing-lg 0 variables.$spacing-md;
+  text-align: center;
+  font-size: 20.8px;
+  line-height: 1.2;
+  letter-spacing: 0.96px;
+
+  &-cursive {
+    font-family: variables.$font-family-zooja;
+    font-size: 1.8em;
+    padding-right: 0.1em;
+    font-weight: 400;
+  }
+}
+
 .topics__grid {
   display: grid;
   grid-template-columns: 1fr;

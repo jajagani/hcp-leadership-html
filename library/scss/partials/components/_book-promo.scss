@@ -16,10 +16,18 @@
     width: 100%;
     align-items: center;
 
+    @media (max-width: variables.$breakpoint-md) {
+      gap: 20px;
+    }
+
     &-side {
       width: 25%;
       padding: 10px 20px;
       flex: 1 1 auto;
+
+      @media (max-width: variables.$breakpoint-md) {
+        width: 100%;
+      }
 
       .promo__img {
         width: 100%;
@@ -37,6 +45,14 @@
       padding: 10px 20px;
       flex: 1 1 auto;
       text-align: center;
+
+      @media (max-width: variables.$breakpoint-md) {
+        width: 100%;
+      }
+
+      @media screen and (min-width: variables.$breakpoint-md) and (max-width: variables.$breakpoint-lg) {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
 
       .promo__hdng {
         font-size: 30px;

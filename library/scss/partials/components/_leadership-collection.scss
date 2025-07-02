@@ -1,6 +1,27 @@
 @use '../../modules/variables' as variables;
 @use '../../modules/mixins' as mixins;
 
+.leadership-collection {
+  .custom-grid {
+    @media (max-width: variables.$breakpoint-md) {
+      gap: 8px;
+    }
+  }
+
+  .cmn__heading {
+    @media (max-width: variables.$breakpoint-md) {
+      padding: 0 16px;
+      overflow: hidden;
+    }
+  }
+
+  .custom-grid-min-4 {
+    @media (max-width: variables.$breakpoint-md) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
 .book__col {
   width: 100%;
 }
@@ -10,11 +31,21 @@
   padding: 10px;
   gap: 20px;
 
+  @media (max-width: variables.$breakpoint-md) {
+    flex-direction: column;
+  }
+
   .thumb {
     width: 200px;
     height: 285px;
     position: relative;
     margin: 0;
+
+    @media (max-width: variables.$breakpoint-md) {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+    }
 
     .redirection {
       @include mixins.absoluteTopLeft;
@@ -30,6 +61,11 @@
     max-width: 53%;
     flex-shrink: 0;
     padding: 12px 0 0;
+
+    @media (max-width: variables.$breakpoint-md) {
+      max-width: 100%;
+      text-align: center;
+    }
 
     .title {
       font-size: 19px;
@@ -93,6 +129,12 @@
       max-height: inherit;
       display: flex;
       align-items: flex-end;
+
+      @media (max-width: variables.$breakpoint-md) {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+      }
     }
 
     .content {

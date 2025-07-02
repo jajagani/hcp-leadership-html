@@ -2,7 +2,7 @@
 @use '../../modules/mixins' as mixins;
 
 .author__section {
-  padding: 110px 0 70px;
+  padding: 40px 0 70px;
   background: variables.$light-gray;
 
   .container {
@@ -14,6 +14,15 @@
   .author__content {
     max-width: 800px;
     padding: 20px 50px;
+
+    @media (max-width: variables.$breakpoint-md) {
+      padding: 0;
+    }
+
+    @media screen and (min-width: variables.$breakpoint-lg) and (max-width: variables.$breakpoint-xl) {
+      max-width: 65%;
+      padding-left: 0;
+    }
 
     &-title {
       font-size: 35px;
@@ -56,6 +65,7 @@
         font-size: 16px;
         color: variables.$hero-here-color;
         text-transform: uppercase;
+        font-weight: 700;
         letter-spacing: 1px;
       }
     }
@@ -64,17 +74,37 @@
   .author__aside {
     width: 25%;
     padding: 0 30px;
+    margin-top: 100px;
+
+    @media (max-width: variables.$breakpoint-md) {
+      width: 100%;
+    }
+
+    @media screen and (min-width: variables.$breakpoint-lg) and (max-width: variables.$breakpoint-xl) {
+      width: 35%;
+    }
   }
 
   .promo-box {
     box-shadow: none;
-    padding-top: 200px;
+    padding-top: 150px;
+
+    @media (max-width: variables.$breakpoint-md) {
+      background: none;
+      min-height: inherit;
+    }
+
+    @media screen and (min-width: variables.$breakpoint-md) and (max-width: variables.$breakpoint-lg) {
+      background: variables.$white;
+      margin: 50px auto 0;
+    }
 
     &__img-wrap {
       width: 230px;
       height: 230px;
       border-width: 2px;
       box-shadow: none;
+      top: -100px;
     }
 
     .by__text {
@@ -95,6 +125,10 @@
     &__desc {
       margin-bottom: 0;
       color: variables.$hero-subtitle-color;
+
+      @media (max-width: variables.$breakpoint-md) {
+        margin-top: 0;
+      }
     }
   }
 }
