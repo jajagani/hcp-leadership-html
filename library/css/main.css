@@ -1812,6 +1812,16 @@ img {
   margin-left: 0.2em;
   line-height: 1;
 }
+@media (max-width: 768px) {
+  .hero .hero__title-cursive {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin-left: 0;
+    display: inline;
+    white-space: nowrap;
+  }
+}
 .hero__subtitle-container p {
   font-family: "Plantin", "EB Garamond", serif;
   font-size: 19.2px;
@@ -1908,6 +1918,16 @@ img {
   padding: 0 130px;
   margin: 0;
 }
+@media (max-width: 1400px) {
+  .hero__text-outer {
+    padding: 0 100px;
+  }
+}
+@media (max-width: 1200px) {
+  .hero__text-outer {
+    padding: 0 80px;
+  }
+}
 @media (max-width: 992px) {
   .hero__text-outer {
     padding: 0 60px;
@@ -1915,7 +1935,13 @@ img {
 }
 @media (max-width: 768px) {
   .hero__text-outer {
+    padding: 0 50px;
+  }
+}
+@media (max-width: 768px) {
+  .hero__text-outer {
     padding: 0 40px;
+    width: 100%;
   }
 }
 .hero__text-outer--start {

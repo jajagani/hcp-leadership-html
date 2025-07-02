@@ -197,6 +197,15 @@
     left: 100%;
     margin-left: 0.2em;
     line-height: 1;
+
+    @media (max-width: variables.$breakpoint-mobile) {
+      position: relative;
+      left: auto;
+      top: auto;
+      margin-left: 0;
+      display: inline;
+      white-space: nowrap;
+    }
   }
 
   // Parent container for subtitle styling
@@ -296,12 +305,25 @@
     padding: 0 130px;
     margin: 0;
 
+    @media (max-width: 1400px) {
+      padding: 0 100px;
+    }
+
+    @media (max-width: 1200px) {
+      padding: 0 80px;
+    }
+
     @media (max-width: variables.$breakpoint-lg) {
       padding: 0 60px;
     }
 
+    @media (max-width: 768px) {
+      padding: 0 50px;
+    }
+
     @media (max-width: variables.$breakpoint-mobile) {
       padding: 0 40px;
+      width: 100%;
     }
   }
 
