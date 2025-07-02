@@ -627,6 +627,111 @@
   font-family: variables.$font-family-brandon;
 }
 
+// Ebook Sale Section Styles
+.ebook-sale__title {
+  font-family: variables.$font-family-brandon;
+  font-size: 20.8px;
+  font-weight: variables.$font-weight-bold;
+  text-align: center;
+  margin-bottom: variables.$spacing-md;
+}
+
+.ebook-sale__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ebook-sale__image {
+  width: 293px;
+  height: auto;
+  display: block;
+  margin-bottom: variables.$spacing-sm;
+}
+
+.ebook-sale__price {
+  font-family: variables.$font-family-primary;
+  font-size: 18px;
+  font-weight: variables.$font-weight-bold;
+  color: variables.$error-color;
+  margin-top: variables.$spacing-xs;
+}
+
+.ebook-sale__period {
+  font-family: variables.$font-family-brandon;
+  font-size: 16px;
+  font-weight: variables.$font-weight-bold;
+  color: variables.$text-dark;
+  text-align: center;
+  margin: variables.$spacing-sm 0 0 0;
+  text-transform: uppercase;
+}
+
+// Audible Sale Section Styles
+.audible-sale-wrapper {
+  background-color: variables.$light-gray;
+  width: 100%;
+}
+
+.audible-sale {
+  padding: variables.$spacing-xl 0;
+  background-color: variables.$light-gray;
+}
+
+.audible-sale__title {
+  font-family: variables.$font-family-brandon;
+  font-size: 20.8px;
+  font-weight: variables.$font-weight-bold;
+  text-align: center;
+  margin-bottom: variables.$spacing-sm;
+}
+
+.audible-sale__subtitle {
+  font-family: variables.$font-family-brandon;
+  font-size: 17.6px;
+  font-weight: variables.$font-weight-normal;
+  text-align: center;
+  color: variables.$text-dark;
+}
+
+.audible-sale__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 285px;
+  flex-shrink: 0;
+  margin: 0 auto;
+}
+
+.audible-sale__image {
+  width: 285px;
+  height: 285px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: variables.$spacing-sm;
+}
+
+.audible-sale__period {
+  font-family: variables.$font-family-brandon;
+  font-size: 16px;
+  font-weight: variables.$font-weight-bold;
+  color: variables.$text-dark;
+  text-align: center;
+  margin: variables.$spacing-sm 0 0 0;
+  text-transform: uppercase;
+}
+
+.audible-sale__price {
+  font-family: variables.$font-family-primary;
+  font-size: 18px;
+  font-weight: variables.$font-weight-bold;
+  color: variables.$error-color;
+  text-align: center;
+  margin: variables.$spacing-xs 0 0 0;
+}
+
 @font-face {
   font-family: "Plantin-Bold";
   src: url("https://db.onlinewebfonts.com/t/7200e29d11cf7f02855b90abc943762c.woff2")
