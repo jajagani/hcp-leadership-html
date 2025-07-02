@@ -22,15 +22,18 @@
     margin: 0;
   }
 
-  &__description {
-    font-family: variables.$font-family-plantin;
-    font-size: 19px;
-    font-weight: 500;
-    line-height: 1.5;
-    color: variables.$text-dark;
-    margin: 0;
-    word-wrap: break-word;
-    hyphens: auto;
+  // Parent container for description styling
+  &__description-container {
+    p {
+      font-family: variables.$font-family-plantin;
+      font-size: 19px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: variables.$text-dark;
+      margin: 0;
+      word-wrap: break-word;
+      hyphens: auto;
+    }
   }
 
   &__buttons {

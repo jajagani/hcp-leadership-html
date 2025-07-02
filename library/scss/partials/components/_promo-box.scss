@@ -74,13 +74,16 @@
   margin-top: 130px;
 }
 
-.promo-box__desc {
-  font-family: variables.$font-family-primary;
-  font-size: 1rem;
-  color: variables.$text-secondary;
-  margin-bottom: 28px;
-  line-height: 1.5;
-  font-weight: 400;
+// Parent container for description styling
+.promo-box__desc-container {
+  p {
+    font-family: variables.$font-family-primary;
+    font-size: 1rem;
+    color: variables.$text-secondary;
+    margin-bottom: 28px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
 }
 
 .promo-box__btn {

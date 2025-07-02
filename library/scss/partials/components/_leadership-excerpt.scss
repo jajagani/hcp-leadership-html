@@ -38,11 +38,14 @@
     }
   }
 
-  &__description {
-    font-size: variables.$font-size-lg;
-    line-height: 1.6;
-    margin-bottom: variables.$spacing-xl;
-    color: variables.$text-secondary;
+  // Parent container for description styling
+  &__description-container {
+    p {
+      font-size: variables.$font-size-lg;
+      line-height: 1.6;
+      margin-bottom: variables.$spacing-xl;
+      color: variables.$text-secondary;
+    }
   }
 
   &__image {
