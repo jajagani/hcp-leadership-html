@@ -30,6 +30,8 @@
 @use "partials/components/book-promo";
 @use "partials/components/author";
 @use "partials/components/maxwell-section";
+@use 'partials/components/image-content';
+@use 'partials/components/gutenberg-blocks';
 
 // Font Face Declarations
 @font-face {

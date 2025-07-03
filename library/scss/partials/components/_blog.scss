@@ -46,237 +46,58 @@
   }
 }
 
-/** Blog Details CSS **/
-.blog-detail-section {
-  padding: 40px 0;
-
-  .container {
-    display: flex;
-    gap: 44px;
-    flex-wrap: wrap;
-  }
-
-  .blog__left {
-    width: 50%;
-    flex-grow: 1;
-    padding: 0 20px;
-
-    @media (max-width: variables.$breakpoint-md) {
-      width: 100%;
-      padding: 0;
-    }
-
-    .blog__dtls {
-      max-width: 800px;
-      padding-left: 90px;
-      position: relative;
-
-      @media (max-width: variables.$breakpoint-md) {
-        padding-left: 0;
-      }
-
-      &-header {
-        @media (max-width: variables.$breakpoint-md) {
-          display: flex;
-          gap: 6px;
-        }
-      }
-
-      .blog__date {
-        position: absolute;
-        top: 0;
-        left: 0;
-        text-align: center;
-        display: block;
-        font-size: 30px;
-        font-weight: 700;
-        font-family: variables.$font-family-brandon;
-
-        @media (max-width: variables.$breakpoint-md) {
-          position: static;
-          width: 80px;
-          text-align: center;
-        }
-
-        small {
-          display: block;
-          text-transform: capitalize;
-          font-size: 15px;
-          font-weight: 400;
-        }
-      }
-
-      &-title {
-        font-size: 30px;
-        margin: variables.$spacing-sm 0 variables.$spacing-2xl;
-        line-height: 1.2;
-        color: variables.$text-dark;
-        font-family: variables.$font-family-plantin;
-      }
-
-      &-banner {
-        width: 100%;
-        position: relative;
-        margin: 20px 0;
-
-        img {
-          max-width: 100%;
-        }
-      }
-
-      &-content {
-        p {
-          font-family: variables.$font-family-brandon;
-          line-height: 1.5;
-          color: variables.$text-dark;
-          font-size: 17px;
-          margin: 16px 0;
-
-          a {
-            color: variables.$hero-here-color;
-          }
-        }
-
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-          font-family: variables.$font-family-plantin;
-        }
-
-        h2 {
-          font-size: 30px;
-        }
-
-        h3 {
-          font-size: 28px;
-        }
-
-        h4 {
-          font-size: 24px;
-        }
-        h5 {
-          font-size: 22px;
-        }
-        h6 {
-          font-size: 18px;
-        }
-
-        ul,
-        ol {
-          display: flex;
-          flex-direction: column;
-          row-gap: 2px;
-          margin: 16px 0;
-
-          li {
-            font-family: variables.$font-family-brandon;
-            line-height: 1.5;
-            color: variables.$text-dark;
-            font-size: 17px;
-
-            a {
-              color: variables.$hero-here-color;
-            }
-          }
-        }
-      }
-
-      &-image {
-        margin: variables.$spacing-md 40px;
-        max-width: 100%;
-        position: relative;
-        @include mixins.flexCenter;
-
-        img {
-          max-width: 100%;
-        }
-      }
-
-      .btn__row {
-        display: flex;
-        justify-content: center;
-        margin: 16px 0 0;
-      }
-
-      &-btn {
-        color: variables.$white;
-        background-color: variables.$text-dark-1;
-        border-radius: 50px;
-        text-decoration: none;
-        padding: 0 variables.$spacing-md;
-        font-size: 1.125em;
-        text-align: center;
-        min-width: 130px;
-        line-height: 47px;
-
-        &:hover {
-          color: variables.$btn-gold;
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-
-  .blog__right {
-    width: 25%;
-
-    @media (max-width: variables.$breakpoint-md) {
-      width: 100%;
-    }
-  }
-}
 
 /** Blog List CSS  **/
 
 .blog-archive {
-  padding: 3rem 0;
+  padding: 40px 0;
 
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-
-  .post-grid {
+  .post__grid {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 120px;
   }
 
-  .blog-post {
+  .blog__post {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
-    padding-bottom: 2rem;
+    gap: 24px;
+    position: relative;
+    padding-left: 90px;
 
     @media (max-width: 768px) {
       flex-direction: column;
     }
 
-    &__date {
-      width: 60px;
+    &-date {
+      position: absolute;
+      top: 0;
+      left: 0;
       text-align: center;
-      font-weight: 600;
-      font-size: 1rem;
+      display: block;
+      font-size: 30px;
+      font-weight: 700;
+      font-family: variables.$font-family-brandon;
+      width: 80px;
+      padding: 18px 0;
 
-      .date-day {
-        font-size: 1.8rem;
-        color: #000;
-        line-height: 1;
+      @media (max-width: variables.$breakpoint-md) {
+        position: static;
+
+        text-align: center;
       }
 
-      .date-month {
-        font-size: 0.9rem;
-        color: #666;
-        text-transform: uppercase;
+      small {
+        display: block;
+        text-transform: capitalize;
+        font-size: 15px;
+        font-weight: 400;
       }
     }
 
-    &__image {
-      flex: 0 0 352px;
-      max-width: 352px;
+    &-image {
+      max-width: 400px;
+      min-width: 300px;
 
       a {
         display: block;
@@ -284,22 +105,27 @@
         img {
           width: 100%;
           height: auto;
-          border-radius: 4px;
         }
       }
     }
 
-    &__content {
+    &-content {
       flex: 1;
 
-      .blog-post__title {
-        font-size: 1.6rem;
-        font-weight: 700;
-        margin: 0 0 0.5rem;
-        color: #34568B;
+      &-title {
+        font-size: 30px;
+        line-height: 1.2;
+        font-family: variables.$font-family-plantin;
+        font-weight: 600;
+        margin: variables.$spacing-sm 0 variables.$spacing-md;
+        color: variables.$hero-here-color;
 
         a {
-          color: inherit;
+          font-size: 30px;
+          line-height: 1.2;
+          font-family: variables.$font-family-plantin;
+          font-weight: 600;
+          color: variables.$hero-here-color;
           text-decoration: none;
 
           &:hover {
@@ -308,8 +134,8 @@
         }
       }
 
-      .blog-post__excerpt {
-        font-size: 1rem;
+      p {
+        font-size: 16px;
         color: #333;
         line-height: 1.6;
       }
@@ -319,23 +145,21 @@
   .pagination {
     display: flex;
     justify-content: space-between;
-    padding-top: 2rem;
-    border-top: 1px solid #ddd;
+    padding-top: 60px;
     font-size: 1rem;
 
     .nav-previous,
     .nav-next {
       a {
         text-decoration: none;
-        color: #34568B;
+        color: variables.$hero-here-color;
+        font-size: 16px;
 
         &:hover {
+          color: variables.$btn-gold;
           text-decoration: underline;
         }
       }
     }
   }
 }
-
-
-

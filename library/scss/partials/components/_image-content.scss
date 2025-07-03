@@ -1,0 +1,140 @@
+@use '../../modules/variables' as variables;
+@use '../../modules/mixins' as mixins;
+
+.img__cont {
+  padding: 80px 0;
+  background: url(https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2022/10/28111315/Section-6-book-mockup_.jpg)
+    no-repeat center / cover;
+
+  &-flex {
+    display: flex;
+  }
+
+  &-lt {
+    @include mixins.flexCenter;
+    width: 50%;
+  }
+
+  .content__grid {
+    max-width: 600px;
+
+    .title {
+      font-family: variables.$font-family-brandon;
+      font-size: 20px;
+      line-height: 1.2;
+      letter-spacing: 1px;
+      margin: 16px 0;
+      text-transform: uppercase;
+    }
+    p {
+      color: variables.$text-dark;
+      font-size: 17.6px;
+      line-height: 1.5;
+      font-family: variables.$font-family-brandon;
+
+      a {
+        font-family: variables.$font-family-brandon;
+        font-size: 16px;
+        color: variables.$hero-here-color;
+
+        &:hover {
+          color: variables.$btn-gold;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .brand__logo {
+      @include mixins.flexCenter;
+      margin: 0 0 40px;
+      img {
+        max-width: 100%;
+      }
+    }
+
+    &-action {
+      margin: 20px 0 0;
+
+      .link__btn {
+        font-family: variables.$font-family-brandon;
+        font-size: 16px;
+        color: variables.$hero-here-color;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  &-rt {
+    width: 50%;
+    .img__blk {
+      width: 100%;
+      display: inline-block;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &-reverse {
+    .img__cont-flex {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &.bg-color {
+    background: variables.$light-gray;
+  }
+
+  &-split-60-40 {
+    .img__cont-flex {
+      .img__cont-lt {
+        width: 60%;
+      }
+
+      .img__cont-rt {
+        width: 40%;
+      }
+    }
+  }
+
+  &.has-spacing {
+    padding: 20px;
+
+    .content__grid {
+      padding: 10px 20px;
+    }
+
+    .img__cont-rt {
+      .img__blk {
+        padding: 10px 20px;
+
+        img {
+          max-width: 100%;
+          width: auto;
+        }
+      }
+    }
+  }
+  &.content-v-top {
+    .img__cont-flex {
+      align-items: flex-start;
+    }
+  }
+
+  &.content-full {
+    .content__grid {
+      max-width: 100%;
+    }
+  }
+
+  &.text-center {
+    text-align: center;
+  }
+
+  &.text-right {
+    text-align: right;
+  }
+}

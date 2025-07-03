@@ -1,4 +1,4 @@
-@use "../../modules/variables" as variables;
+@use '../../modules/variables' as variables;
 
 // Header Component
 .header {
@@ -83,37 +83,122 @@
   }
 }
 
-.header__nav-list {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: variables.$spacing-xl;
-}
-
-.header__nav-item {
-  position: relative;
-}
-
-.header__nav-link {
-  font-family: variables.$font-family-primary;
-  font-size: variables.$font-size-base;
-  font-weight: variables.$font-weight-medium;
-  color: variables.$text-primary;
-  text-decoration: none;
-  padding: variables.$spacing-sm variables.$spacing-md;
-  border-radius: variables.$border-radius-sm;
-  transition: variables.$transition-base;
-
-  &:hover {
-    color: variables.$primary-color;
-    background-color: rgba(variables.$primary-color, 0.1);
+.header__nav {
+  &-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: variables.$spacing-sm;
   }
 
-  &.header__nav-link--active {
-    color: variables.$primary-color;
-    background-color: rgba(variables.$primary-color, 0.1);
+  &-item {
+    position: relative;
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: variables.$spacing-sm;
+
+    > li {
+      position: relative;
+      margin: 0;
+
+      > a {
+        font-family: variables.$font-family-brandon;
+        font-size: variables.$font-size-xl;
+        font-weight: variables.$font-weight-bold;
+        color: variables.$text-primary;
+        text-decoration: none;
+        padding: variables.$spacing-md;
+        transition: variables.$transition-base;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        display: block;
+
+        &::before {
+          content: '';
+          width: calc(80% - 36px);
+          height: 5px;
+          background: variables.$hero-here-color;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          opacity: 0;
+        }
+
+        &:after {
+          transition: 0.4s ease-in-out;
+          content: '\f107';
+          color: #1e3046;
+          padding: 0 7px;
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 900;
+          text-decoration: none;
+          display: inline-flex;
+        }
+
+        &:hover {
+          color: variables.$hero-here-color;
+          text-decoration: underline;
+
+          &::before {
+            opacity: 1;
+          }
+
+          &::after {
+            color: variables.$hero-here-color;
+            transform: rotate(180deg);
+          }
+        }
+
+        &.header__nav-link--active {
+          color: variables.$primary-color;
+          background-color: rgba(variables.$primary-color, 0.1);
+        }
+      }
+    }
+  }
+
+  &-link {
+    font-family: variables.$font-family-brandon;
+    font-size: variables.$font-size-xl;
+    font-weight: variables.$font-weight-bold;
+    color: variables.$text-primary;
+    text-decoration: none;
+    padding: variables.$spacing-md;
+    transition: variables.$transition-base;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    display: block;
+
+    &::before {
+      content: '';
+      width: calc(80% - 36px);
+      height: 5px;
+      background: variables.$hero-here-color;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 1;
+    }
+
+    &:hover {
+      color: variables.$hero-here-color;
+      //background-color: rgba(variables.$primary-color, 0.1);
+    }
+
+    &.header__nav-link--active {
+      color: variables.$primary-color;
+      background-color: rgba(variables.$primary-color, 0.1);
+    }
   }
 }
 
@@ -133,6 +218,8 @@
   transition: variables.$transition-base;
   z-index: variables.$z-dropdown;
   margin-top: variables.$spacing-sm;
+  padding: 0;
+  list-style: none;
 
   .header__nav-item:hover & {
     opacity: 1;
@@ -161,6 +248,67 @@
   &:hover {
     background-color: variables.$light-gray;
     color: variables.$primary-color;
+  }
+}
+
+//Wordpress Dropdown
+.sub-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: variables.$white;
+  border: 1px solid variables.$medium-gray;
+  border-radius: variables.$border-radius;
+  box-shadow: variables.$shadow-lg;
+  min-width: 220px;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: variables.$transition-base;
+  z-index: variables.$z-dropdown;
+  padding: 10px;
+  list-style: none;
+
+  .menu-item {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 999;
+
+    a {
+      display: block;
+      padding: 7px 15px;
+      color: variables.$text-primary;
+      text-decoration: none;
+      transition: variables.$transition-base;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.5;
+
+      &:hover {
+        color: variables.$hero-here-color;
+      }
+    }
+
+    .sub-menu {
+      left: 190px;
+      top: -10px;
+
+      .menu-item {
+        a {
+          font-size: 1em;
+          line-height: 1.3;
+        }
+      }
+    }
+  }
+
+  .header__nav .menu .menu-item:hover > & {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
 }
 
@@ -357,7 +505,7 @@
 
   &::after {
     // Your SVG curve underline
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     bottom: -20px;
@@ -371,7 +519,7 @@
 
   &::before {
     // The mask that reveals the curve
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     bottom: -20px;
@@ -384,12 +532,6 @@
 
   &.active::before {
     animation: reveal-underline 1.2s cubic-bezier(0.6, 0.05, 1, 0.2) forwards;
-  }
-  
-  &.underline-animated-yellow {
-    &:after {
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 500 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.7,145.6C109,125,299.9,116.2,401,121.3c42.1,2.2,87.6,11.8,87.3,25.7' fill='none' stroke='rgb(241,167,20)' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E");
-    }
   }
 }
 

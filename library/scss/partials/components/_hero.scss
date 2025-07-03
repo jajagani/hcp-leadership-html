@@ -800,13 +800,16 @@
 
 // Audible Sale Section Styles
 .audible-sale-wrapper {
-  background-color: variables.$light-gray;
+  // background-color: variables.$light-gray;
   width: 100%;
+  .custom-grid--audible-sale {
+    justify-content:flex-start
+  }
 }
 
 .audible-sale {
   padding: variables.$spacing-xl 0;
-  background-color: variables.$light-gray;
+  // background-color: variables.$light-gray;
 }
 
 .audible-sale__title {
@@ -837,7 +840,7 @@
 
 .audible-sale__image {
   width: 285px;
-  height: 285px;
+  // height: 285px;
   object-fit: cover;
   display: block;
   margin-bottom: variables.$spacing-sm;
