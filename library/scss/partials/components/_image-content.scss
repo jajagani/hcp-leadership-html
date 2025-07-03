@@ -2,10 +2,6 @@
 @use '../../modules/mixins' as mixins;
 
 .img__cont {
-  padding: 80px 0;
-  background: url(https://dhjhkxawhe8q4.cloudfront.net/hc-leadership-wp/wp-content/uploads/2022/10/28111315/Section-6-book-mockup_.jpg)
-    no-repeat center / cover;
-
   &-flex {
     display: flex;
   }
