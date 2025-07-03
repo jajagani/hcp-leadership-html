@@ -1,7 +1,23 @@
 @use "../../modules/variables" as variables;
 @use "../buttons";
 
-.section-organization {
+body .section-organization {
+  padding: 0 70px;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  place-content: center;
+
+  grid-template-columns: repeat(1, minmax(0, 420px));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(2, minmax(0, 420px));
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(0, 420px));
+  }
+
   h3 {
     margin-top: 50px;
     font-family: variables.$font-family-brandon-bold;
@@ -18,6 +34,8 @@
   margin-top: 30px;
   margin-bottom: 40px;
   a {
+    margin: auto !important;
+
     @extend .btn;
     @extend .btn--primary;
   }
@@ -25,6 +43,10 @@
 
 .section-order {
   margin-top: 120px;
+  div {
+    max-width: 560px;
+    margin: auto;
+  }
   h3 {
     font-size: 30.4px;
     font-family: variables.$font-family-plantin;
@@ -35,7 +57,7 @@
   }
   p {
     display: inline;
-    font-size: 17.6px;
+    font-size: 18.6px;
     color: variables.$text-dark;
     font-family: variables.$font-family-brandon-italic;
   }
@@ -43,11 +65,10 @@
     font-size: 17.6px;
     color: variables.$text-dark;
     font-family: variables.$font-family-brandon-italic;
-    font-weight: bold;
   }
 }
 
-/*
+/* 
 
 ABOUT PAGE COMPONENT 13
 
@@ -105,8 +126,8 @@ body .section-about {
   }
 }
 
-/*
-Bookclub Section
+/* 
+ Bookclub Section
 */
 
 .section-bookclub {
@@ -144,5 +165,136 @@ Bookclub Section
   }
   a {
     color: variables.$hero-here-color;
+  }
+}
+
+/* 
+component 15 featured catalog section
+*/
+
+body .section-featured-catalog {
+  padding: 70px 0;
+  display: grid;
+  gap: 40px;
+  align-items: flex-start;
+  place-content: space-around;
+
+  grid-template-columns: repeat(1, minmax(0, 333px));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(2, minmax(0, 333px));
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(0, 333px));
+  }
+
+  div {
+    width: 100%;
+  }
+  figure {
+    width: 100%;
+    margin: 0 !important; // I was forced to use !important here despite is a bad practise
+  }
+  figure a {
+    display: inline;
+    min-width: 100%;
+  }
+  img {
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 21px;
+    font-family: variables.$font-family-brandon-bold;
+  }
+  h4 {
+    font-size: 31px;
+    text-transform: none;
+    font-family: variables.$font-family-plantin;
+  }
+
+  .wp-block-button {
+    display: flex;
+    justify-content: center;
+    a {
+      @extend .btn;
+      @extend .btn--primary;
+    }
+  }
+}
+
+/* 
+component 16 Catalog Grid Section
+*/
+
+body .section-catalog-grid {
+  padding: 70px 0;
+  display: grid;
+  gap: 40px;
+  align-items: flex-start;
+  place-content: center;
+
+  grid-template-columns: repeat(1, minmax(0, 390px));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(0, 390px));
+  }
+
+  img {
+    max-width: 190px;
+  }
+  h3 {
+    font-family: variables.$font-family-brandon-bold;
+    font-size: 21px;
+    letter-spacing: 1.7px;
+  }
+  a {
+    color: variables.$hero-here-color;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-family: variables.$font-family-brandon-bold;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+/* 
+component 17 Catalog Grid Section
+*/
+
+.section-cta-block {
+  height: 300px;
+  gap: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 60px 30px;
+
+  // Aplicar altura a todos los hijos directos
+  > * {
+    flex: 1;
+    margin: 0;
+  }
+  p {
+    color: white;
+    font-size: 17.6px;
+    font-family: variables.$font-family-brandon-italic;
+    max-width: 600px;
+    text-align: center;
+    justify-content: flex-end;
+    justify-self: end;
+  }
+  div > a {
+    @extend .btn;
+    @extend .btn--gold;
+    @extend .btn--arrow;
   }
 }
