@@ -71,14 +71,14 @@
       font-size: 19px;
       line-height: 22px;
       color: variables.$hero-here-color;
-      font-family: variables.$font-family-brandon;
+      font-family: variables.$primary_bold;
       text-transform: uppercase;
 
       a {
         font-size: 19px;
         line-height: 22px;
         color: variables.$hero-here-color;
-        font-family: variables.$font-family-brandon;
+        font-family: variables.$primary_bold;
         text-decoration: none;
         text-transform: uppercase;
 
@@ -160,7 +160,7 @@
         margin: 4px 0 0;
         font-size: 16px;
         line-height: 24px;
-        font-family: variables.$font-family-brandon;
+        font-family: variables.$primary_regular;
       }
     }
   }

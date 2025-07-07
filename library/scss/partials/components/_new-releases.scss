@@ -1,7 +1,7 @@
 // New Releases component for HarperCollins Leadership website
 
-@use "../../modules/variables" as variables;
-@use "../custom-grid" as customGrid;
+@use '../../modules/variables' as variables;
+@use '../custom-grid' as customGrid;
 
 .new-releases {
   padding: variables.$spacing-3xl 0;
@@ -74,7 +74,7 @@
   text-align: center;
   padding: 1.1rem 1.5rem;
   border-radius: 0;
-  font-family: variables.$font-family-brandon;
+  font-family: variables.$primary_regular;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;

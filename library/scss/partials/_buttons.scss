@@ -1,11 +1,10 @@
-@use "../modules/variables" as variables;
-@use "sass:color";
+@use '../modules/variables' as variables;
+@use 'sass:color';
 
 // Button Mixins
 @mixin button-base {
-  font-family: variables.$font-family-brandon;
+  font-family: variables.$primary_bold;
   font-size: 16px;
-  font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
   display: inline-flex;
@@ -68,7 +67,7 @@
   }
 
   &__icon {
-    font-family: "Font Awesome 5 Pro", "Font Awesome 5 Free", "FontAwesome",
+    font-family: 'Font Awesome 5 Pro', 'Font Awesome 5 Free', 'FontAwesome',
       sans-serif;
     font-size: 20.8px;
     font-style: normal;
@@ -149,7 +148,7 @@
   color: transparent;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -168,7 +167,7 @@
   transition: padding-right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     right: 16px;
     top: 50%;

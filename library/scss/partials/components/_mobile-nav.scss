@@ -1,4 +1,4 @@
-@use "../../modules/variables" as variables;
+@use '../../modules/variables' as variables;
 
 // Mobile Navigation Mixins
 @mixin mobile-nav-open {
@@ -64,7 +64,7 @@
   color: transparent;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -240,7 +240,7 @@
   &__link {
     display: block;
     padding: variables.$spacing-lg 0;
-    font-family: variables.$font-family-primary;
+    font-family: variables.$primary_regular;
     font-size: variables.$font-size-lg;
     font-weight: variables.$font-weight-medium;
     color: variables.$text-primary;

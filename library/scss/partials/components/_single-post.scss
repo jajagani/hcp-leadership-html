@@ -1,5 +1,5 @@
 // Single Post component for HarperCollins Leadership website
-@use "../../modules/variables" as variables;
+@use '../../modules/variables' as variables;
 @use '../../modules/mixins' as mixins;
 
 .single-post {
@@ -12,7 +12,7 @@
   }
 
   &__title {
-    font-family: variables.$font-family-brandon;
+    font-family: variables.$primary_regular;
     font-size: variables.$font-size-2xl;
     font-weight: variables.$font-weight-bold;
     color: variables.$text-primary;
@@ -25,7 +25,7 @@
   }
 
   &__meta {
-    font-family: variables.$font-family-primary;
+    font-family: variables.$primary_regular;
     font-size: variables.$font-size-base;
     font-weight: variables.$font-weight-normal;
     color: variables.$text-secondary;
@@ -41,7 +41,7 @@
     color: variables.$text-secondary;
 
     p {
-      font-family: variables.$font-family-primary;
+      font-family: variables.$primary_regular;
       font-size: variables.$font-size-lg;
       font-weight: variables.$font-weight-normal;
       color: variables.$text-primary;
@@ -54,7 +54,7 @@
     h4,
     h5,
     h6 {
-      font-family: variables.$font-family-secondary;
+      font-family: variables.$secondary_regular;
       font-weight: variables.$font-weight-bold;
       color: variables.$text-primary;
       margin-top: variables.$spacing-2xl;
@@ -80,7 +80,7 @@
     }
 
     li {
-      font-family: variables.$font-family-primary;
+      font-family: variables.$primary_regular;
       font-size: variables.$font-size-lg;
       font-weight: variables.$font-weight-normal;
       color: variables.$text-primary;
@@ -89,7 +89,6 @@
     }
   }
 }
-
 
 /** Blog Details CSS **/
 .blog-detail-section {
@@ -134,8 +133,8 @@
         text-align: center;
         display: block;
         font-size: 30px;
-        font-weight: 700;
-        font-family: variables.$font-family-brandon;
+        line-height: 1.2;
+        font-family: variables.$primary_bold;
 
         @media (max-width: variables.$breakpoint-md) {
           position: static;
@@ -147,7 +146,8 @@
           display: block;
           text-transform: capitalize;
           font-size: 15px;
-          font-weight: 400;
+          font-family: variables.$primary_light;
+          margin-top: 6px;
         }
       }
 
@@ -156,7 +156,7 @@
         margin: variables.$spacing-sm 0 variables.$spacing-2xl;
         line-height: 1.2;
         color: variables.$text-dark;
-        font-family: variables.$font-family-plantin;
+        font-family: variables.$secondary_bold;
       }
 
       &-banner {
@@ -171,7 +171,7 @@
 
       &-content {
         p {
-          font-family: variables.$font-family-brandon;
+          font-family: variables.$primary_regular;
           line-height: 1.5;
           color: variables.$text-dark;
           font-size: 17px;
@@ -182,12 +182,18 @@
           }
         }
 
+        strong {
+          font-weight: 400;
+          font-family: variables.$primary_bold;
+        }
+
         h2,
         h3,
         h4,
         h5,
         h6 {
-          font-family: variables.$font-family-plantin;
+          font-weight: 400;
+          font-family: variables.$primary_bold;
         }
 
         h2 {
@@ -216,7 +222,7 @@
           margin: 16px 0;
 
           li {
-            font-family: variables.$font-family-brandon;
+            font-family: variables.$primary_regular;
             line-height: 1.5;
             color: variables.$text-dark;
             font-size: 17px;

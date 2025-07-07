@@ -28,7 +28,27 @@ $top-bar-bg: #234f6a; // Top bar background
 $hero-subtitle-color: $text-dark; // Hero subtitle color
 $search-input-color: $text-dark; // Search input text color
 
-// Typography - HarperCollins Leadership Fonts
+$blue1: #0d82c7;
+
+/* Primary Font Family */
+$primary_light: 'hvdtrial_brandon_grotesqueLt', sans-serif;
+$primary_regular: 'hvdtrial_brandon_grotesqueRg', sans-serif;
+$primary_medium: 'hvdtrial_brandon_grotesqueMd', sans-serif;
+$primary_bold: 'hvdtrial_brandon_grotesqueBd', sans-serif;
+$primary_black: 'hvdtrial_brandon_grotesqueBlk', sans-serif;
+
+/* Secondary Font Family */
+$secondary_light: 'plantin_mt_prolight', sans-serif;
+$secondary_regular: 'plantin_mt_proregular', sans-serif;
+$secondary_semibold: 'plantin_mt_prosemibold', sans-serif;
+$secondary_bold: 'plantin_mt_probold', sans-serif;
+
+$font-family-zooja: 'Zooja Pro', cursive, sans-serif; // Zooja Pro font family
+
+
+
+// Font Family Added By Bruno Start
+
 $font-family-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
   Roboto, sans-serif;
 $font-family-secondary: "Georgia", serif; // For headings
@@ -39,6 +59,9 @@ $font-family-brandon-italic: "Brandon Grotesque Web Italic", "Brandon Grotesque"
 $font-family-brandon-bold: "Brandon Grotesque Web Black", "Brandon Grotesque",
   "Inter", Arial, sans-serif; // Brandon bold font family
 $font-family-zooja: "Zooja Pro", cursive, sans-serif; // Zooja Pro font family
+
+// Font Family Added By Bruno END
+
 $font-size-base: 12.8px;
 $font-size-sm: 11.2px;
 $font-size-lg: 14.4px;

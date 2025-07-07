@@ -2,21 +2,36 @@
 @use '../../modules/mixins' as mixins;
 
 .img__cont {
-  
   &-flex {
     display: flex;
+
+    @media (max-width: variables.$breakpoint-mobile) {
+      flex-direction: column;
+      row-gap: 40px;
+      padding: 20px 16px;
+    }
+
+    @media screen and (min-width: variables.$breakpoint-md) and (max-width: variables.$breakpoint-lg) {
+      padding: 0 16px;
+      gap: 20px;
+    }
   }
 
   &-lt {
     @include mixins.flexCenter;
     width: 50%;
+
+    @media (max-width: variables.$breakpoint-mobile) {
+      width: 100%;
+      order: 2;
+    }
   }
 
   .content__grid {
     max-width: 600px;
 
     .title {
-      font-family: variables.$font-family-brandon;
+      font-family: variables.$primary_bold;
       font-size: 20px;
       line-height: 1.2;
       letter-spacing: 1px;
@@ -27,10 +42,10 @@
       color: inherit;
       font-size: 17.6px;
       line-height: 1.5;
-      font-family: variables.$font-family-brandon;
+      font-family: variables.$primary_regular;
 
       a {
-        font-family: variables.$font-family-brandon;
+        font-family: variables.$primary_bold;
         font-size: 16px;
         color: variables.$hero-here-color;
 
@@ -43,7 +58,8 @@
 
     .brand__logo {
       @include mixins.flexCenter;
-      margin: 0 0 40px;
+      margin: 0 auto 40px;
+      max-width: 300px;
       img {
         max-width: 100%;
       }
@@ -53,7 +69,7 @@
       margin: 20px 0 0;
 
       .link__btn {
-        font-family: variables.$font-family-brandon;
+        font-family: variables.$primary_regular;
         font-size: 16px;
         color: variables.$hero-here-color;
         text-transform: uppercase;
@@ -65,6 +81,12 @@
 
   &-rt {
     width: 50%;
+
+    @media (max-width: variables.$breakpoint-mobile) {
+      width: 100%;
+      order: 1;
+    }
+
     .img__blk {
       width: 100%;
       display: inline-block;
@@ -78,6 +100,10 @@
   &-reverse {
     .img__cont-flex {
       flex-direction: row-reverse;
+
+      @media (max-width: variables.$breakpoint-mobile) {
+        flex-direction: column;
+      }
     }
   }
 
@@ -89,10 +115,18 @@
     .img__cont-flex {
       .img__cont-lt {
         width: 60%;
+
+        @media (max-width: variables.$breakpoint-mobile) {
+          width: 100%;
+        }
       }
 
       .img__cont-rt {
         width: 40%;
+
+        @media (max-width: variables.$breakpoint-mobile) {
+          width: 100%;
+        }
       }
     }
   }
@@ -100,13 +134,25 @@
   &.has-spacing {
     padding: 20px;
 
+    @media (max-width: variables.$breakpoint-mobile) {
+      padding: 20px 0;
+    }
+
     .content__grid {
       padding: 10px 20px;
+
+      @media (max-width: variables.$breakpoint-mobile) {
+        padding: 0;
+      }
     }
 
     .img__cont-rt {
       .img__blk {
         padding: 10px 20px;
+
+        @media (max-width: variables.$breakpoint-mobile) {
+          padding: 0;
+        }
 
         img {
           max-width: 100%;

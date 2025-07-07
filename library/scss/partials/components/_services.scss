@@ -1,6 +1,6 @@
 // Services component for HarperCollins Leadership website
 
-@use "../../modules/variables" as variables;
+@use '../../modules/variables' as variables;
 
 .services {
   padding: variables.$spacing-3xl 0;
@@ -50,7 +50,7 @@
   }
 
   &__title {
-    font-family: variables.$font-family-secondary;
+    font-family: variables.$secondary_regular;
     font-size: variables.$font-size-xl;
     font-weight: variables.$font-weight-bold;
     color: variables.$text-primary;
@@ -59,7 +59,7 @@
   }
 
   &__description {
-    font-family: variables.$font-family-primary;
+    font-family: variables.$primary_regular;
     font-size: variables.$font-size-base;
     font-weight: variables.$font-weight-normal;
     color: variables.$text-secondary;

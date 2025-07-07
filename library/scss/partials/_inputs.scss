@@ -1,10 +1,10 @@
-@use "../modules/variables" as variables;
+@use '../modules/variables' as variables;
 
 // Input styles for HarperCollins Leadership website
 
 // Form Mixins
 @mixin form-base {
-  font-family: variables.$font-family-primary;
+  font-family: variables.$primary_regular;
   font-size: variables.$font-size-base;
   color: variables.$text-primary;
 }
@@ -90,7 +90,7 @@
 .form-checkbox {
   @include form-control;
 
-  input[type="checkbox"] {
+  input[type='checkbox'] {
     width: 16px;
     height: 16px;
     accent-color: variables.$primary-color;
@@ -106,7 +106,7 @@
 .form-radio {
   @include form-control;
 
-  input[type="radio"] {
+  input[type='radio'] {
     width: 16px;
     height: 16px;
     accent-color: variables.$primary-color;

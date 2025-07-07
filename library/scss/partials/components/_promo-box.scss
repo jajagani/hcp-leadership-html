@@ -1,4 +1,4 @@
-@use "../../modules/variables" as variables;
+@use '../../modules/variables' as variables;
 
 .promo-section {
   background: variables.$top-bar-bg;
@@ -65,7 +65,7 @@
 }
 
 .promo-box__title {
-  font-family: variables.$font-family-brandon;
+  font-family: variables.$primary_regular;
   font-size: 1.5rem;
   font-weight: 900;
   margin-bottom: 12px;
@@ -77,7 +77,7 @@
 // Parent container for description styling
 .promo-box__desc-container {
   p {
-    font-family: variables.$font-family-primary;
+    font-family: variables.$primary_regular;
     font-size: 1rem;
     color: variables.$text-secondary;
     margin-bottom: 28px;
@@ -91,7 +91,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: variables.$font-family-brandon;
+  font-family: variables.$primary_regular;
   font-weight: 600;
   font-size: 1rem;
 }

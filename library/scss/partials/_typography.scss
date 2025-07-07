@@ -1,4 +1,4 @@
-@use "../modules/variables" as variables;
+@use '../modules/variables' as variables;
 
 // Typography Mixins
 @mixin text-color($color) {
@@ -40,19 +40,19 @@
 
 // Font Family Utilities
 .font-primary {
-  @include font-family(variables.$font-family-primary);
+  @include font-family(variables.$primary_regular);
 }
 
 .font-secondary {
-  @include font-family(variables.$font-family-secondary);
+  @include font-family(variables.$secondary_regular);
 }
 
 .font-plantin {
-  @include font-family(variables.$font-family-plantin);
+  @include font-family(variables.$secondary_regular);
 }
 
 .font-brandon {
-  @include font-family(variables.$font-family-brandon);
+  @include font-family(variables.$primary_regular);
 }
 
 .font-zooja {

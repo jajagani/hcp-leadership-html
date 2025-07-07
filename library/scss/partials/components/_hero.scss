@@ -1,9 +1,9 @@
-@use "../../modules/variables" as variables;
-@use "sass:color";
+@use '../../modules/variables' as variables;
+@use 'sass:color';
 
 // Hero Mixins
 @mixin hero-title-base {
-  font-family: "Plantin-Bold", variables.$font-family-plantin;
+  font-family: 'Plantin-Bold', variables.$secondary_regular;
   font-size: 35.2px;
   font-weight: variables.$font-weight-normal;
   color: variables.$hero-title-color;
@@ -18,9 +18,8 @@
 }
 
 @mixin hero-subtitle-base {
-  font-family: variables.$font-family-plantin;
+  font-family: variables.$secondary_light;
   font-size: 19.2px;
-  font-weight: 300;
   color: variables.$text-dark;
   line-height: 26.88px;
   letter-spacing: 0.3px;
@@ -169,8 +168,7 @@
   }
 
   &__title {
-    font-family: "Plantin-Bold", serif;
-    font-weight: 900;
+    font-family: variables.$secondary_bold;
     font-style: normal;
     letter-spacing: 0.01em;
     font-size: 35.2px;
@@ -213,7 +211,7 @@
     // Default subtitle styling for child p elements
     p {
       @include hero-subtitle-base;
-      font-family: "Plantin", "EB Garamond", serif;
+      font-family: 'Plantin', 'EB Garamond', serif;
       font-weight: 400;
       font-style: normal;
       font-size: 17.6px;
@@ -225,7 +223,7 @@
       color: variables.$white;
       font-weight: bold;
       // Preserve the base font family and size
-      font-family: "Plantin", "EB Garamond", serif;
+      font-family: 'Plantin', 'EB Garamond', serif;
       font-size: 17.6px;
       font-style: normal;
     }
@@ -235,7 +233,7 @@
       box-sizing: border-box;
       color: variables.$text-dark;
       display: block;
-      font-family: variables.$font-family-brandon;
+      font-family: variables.$primary_regular;
       font-size: 17.6px;
       height: 52.7812px;
       line-height: 26.4px;
@@ -245,7 +243,8 @@
       width: 520px;
 
       em {
-        font-family: variables.$font-family-brandon-italic;
+        font-family: variables.$primary_regular;
+        font-style: italic;
       }
     }
 
@@ -375,7 +374,7 @@
   }
 
   &__title--brandon {
-    font-family: variables.$font-family-brandon-bold;
+    font-family: variables.$primary_bold;
     font-size: 20.8px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -384,7 +383,7 @@
   }
 
   &__link {
-    font-family: variables.$font-family-brandon;
+    font-family: variables.$primary_regular;
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
@@ -663,7 +662,7 @@
   position: absolute;
   left: -20px;
   top: 40px;
-  font-family: "Plantin-Bold", "EB Garamond", serif;
+  font-family: 'Plantin-Bold', 'EB Garamond', serif;
   font-weight: 700;
   background: none;
   color: variables.$text-primary;
@@ -732,7 +731,7 @@
 }
 
 .hero__link {
-  font-family: variables.$font-family-brandon;
+  font-family: variables.$primary_regular;
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
@@ -759,9 +758,8 @@
 
 // Ebook Sale Section Styles
 .ebook-sale__title {
-  font-family: variables.$font-family-brandon;
+  font-family: variables.$primary_bold;
   font-size: 20.8px;
-  font-weight: variables.$font-weight-bold;
   text-align: center;
   margin-bottom: variables.$spacing-md;
 }
@@ -781,7 +779,7 @@
 }
 
 .ebook-sale__price {
-  font-family: variables.$font-family-primary;
+  font-family: variables.$primary_regular;
   font-size: 18px;
   font-weight: variables.$font-weight-bold;
   color: variables.$error-color;
@@ -789,7 +787,7 @@
 }
 
 .ebook-sale__period {
-  font-family: variables.$font-family-brandon;
+  font-family: variables.$primary_regular;
   font-size: 16px;
   font-weight: variables.$font-weight-bold;
   color: variables.$text-dark;
@@ -803,7 +801,7 @@
   // background-color: variables.$light-gray;
   width: 100%;
   .custom-grid--audible-sale {
-    justify-content:flex-start
+    justify-content: center;
   }
 }
 
@@ -813,15 +811,14 @@
 }
 
 .audible-sale__title {
-  font-family: variables.$font-family-brandon;
+  font-family: variables.$primary_bold;
   font-size: 20.8px;
-  font-weight: variables.$font-weight-bold;
   text-align: center;
   margin-bottom: variables.$spacing-sm;
 }
 
 .audible-sale__subtitle {
-  font-family: variables.$font-family-brandon;
+  font-family: variables.$primary_regular;
   font-size: 17.6px;
   font-weight: variables.$font-weight-normal;
   text-align: center;
@@ -847,7 +844,7 @@
 }
 
 .audible-sale__period {
-  font-family: variables.$font-family-brandon;
+  font-family: variables.$primary_regular;
   font-size: 16px;
   font-weight: variables.$font-weight-bold;
   color: variables.$text-dark;
@@ -857,7 +854,7 @@
 }
 
 .audible-sale__price {
-  font-family: variables.$font-family-primary;
+  font-family: variables.$primary_regular;
   font-size: 18px;
   font-weight: variables.$font-weight-bold;
   color: variables.$error-color;

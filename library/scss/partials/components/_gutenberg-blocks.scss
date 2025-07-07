@@ -38,6 +38,7 @@ body .section-organization {
 
     @extend .btn;
     @extend .btn--primary;
+    @extend .btn--arrow;
   }
 }
 
@@ -79,11 +80,13 @@ body .section-about {
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   padding: 20px;
+  max-width: 1200px;
+  margin: auto;
 
   @media (min-width: 900px) {
     grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
-    padding: 60px;
+    gap: 55px;
+    padding: 0 60px;
   }
 
   @media (min-width: 1200px) {
@@ -269,17 +272,19 @@ component 17 Catalog Grid Section
 
 .section-cta-block {
   height: 300px;
-  gap: 10px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   padding: 60px 30px;
 
+  div {
+    gap: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   // Aplicar altura a todos los hijos directos
-  > * {
+  div > * {
     flex: 1;
     margin: 0;
   }
@@ -296,5 +301,167 @@ component 17 Catalog Grid Section
     @extend .btn;
     @extend .btn--gold;
     @extend .btn--arrow;
+  }
+}
+
+/* 
+component 18 section-manager-banner
+*/
+.section-manager-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  img {
+    max-width: 720px;
+  }
+}
+
+/* 
+component 19 section-manager-banner
+*/
+
+body .section-manager-books {
+  > div {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1000px));
+
+    place-content: center;
+    gap: 50px;
+    padding: 50px;
+    > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+    }
+  }
+  h2 {
+    margin-top: 30px;
+    font-family: variables.$font-family-plantin;
+    font-size: 30.4px;
+    text-transform: none;
+  }
+  h4 {
+    font-family: variables.$font-family-brandon-bold;
+    font-size: 21px;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    a {
+      color: variables.$hero-here-color;
+      background-color: transparent;
+      text-decoration: none;
+    }
+  }
+  figure {
+    width: 100%;
+    max-width: 300px;
+  }
+  p {
+    font-family: variables.$font-family-brandon-italic;
+    font-size: 18px;
+    color: variables.$text-dark;
+  }
+  a {
+    margin-top: 20px;
+    @extend .btn;
+    @extend .btn--gold;
+  }
+}
+
+/* 
+component 20 section-manager-book-detail-hero
+*/
+
+body .section-manager-book-detail-hero {
+  section {
+    max-width: 1400px;
+    margin: auto;
+    padding: 35px;
+    div {
+      width: 100%;
+      max-width: 100%;
+    }
+    > div {
+      display: flex;
+      flex-direction: column-reverse !important;
+      justify-content: center;
+      align-items: center;
+      @media (min-width: 900px) {
+        flex-direction: row-reverse !important;
+        gap: 20px;
+      }
+    }
+    .content__grid {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 100px;
+      gap: 5px;
+    }
+  }
+  h3 {
+    font-family: variables.$font-family-plantin !important;
+    font-size: 30.4px !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    span {
+    }
+  }
+  p {
+    font-family: variables.$font-family-plantin !important;
+    font-size: 18px !important;
+    color: variables.$text-dark !important;
+  }
+  a {
+    @extend .btn;
+    @extend .btn--arrow;
+    @extend .btn--gold;
+    background-color: variables.$btn-gold !important;
+  }
+}
+
+/* 
+component 21 section-manager-best-seller
+*/
+
+body .section-manager-best-seller {
+  padding: 30px;
+  display: grid;
+  gap: 3%;
+  grid-template-columns: repeat(5, 1fr);
+
+  img {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+
+    // First item spans full width
+    > *:first-child {
+      grid-column: 1 / -1; // spans all columns
+    }
+  }
+}
+
+/* 
+component 22 section-manager-best-seller
+
+There wasn't a father component for this one, so apply it in each column.
+*/
+.section-material-list {
+  margin-top: 20px;
+  margin-left: 30px;
+  font-family: variables.$font-family-brandon-italic;
+  font-size: 18px;
+
+  p {
+    color: black;
+    text-decoration: underline;
+  }
+
+  a {
+    color: variables.$hero-here-color;
   }
 }

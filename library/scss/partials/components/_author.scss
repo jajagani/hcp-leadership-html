@@ -28,16 +28,17 @@
       font-size: 35px;
       line-height: 1.2;
       color: variables.$hero-subtitle-color;
-      font-weight: 600;
       margin-bottom: 16px;
+      font-family: variables.$secondary_bold;
     }
 
     &-subtitle {
-      font-family: variables.$font-family-brandon;
+      font-family: variables.$primary_bold;
       line-height: 1.2;
       letter-spacing: 0.06em;
-      font-size: 16px;
+      font-size: 20px;
       margin: 16px 0;
+      text-transform: uppercase;
     }
 
     p {
@@ -54,6 +55,11 @@
         color: variables.$hero-subtitle-color;
         font-size: 17px;
         margin-bottom: 8px;
+
+        strong {
+          font-weight: 400;
+          font-family: variables.$primary_bold;
+        }
       }
     }
 
@@ -61,7 +67,7 @@
       margin: 20px 0 0;
 
       &-action {
-        font-family: variables.$font-family-brandon;
+        font-family: variables.$primary_regular;
         font-size: 16px;
         color: variables.$hero-here-color;
         text-transform: uppercase;
@@ -118,7 +124,7 @@
       margin: 0 0 40px;
       font-size: 32px;
       line-height: 1.1;
-      font-family: variables.$font-family-plantin;
+      font-family: variables.$secondary_regular;
       text-transform: uppercase;
     }
 

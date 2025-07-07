@@ -1,6 +1,6 @@
 // Featured Collection component for HarperCollins Leadership website
 
-@use "../../modules/variables" as variables;
+@use '../../modules/variables' as variables;
 
 .featured-collection {
   background-color: variables.$light-gray;
@@ -13,9 +13,8 @@
   }
 
   &__title {
-    font-family: variables.$font-family-secondary;
+    font-family: variables.$secondary_bold;
     font-size: variables.$font-size-2xl;
-    font-weight: variables.$font-weight-bold;
     color: variables.$text-primary;
     margin-bottom: variables.$spacing-lg;
     line-height: variables.$line-height-tight;

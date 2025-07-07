@@ -13,7 +13,7 @@
   }
 
   &__title {
-    font-family: variables.$font-family-brandon;
+    font-family: variables.$primary_regular;
     font-size: variables.$font-size-2xl;
     font-weight: variables.$font-weight-bold;
     color: variables.$text-primary;
@@ -46,7 +46,6 @@
   }
 }
 
-
 /** Blog List CSS  **/
 
 .blog-archive {
@@ -56,6 +55,10 @@
     display: flex;
     flex-direction: column;
     gap: 120px;
+
+    @media (max-width: 768px) {
+      gap: 60px;
+    }
   }
 
   .blog__post {
@@ -65,8 +68,13 @@
     position: relative;
     padding-left: 90px;
 
-    @media (max-width: 768px) {
+    @media (max-width: variables.$breakpoint-md) {
       flex-direction: column;
+      padding-left: 0;
+    }
+
+    @media screen and (min-width: variables.$breakpoint-md) and (max-width: variables.$breakpoint-lg) {
+      padding-left: 90px;
     }
 
     &-date {
@@ -77,21 +85,27 @@
       display: block;
       font-size: 30px;
       font-weight: 700;
-      font-family: variables.$font-family-brandon;
+      font-family: variables.$primary_bold;
       width: 80px;
       padding: 18px 0;
 
       @media (max-width: variables.$breakpoint-md) {
         position: static;
-
         text-align: center;
+        padding: 0;
+      }
+
+      @media screen and (min-width: variables.$breakpoint-md) and (max-width: variables.$breakpoint-lg) {
+        position: absolute;
+        padding: 18px 0;
       }
 
       small {
         display: block;
         text-transform: capitalize;
         font-size: 15px;
-        font-weight: 400;
+        font-family: variables.$primary_light;
+        margin-top: 6px;
       }
     }
 
@@ -115,16 +129,14 @@
       &-title {
         font-size: 30px;
         line-height: 1.2;
-        font-family: variables.$font-family-plantin;
-        font-weight: 600;
+        font-family: variables.$secondary_bold;
         margin: variables.$spacing-sm 0 variables.$spacing-md;
         color: variables.$hero-here-color;
 
         a {
           font-size: 30px;
           line-height: 1.2;
-          font-family: variables.$font-family-plantin;
-          font-weight: 600;
+          font-family: variables.$secondary_bold;
           color: variables.$hero-here-color;
           text-decoration: none;
 
@@ -147,6 +159,10 @@
     justify-content: space-between;
     padding-top: 60px;
     font-size: 1rem;
+
+    @media (max-width: 768px) {
+      padding-top: 30px;
+    }
 
     .nav-previous,
     .nav-next {

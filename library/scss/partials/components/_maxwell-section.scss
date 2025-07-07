@@ -1,4 +1,4 @@
-@use "../../modules/variables" as variables;
+@use '../../modules/variables' as variables;
 
 .maxwell-section {
   padding: variables.$spacing-3xl 0;
@@ -14,7 +14,7 @@
   }
 
   &__title {
-    font-family: variables.$font-family-plantin;
+    font-family: variables.$secondary_regular;
     font-size: 35.2px;
     font-weight: variables.$font-weight-bold;
     line-height: 1.2;
@@ -25,7 +25,7 @@
   // Parent container for description styling
   &__description-container {
     p {
-      font-family: variables.$font-family-plantin;
+      font-family: variables.$secondary_regular;
       font-size: 19px;
       font-weight: 500;
       line-height: 1.5;
@@ -46,7 +46,7 @@
 
   &__button {
     // Button base styles
-    font-family: variables.$font-family-brandon;
+    font-family: variables.$primary_regular;
     font-size: 16px;
     font-weight: 700;
     letter-spacing: 1px;

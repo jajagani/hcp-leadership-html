@@ -51,7 +51,7 @@ $light-gray: #e3e8eb !default;
   text-align: center;
   font-size: variables.$font-size-3xl !important;
   margin-bottom: variables.$spacing-2xl;
-  font-family: variables.$font-family-brandon !important;
+  font-family: variables.$primary_bold !important;
   text-transform: uppercase;
 }
 
@@ -116,7 +116,7 @@ $light-gray: #e3e8eb !default;
   text-align: center;
   padding: 1.1rem 1.5rem;
   border-radius: 0;
-  font-family: variables.$font-family-brandon !important;
+  font-family: variables.$primary_regular !important;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;

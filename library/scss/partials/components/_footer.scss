@@ -1,5 +1,5 @@
-@use "../../modules/variables" as variables;
-@use "sass:color";
+@use '../../modules/variables' as variables;
+@use 'sass:color';
 
 // Footer Mixins
 @mixin footer-base {
@@ -23,7 +23,7 @@
 @mixin footer-newsletter-input {
   flex: 1;
   padding: variables.$spacing-sm variables.$spacing-md;
-  font-family: variables.$font-family-primary;
+  font-family: variables.$primary_regular;
   font-size: variables.$font-size-base;
   border: 1px solid rgba(variables.$white, 0.3);
   border-radius: variables.$border-radius;
@@ -46,7 +46,7 @@
   align-items: center;
   justify-content: center;
   padding: variables.$spacing-xs variables.$spacing-md;
-  font-family: variables.$font-family-secondary;
+  font-family: variables.$secondary_regular;
   font-size: variables.$font-size-sm;
   font-weight: 600;
   text-decoration: none;
@@ -114,7 +114,7 @@
 }
 
 .footer__title {
-  font-family: variables.$font-family-secondary;
+  font-family: variables.$secondary_regular;
   font-size: variables.$font-size-xl;
   font-weight: variables.$font-weight-bold;
   color: variables.$white;
@@ -137,7 +137,7 @@
 }
 
 .footer__description {
-  font-family: variables.$font-family-primary;
+  font-family: variables.$primary_regular;
   font-size: variables.$font-size-base;
   font-weight: variables.$font-weight-normal;
   color: rgba(variables.$white, 0.8);
@@ -171,7 +171,7 @@
 }
 
 .footer__newsletter-disclaimer {
-  font-family: variables.$font-family-primary;
+  font-family: variables.$primary_regular;
   font-size: variables.$font-size-sm;
   font-weight: variables.$font-weight-normal;
   color: rgba(variables.$white, 0.6);
@@ -201,7 +201,7 @@
 }
 
 .footer__copyright {
-  font-family: variables.$font-family-primary;
+  font-family: variables.$primary_regular;
   font-size: variables.$font-size-sm;
   font-weight: variables.$font-weight-bold;
   color: rgba(variables.$white, 0.6);
@@ -220,7 +220,7 @@
 
 .footer__bottom-link {
   @include footer-link;
-  font-family: variables.$font-family-primary;
+  font-family: variables.$primary_regular;
   font-size: variables.$font-size-sm;
   font-weight: variables.$font-weight-normal;
   color: rgba(variables.$white, 0.6);
@@ -289,7 +289,7 @@
 
 .menu-item a {
   color: inherit;
-  font-family: variables.$font-family-primary;
+  font-family: variables.$primary_regular;
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 1px;
@@ -337,7 +337,7 @@
 #copyright {
   color: variables.$text-light;
   font-size: 15px;
-  font-family: variables.$font-family-primary;
+  font-family: variables.$primary_regular;
   margin-top: 12px;
 }
 

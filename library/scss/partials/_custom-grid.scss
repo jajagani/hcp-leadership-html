@@ -1,4 +1,4 @@
-@use "../modules/variables" as variables;
+@use '../modules/variables' as variables;
 
 // Grid Variables
 $custom-grid-gap-sm: 1.4rem;
@@ -135,9 +135,8 @@ $custom-grid-max-col-width: 1fr;
 
 // Section Title Mixin
 @mixin section-title {
-  font-family: variables.$font-family-brandon;
+  font-family: variables.$primary_bold;
   font-size: variables.$font-size-xl;
-  font-weight: variables.$font-weight-bold;
   color: variables.$text-primary;
   text-align: center;
   margin-bottom: 0;

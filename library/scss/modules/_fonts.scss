@@ -1,0 +1,84 @@
+// Font Face Declarations
+@font-face {
+  font-family: 'hvdtrial_brandon_grotesqueBlk';
+  src: url('../fonts/hvdtrial_brandon_grotesque_black-bf64a625c944b08-webfont.woff2')
+      format('woff2'),
+    url('../fonts/hvdtrial_brandon_grotesque_black-bf64a625c944b08-webfont.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'hvdtrial_brandon_grotesqueBd';
+  src: url('../fonts/hvdtrial_brandon_grotesque_bold-bf64a625c9151d5-webfont.woff2')
+      format('woff2'),
+    url('../fonts/hvdtrial_brandon_grotesque_bold-bf64a625c9151d5-webfont.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'hvdtrial_brandon_grotesqueLt';
+  src: url('../fonts/hvdtrial_brandon_grotesque_light-bf64a625c93e709-webfont.woff2')
+      format('woff2'),
+    url('../fonts/hvdtrial_brandon_grotesque_light-bf64a625c93e709-webfont.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'hvdtrial_brandon_grotesqueMd';
+  src: url('../fonts/hvdtrial_brandon_grotesque_medium-bf64a625c84a521-webfont.woff2')
+      format('woff2'),
+    url('../fonts/hvdtrial_brandon_grotesque_medium-bf64a625c84a521-webfont.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'hvdtrial_brandon_grotesqueRg';
+  src: url('../fonts/hvdtrial_brandon_grotesque_regular-bf64a625c9311e1-webfont.woff2')
+      format('woff2'),
+    url('../fonts/hvdtrial_brandon_grotesque_regular-bf64a625c9311e1-webfont.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/** Secondary Font **/
+
+@font-face {
+  font-family: 'plantin_mt_probold';
+  src: url('../fonts/plantinmtprobold-webfont.woff2') format('woff2'),
+    url('../fonts/plantinmtprobold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'plantin_mt_prolight';
+  src: url('../fonts/plantinmtprolight-webfont.woff2') format('woff2'),
+    url('../fonts/plantinmtprolight-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'plantin_mt_proregular';
+  src: url('../fonts/plantinmtprorg-webfont.woff2') format('woff2'),
+    url('../fonts/plantinmtprorg-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'plantin_mt_prosemibold';
+  src: url('../fonts/plantinmtprosmbd-webfont.woff2') format('woff2'),
+    url('../fonts/plantinmtprosmbd-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

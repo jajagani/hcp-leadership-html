@@ -1,5 +1,5 @@
-@use "../modules/variables" as variables;
-@use "sass:color";
+@use '../modules/variables' as variables;
+@use 'sass:color';
 
 // Reset and Base Styles
 * {
@@ -16,9 +16,9 @@ body {
 }
 
 body {
-  font-family: variables.$font-family-primary;
-  font-size: variables.$font-size-base;
-  line-height: variables.$line-height-normal;
+  font-family: variables.$primary_regular;
+  font-size: variables.$font-size-xl;
+  line-height: 1.2rem;
   color: variables.$text-primary;
   margin: 0;
   padding: 0;
@@ -38,8 +38,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: variables.$font-family-secondary;
-  font-weight: variables.$font-weight-bold;
+  font-family: variables.$secondary_bold;
   line-height: variables.$line-height-tight;
   margin: 0 0 variables.$spacing-md 0;
   color: variables.$text-primary;
@@ -200,52 +199,52 @@ img {
 }
 
 @font-face {
-  font-family: "Plantin";
-  src: url("https://db.onlinewebfonts.com/t/c8b39fed03f94d04076e43085def7a5e.woff2")
-      format("woff2"),
-    url("https://db.onlinewebfonts.com/t/c8b39fed03f94d04076e43085def7a5e.woff")
-      format("woff");
+  font-family: 'Plantin';
+  src: url('https://db.onlinewebfonts.com/t/c8b39fed03f94d04076e43085def7a5e.woff2')
+      format('woff2'),
+    url('https://db.onlinewebfonts.com/t/c8b39fed03f94d04076e43085def7a5e.woff')
+      format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Plantin";
-  src: url("https://db.onlinewebfonts.com/t/7200e29d11cf7f02855b90abc943762c.woff2")
-      format("woff2"),
-    url("https://db.onlinewebfonts.com/t/7200e29d11cf7f02855b90abc943762c.woff")
-      format("woff");
+  font-family: 'Plantin';
+  src: url('https://db.onlinewebfonts.com/t/7200e29d11cf7f02855b90abc943762c.woff2')
+      format('woff2'),
+    url('https://db.onlinewebfonts.com/t/7200e29d11cf7f02855b90abc943762c.woff')
+      format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Plantin-Bold";
-  src: url("https://db.onlinewebfonts.com/t/7200e29d11cf7f02855b90abc943762c.woff2")
-      format("woff2"),
-    url("https://db.onlinewebfonts.com/t/7200e29d11cf7f02855b90abc943762c.woff")
-      format("woff");
+  font-family: 'Plantin-Bold';
+  src: url('https://db.onlinewebfonts.com/t/7200e29d11cf7f02855b90abc943762c.woff2')
+      format('woff2'),
+    url('https://db.onlinewebfonts.com/t/7200e29d11cf7f02855b90abc943762c.woff')
+      format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Plantin-Bold";
-  src: url("https://db.onlinewebfonts.com/t/7200e29d11cf7f02855b90abc943762c.woff2")
-      format("woff2"),
-    url("https://db.onlinewebfonts.com/t/7200e29d11cf7f02855b90abc943762c.woff")
-      format("woff");
+  font-family: 'Plantin-Bold';
+  src: url('https://db.onlinewebfonts.com/t/7200e29d11cf7f02855b90abc943762c.woff2')
+      format('woff2'),
+    url('https://db.onlinewebfonts.com/t/7200e29d11cf7f02855b90abc943762c.woff')
+      format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Plantin-Bold";
-  src: url("https://db.onlinewebfonts.com/t/7200e29d11cf7f02855b90abc943762c.woff2")
-      format("woff2"),
-    url("https://db.onlinewebfonts.com/t/7200e29d11cf7f02855b90abc943762c.woff")
-      format("woff");
+  font-family: 'Plantin-Bold';
+  src: url('https://db.onlinewebfonts.com/t/7200e29d11cf7f02855b90abc943762c.woff2')
+      format('woff2'),
+    url('https://db.onlinewebfonts.com/t/7200e29d11cf7f02855b90abc943762c.woff')
+      format('woff');
   font-weight: 900;
   font-style: normal;
   font-display: swap;

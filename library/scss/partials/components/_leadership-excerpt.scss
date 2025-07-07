@@ -1,6 +1,6 @@
 // Leadership Excerpt component for HarperCollins Leadership website
 
-@use "../../modules/variables" as variables;
+@use '../../modules/variables' as variables;
 
 .leadership-excerpt {
   padding: variables.$spacing-3xl 0;
@@ -26,9 +26,8 @@
   }
 
   &__title {
-    font-family: variables.$font-family-brandon;
+    font-family: variables.$primary_bold;
     font-size: variables.$font-size-2xl;
-    font-weight: variables.$font-weight-bold;
     color: variables.$text-primary;
     text-align: center;
     margin-bottom: variables.$spacing-lg;
